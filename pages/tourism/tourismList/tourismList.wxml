@@ -1,0 +1,138 @@
+<view class='head'>
+  <!-- <view class='search'><image src='/images/search.png' bindtap='search'></image></view> -->
+  <view class='head-select'  bindtap='showCityPicker'>
+      <view wx:if='{{city}}' class='head-all'>{{city}}</view>
+      <view wx:else class='head-all'>全部</view>
+      <view class='head-icon'><image src='/images/icon_down.png'></image></view>
+  </view>
+  <view class='head-c'><image data-id='{{cityPickerValue[1]}}' src='/images/che.png'  bindtap='search'></image></view>
+  <view class='head-recommend' bindtap='recommend'>+推荐美景地</view>
+</view>
+
+<view class='head-line'></view>
+
+<block wx:for='{{listData}}'>
+<view class='content'>
+  <view class='contentInfo'>
+    <view wx:if='{{item.author_id}}'>
+      <view class='user_portrait' data-id='{{item.author_id}}' bindtap='onUser'><image src='{{item.headImg}}'></image></view>
+      <view class='user_name'>
+        <view class='name'>{{item.author_name}}</view>
+        <view class='find'>美景地发现者 <image src='/images/find.png'></image> </view>
+      </view> 
+    </view>
+    <view wx:else class='addFind' data-id='{{item.spotId}}' data-name='{{item.spotName}}' data-cityid='{{item.cityId}}' data-cityname='{{item.cityName}}' bindtap='spotFind'>+成为发现者</view>
+
+    <view class='contentInfo-num'>
+        <view class='contentInfo-num-l'><image src='/images/pingjia.png'></image><text>{{item.articleNum}}</text></view>
+        <view class='contentInfo-num-r'><image src='/images/tupian.png'></image><text>{{item.photoNum}}</text></view>
+    </view>
+  </view>
+  <view class='image'>
+     <image class='img' data-name='{{item.address}}'  data-id='{{item.spotId}}' src='{{item.image}}' mode='aspectFill' bindtap='tourismDetail' />
+     <view class='address'>
+          <view class='address-l'><image src='/images/icon_wz1.png'></image><text>{{item.address}}</text></view>
+     </view>
+  </view>
+</view>
+<view class='line'></view>
+</block>
+
+
+<!-- <view class="b1" hidden="{{spotFind}}">
+  <view class="b2">
+    <view class='taichuang'>
+          <view class='cancel'><image src='/images/01-pictureDetail-13.png'></image></view>
+          <view class='title'>
+            <view class='titleBgk'></view>
+            <view class=''>申请美景地发现者</view>
+          </view>
+    </view>
+  </view>
+</view> -->
+
+<view class="b1" hidden="{{spotFind !=2}}">
+  <view class="b2">
+    <view class='cancel' bindtap='cancel'><image src='/images/01-pictureDetail-13.png'></image></view>
+    <view class='title'>
+      <view class='line1'></view>
+      <view class='content'>申请美景地发现者</view>
+    </view>
+    <text class='info'><text class='content-title'>成为美景地发现者，您就拥有如下特权：</text> 
+      1、在页面头部显示个人的头像和昵称；
+      2、可以上传景区封面图；
+      3、可以编辑景区介绍；
+      4、可以推荐置顶图文。
+      <text class='content-title'>成为美景地发现者，您就拥有如下特权：</text>
+      1、在此景区上传图片或者视频达到 5 次；
+      2、在此景区上传的图文的篇数达到 2 篇。
+      3、每个用户最多申请5个景区的美景地发现者。
+      <text class='content-title'>您已上传的图片/视频次数是 <text>{{findData.fileNum}}</text> 次，图文 <text>{{findData.filmNum}}</text> 篇，已达到要求，且申请的美景地发现者个数未达到5个。您可以成为<text class='find'>美景地发现者</text></text>
+    </text>
+    <view class='button'>
+      <view class='button-l' bindtap='cancel'>放弃</view>
+      <view class='button-r' data-id='{{spotId}}' data-name='{{spotName}}' bindtap='confirm'>确认</view>
+    </view>
+
+  </view>
+</view>
+
+<view class="b1" hidden="{{spotFind !=1}}">
+  <view class="b2">
+    <view class='cancel' bindtap='cancel'><image src='/images/01-pictureDetail-13.png'></image></view>
+    <view class='title'>
+      <view class='line1'></view>
+      <view class='content'>申请美景地发现者</view>
+    </view>
+    <text class='info'><text class='content-title'>成为美景地发现者，您就拥有如下特权：</text> 
+      1、在页面头部显示个人的头像和昵称；
+      2、可以上传景区封面图；
+      3、可以编辑景区介绍；
+      4、可以推荐置顶图文。
+      <text class='content-title'>成为美景地发现者，您就拥有如下特权：</text>
+      1、在此景区上传图片或者视频达到 5 次；
+      2、在此景区上传的图文的篇数达到 2 篇。
+      3、每个用户最多申请5个景区的美景地发现者。
+     <text class='content-title'> 您已上传的图片/视频次数是 <text>{{findData.fileNum}}</text> 次，图文 <text>{{findData.filmNum}}</text> 篇，尚未达到要求，请达到要求后再次申请。您可以继续:</text>
+    </text>
+    <view class='button'>
+      <view class='upload' bindtap='upload'>上传</view>
+    </view>
+
+  </view>
+</view>
+
+<view class="b1" hidden="{{spotFind !=3}}">
+  <view class="b2">
+    <view class='cancel' bindtap='cancel'><image src='/images/01-pictureDetail-13.png'></image></view>
+    <view class='title'>
+      <view class='line1'></view>
+      <view class='content'>申请美景地发现者</view>
+    </view>
+    <text class='info'><text class='content-title'>成为美景地发现者，您就拥有如下特权：</text> 
+      1、在页面头部显示个人的头像和昵称；
+      2、可以上传景区封面图；
+      3、可以编辑景区介绍；
+      4、可以推荐置顶图文。
+      <text class='content-title'>成为美景地发现者，您就拥有如下特权：</text>
+      1、在此景区上传图片或者视频达到 5 次；
+      2、在此景区上传的图文的篇数达到 2 篇。
+      3、每个用户最多申请5个景区的美景地发现者。
+      您申请的美景地发现者个数已达到 5 个，您不能再申请了！
+    </text>
+    <view class='button'>
+      <view class='upload' bindtap='cancel'>确定</view>
+    </view>
+
+  </view>
+</view>
+
+
+
+
+<city-picker class='address-select'
+    id="city-picker"
+    value="{{cityPickerValue}}" 
+    isShow="{{cityPickerIsShow}}"
+    bindsureclick="cityPickerOnSureClick"
+    bindcancelclick="cityPickerOnCancelClick" />

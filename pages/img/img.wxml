@@ -1,0 +1,105 @@
+<wxs src="../../utils/common.wxs" module="comm"></wxs>
+<view>
+  <!-- <button bindtap="aa">11</button> -->
+  <view class="search">
+    <!-- <icon type="search" class="search-img1" size="18" /> -->
+    <view class='search_icon' bindtap='onInput'><image src='/images/search.png' /></view>
+    <view class="worksType">
+      <view wx:if='{{worksSwitch==3}}' bindtap='worksSwitch' data-type='3' class='yj'>活动</view>
+      <view wx:else data-type='3' bindtap='worksSwitch' class='yj-1'>活动</view>
+      <!-- <view wx:if='{{worksSwitch==1}}' bindtap='worksSwitch' data-type='1' class='yj'>影集</view>
+      <view wx:else data-type='1' bindtap='worksSwitch' class='yj-1'>影集</view> -->
+      <view wx:if='{{worksSwitch==2}}' bindtap='worksSwitch' data-type='2' class='yj'>图文</view>
+      <view wx:else data-type='2' bindtap='worksSwitch' class='yj-1'>图文</view>    
+          <!-- <view bindtap='tourism' class='yj-1'>觅景</view>     -->
+      <view class='yj-r'>
+        <view wx:if='{{worksSwitch != 3}}' class='worksAdd' bindtap='worksAdd'>+制作</view> 
+        <view class='more' bindtap='worksMore'>
+          <text class='more-text'>更多</text>
+          <image src='/images/right_gysj.png' />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if='{{worksSwitch<3}}' class='worksShow'>
+    <scroll-view scroll-x class="scroll-works" >
+    <block wx:for="{{showList}}">
+      <view class='album_dt'>
+        <image class='list' data-id='{{item.worksShowId}}' src='{{comm.removeParam(item.doc_path)}}' mode='aspectFill' bindtap='showDetail' />
+        <view class='album_title line_over_1'>{{item.title}}</view>
+        <view wx:if='{{item.isboutique > 0}}' class='imgInfo-jx1'>精选</view>
+      </view>
+    </block>
+    </scroll-view>
+  </view>
+
+  <view wx:else class='activity'>
+    <view class='switch-left'><image src='/images/switch_left.png'/></view>  
+    <view class='switch-right'><image src='/images/switch_right.png'/></view>  
+    <swiper indicator-dots="{{false}}"
+      autoplay="{{true}}" interval="{{3000}}" circular='{{true}}' indicator-color='#999' indicator-active-color='#1790d7' duration="{{500}}" class='abc'>
+      <!-- 广告 -->
+      <block wx:for="{{banner}}">
+        <!-- 广告 -->
+        <block wx:if="{{item.advId && item.advId != ''}}"> 
+          <swiper-item>
+            <!-- 小程序内部跳转 -->
+            <view wx:if='{{item.linkPageType==1 && item.appId == "wxc2c607187b4e51b4"}}' data-path="{{item.linkPagePath}}" bindtap="goPage">
+              <view class='swiper'>
+                <image src="{{item.advImg}}" />
+              </view>
+            </view>
+            <!-- 其他小程序跳转 -->
+            <navigator  wx:elif='{{item.linkPageType==1}}'  target="miniProgram" version="develop" app-id="{{item.appId}}" path="{{item.linkPagePath}}">
+              <view class='swiper'>
+                <image src="{{item.advImg}}" />
+              </view>
+            </navigator>
+            <!-- 网页 -->
+            <view wx:elif='{{item.linkPageType==2}}' class='swiper' data-status='{{item.advType}}' data-linkpath='{{item.linkPagePath}}' bindtap='goAdv'>
+              <image src="{{item.advImg}}" />
+            </view>
+          </swiper-item>
+        </block> 
+      <!-- 赛事 -->
+      <block wx:else> 
+        <swiper-item>
+          <view class='swiper' data-status='{{item.status}}' data-id='{{item.worksShowId}}' bindtap='onMatch'>
+            <image src="{{item.doc_path}}" />
+            <view class='title'>
+              <view wx:if='{{item.status==0}}' class='title-l'>[征集中]</view>
+              <view wx:elif='{{item.status==1}}' class='title-l'>[评审中]</view>
+              <view wx:else class='title-l'>[已结束]</view>
+              <view class='title-r'>{{item.title}}</view>
+              <view wx:if='{{!item.status}}' class='title-match'>我要参赛</view>
+            </view>
+          </view>
+        </swiper-item>
+        </block>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='line'></view>
+  
+  <scroll-view scroll-x class="scroll-type">
+        <view style="background-image:url({{allType}})" class="type" data-name="全部" data-id="" bindtap='ontype'>
+          <view class='type-text'>全部</view>
+        </view>
+        <!-- <view style="background-image:url({{worksShow}})" class="type" data-name="影集" data-id="-2" bindtap='ontype'>
+          <view class='type-text'>影集</view>
+        </view> -->
+        <block class="text" wx:for="{{typeList}}">
+        <view style="background-image:url({{item.backgroundImg}})" class="type" data-name="{{item.type}}" data-id="{{item.id}}" bindtap='ontype'>
+          <view class='type-text'>{{item.type}}</view>
+        </view>
+      </block>  
+  </scroll-view>
+  <view class="index_works">{{imgTypeName}}</view>
+  <view wx:if="{{!image}}">
+    <import src='../template/imgList.wxml' />
+    <template is="imgList" data="{{images:images,scrollH:scrollH,col1:col1,col2:col2}}" />
+    <!-- <list data="{{imgArr}}" clearData="{{clearList}}" bind:loadMore="loadImages" /> -->
+  </view>
+</view>

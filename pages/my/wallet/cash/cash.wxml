@@ -1,0 +1,34 @@
+<view class='cash'>
+  <!-- <view class='add'>+添加提现账户</view> -->
+  <view class='account' bindtap='selectAccount'>
+    <view class='payInfo'>
+      <view class='icon'>
+        <image src='/images/wx.png' />
+      </view>
+      <view class='info'>
+        <view class='info-l'>
+          <view class='title'><text>招商银行</text><text class='name'>李杰龙</text></view>
+          <view class='time'>2018-03-11 11:03:12</view>
+        </view>
+        <view class='info-r'>
+          <view class='type'>默认</view>
+          <view class='num'><image src='/images/right_gysj.png'/></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cash-info'>
+    <view class='cash-info-title'>提现金额（提现手续费按照5%收取）</view>
+    <view class='cashNum'>
+      <view class='a'>￥：</view><view class='input'><input type='number'  placeholder='0'/></view>
+    </view>
+    <view class='cash-info-b'>
+      <view class='l'>可提现余额 128.88</view>
+      <view class='r'>全部提现</view>
+    </view>
+  </view>
+
+  <view class='desc'>单次最小提现额度100元，提交申请后1~3个工作日完成提现。</view>
+  <view class='confirm'>确认提现</view>
+</view>
+

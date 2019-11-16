@@ -1,0 +1,110 @@
+
+/* 绑定手机号码 */
+.verify{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;background:rgba(0,0,0,0.4);
+  z-index: 100;
+  overflow: hidden;
+}
+.verify-a{
+  display: flex;
+  flex-direction:column;
+  width: 87.7333%; 
+  margin:35% auto;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+
+.mobile_phone{ font-size:30rpx; text-align: center; width: 100%; margin:50rpx 0; color: #333;}
+.bindContent{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30rpx;
+  
+  width: 88%;
+  
+  margin:0 auto;
+  font-size:30rpx;
+
+  color: #333;
+}
+.phone{
+  width: 100%;
+  float: left;
+  flex-direction: row;
+  font-size: 26rpx;
+  margin-bottom:30rpx;
+ 
+}
+.phone text{line-height: 60rpx; float: left; width:120rpx;}
+.verify-sj{
+  border: 1rpx solid #ccc;
+  
+  height: 60rpx;
+  padding-left: 15rpx;
+  color: #333;
+  width: 400rpx;
+  float: left;
+}
+.verify-code{
+  border: 1rpx solid #ccc;
+  width: 200rpx;
+  padding-left: 15rpx;
+  height: 60rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.getButton{
+ border: 1rpx solid #1790d7;
+  border-radius:6rpx;
+  text-align: center;
+  background-color: #1790d7; 
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  float: left;
+  font-size: 26rpx;
+  width: 175rpx;
+}
+.getButton-1{
+ border: 1rpx solid #ccc;
+  border-radius:6rpx;
+  text-align: center;
+  background-color: #ccc; 
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  float: left;
+  font-size: 26rpx;
+  width: 175rpx;
+}
+.verify-button{
+  width: 100%;
+  line-height: 88rpx;
+  float: left;
+  flex-direction: row;
+  font-size: 30rpx;
+  border-top: 1rpx solid #e9e9e9;
+}
+
+.verify-button .cancel{
+  float: left;
+  border-right:1rpx solid #e9e9e9; 
+  border-radius: 8rpx;
+  width: 49.8%;
+  text-align: center;
+ 
+}
+.verify-button .cance2{
+  float: left;
+  border-radius: 8rpx;
+  width: 49.8%;
+  text-align: center;
+
+}
+
+/* 绑定手机号码 */

@@ -1,0 +1,108 @@
+<view class="line"></view>
+<view class="cloud-head">
+  <view class="cloud-upload" bindtap='upload'>
+    <image  src='/images/cloud_img1.png' />
+    <text>上传照片/视频</text>
+  </view>
+  <view class="cloud-head-r">
+    <!-- <text class="head-r-upgrade" bindtap='upgrade'>升级容量</text> -->
+    <text class="head-r-content">容量{{albumList.total_capacity}}/剩余{{albumList.surplus_capacity}}</text>
+    
+  </view>
+</view>
+
+<view class="cloud-album">
+    <!-- 全部 -->
+    <view class="album" data-name='全部' data-id="{{albumList.system_album.all.album_id}}" bindtap='onalbum'>
+      <view class="album1">
+        <view class="album2">
+          <image  src='{{cloudAlbum.all}}' />
+          <text>全部（{{albumList.system_album.all.img_num}}）</text>
+        </view>
+      </view>
+    </view>
+    <!-- 参赛 -->
+        <view class="album" data-name='参赛' data-id="{{albumList.system_album.match.album_id}}" bindtap='onalbum'>
+      <view class="album1">
+        <view class="album2">
+          <image  src='{{cloudAlbum.match}}' />
+          <text>参赛（{{albumList.system_album.match.img_num}}）</text>
+        </view>
+      </view>
+    </view>
+    <!-- 视频 -->
+        <view class="album" data-name='视频' data-id="{{albumList.system_album.video.album_id}}" bindtap='onalbum'>
+      <view class="album1">
+        <view class="album2">
+          <image  src='{{cloudAlbum.video}}' />
+          <text>视频（{{albumList.system_album.video.img_num}}）</text>
+        </view>
+      </view>
+    </view>
+    <!-- 公开 -->
+        <view class="album" data-name='公开' data-id="{{albumList.system_album.public.album_id}}" bindtap='onalbum'>
+      <view class="album1">
+        <view class="album2">
+          <image  src='{{cloudAlbum.ispublic}}' />
+          <text>公开（{{albumList.system_album.public.img_num}}）</text>
+        </view>
+      </view>
+    </view>
+    <!-- 不公开 -->
+        <view class="album" data-name='不公开' data-id="{{albumList.system_album.nopublic.album_id}}" bindtap='onalbum'>
+      <view class="album1">
+        <view class="album2">
+          <image  src='{{cloudAlbum.nopublic}}' />
+          <text>不公开（{{albumList.system_album.nopublic.img_num}}）</text>
+        </view>
+      </view>
+    </view>
+    <!-- 回收站 -->
+        <view class="album" data-name='回收站' data-id="{{albumList.system_album.delete.album_id}}" bindtap='recovery'>
+      <view class="album1">
+        <view class="album2">
+          <image  src='{{cloudAlbum.del}}' />
+          <text>回收站（{{albumList.system_album.delete.img_num}}）</text>
+        </view>
+      </view>
+    </view>
+
+</view>
+
+<view class="cloud-title"><text>个人云库</text></view>
+
+<view class="cloud-album">
+    <block wx:for="{{albumList.personal}}">
+      <view class="album" data-name="{{item.album_name}}" data-id="{{item.album_id}}" bindtap='onalbum'>
+        <view class="album1">
+          <view class="album2">
+            <image wx:if="{{item.background_img}}"  src='{{item.background_img}}' />
+            <image wx:else src='{{cloudAlbum.defaultImg}}' />
+            <text>{{item.album_name}}（{{item.img_num}}）</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view class="album" bindtap='addAlbum'>
+    <view class="album1">
+      <view class="album2">
+        <image  src='/images/cloud_img2.png'/>
+        <text>新建云库</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="b1" hidden="{{!newAlbum}}">
+  <view class="b2">
+    <view class='albumAdd'>
+    <view class='albumAdd-title'>新建云库</view>
+      <view class='albumAdd-content'>请输入相册名称</view>
+      <input class='albumadd-input' type='text' bindinput='albumBlur' value="{{newAlbumName}}" />
+      <view class="albumAdd-list">
+        <text class='button-cancel' bindtap='albumCancel'>取消</text>
+        <text class='button-add' bindtap='albumAdd'>添加</text>
+      </view>
+    </view>
+  </view>
+</view>

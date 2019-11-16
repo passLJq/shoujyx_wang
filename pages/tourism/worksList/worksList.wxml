@@ -1,0 +1,229 @@
+
+<view class='header'>
+  <view class='head-img'>
+   <image src='{{spotData.image}}' mode='aspectFill' bindtap='showDetail' />
+   <view class='find'>
+      <view wx:if="{{spotData.author_id==''}}" class='find-title'>这片美景地还无人认领,我要成为</view>
+      <view wx:elif="{{spotData.isAuthor == 0 && spotData.author_id==''}}" class='find-title'>这片美景地还无人认领,我要成为</view>
+      <view wx:if="{{spotData.author_id==''}}" class='find-add'  data-id='{{spotData.spotId}}' data-name='{{spotData.spotName}}' data-cityid='{{spotData.cityId}}' data-cityname='{{spotData.cityName}}' bindtap='spotFind'>+美景地发现者</view>
+      <view wx:elif="{{spotData.isAuthor == 0 && spotData.author_id==''}}" class='find-add'  data-id='{{spotData.spotId}}' data-name='{{spotData.spotName}}' data-cityid='{{spotData.cityId}}' data-cityname='{{spotData.cityName}}' bindtap='spotFind'>+美景地发现者</view>
+      
+   </view>
+  </view>
+  <view class='address'>
+    <span class="dingw-left">
+      <p class="ding-img"><image src="/images/dingwei.png" /></p>
+      <p class="jinqu">{{spotData.spotAddress}}</p>
+    </span>
+    <button class="zhuanf" open-type="share"> <image src="/images/zhuanf.png" /></button>
+  </view>
+</view>
+
+<view wx:if='{{spotData.author_id}}'>
+<view class='bg-color'>
+  <view class='edit'>
+    <view class='edit-img'>
+      <image src='{{spotData.author_portrait}}'></image>
+    </view>
+    <view class='edit-name'>
+      <view class=''>{{spotData.author_name}}</view>
+      <view class='edit-name-centent' bindtap='spotFind'>美景地发现者<image src='/images/find.png'></image></view>
+    </view>
+    <view wx:if='{{spotData.isAuthor>0}}' bindtap='edit' data-id='{{spotId}}' data-name='{{spotData.spotName}}' class='follow' >编辑</view>
+    <view wx:elif='{{spotData.isFollow}}' data-userid='{{spotData.author_id}}' data-status='{{spotData.isFollow}}' class='follow' bindtap='changeFollow1'>取消关注</view>
+    <view wx:else class='follow' data-userid='{{spotData.author_id}}' data-status='{{spotData.isFollow}}' bindtap='changeFollow1'>关注</view>
+  </view>
+  </view>
+  <view class='bg-color-bottom'>
+  <view class='edit-desc'>
+      <view class='edit-line'></view>
+      <view class='edit-yh'>
+        <image src='/images/icon_yh.png'></image>
+      </view>
+      <view class='centent'>{{spotData.spotDesc}}</view>
+      <view class='edit-yh-r'>
+        <image src='/images/icon-yh-r.png'></image>
+      </view>
+  </view>
+ </view>
+</view>
+
+
+<view wx:if="{{!spotData.author_id}}" class='line'>
+  <view class='line-c'></view>
+  <view  class='line-content'>精彩推荐</view>
+</view>
+
+<view>
+<view class="container attention">
+    <block wx:for='{{listData}}'  wx:for-index="index">
+    <view class="pictureDetails-content">
+        <view class="pictureDetails-top" >
+          <!--资料-->
+          <view class="pictureDetails-top-data">
+            <view class="pictureDetails-top-data-left fl">
+              <view class="pictureDetails-top-data-left-left fl" data-id="{{item.author_id}}" bindtap='onuser'>
+                <image src="{{item.author_portrait}}" />
+              </view>
+              <view class="pictureDetails-top-data-left-right fl">
+                <view class="pictureDetails-top-data-left-right-top" data-id="{{item.author_id}}" bindtap='onuser'>
+                  <span class="fl">{{item.author_name}}</span>
+                </view>
+                <view class="pictureDetails-top-data-left-right-bottom">
+                  <view class="pictureDetails-top-data-left-right-bottom-left">
+                    <block wx:for="{{item.rank}}" wx:for-item="items">
+                     <image wx:if="{{items}}" src="/images/stars.png" />
+                     <image wx:if="{{!items}}" src="/images/stars_1.png" />
+                    </block>
+                  </view>
+                  <view class="pictureDetails-top-data-left-right-bottom-center">
+                    <span class="fl">{{item.upload_time}}</span>
+                  </view>
+                  <view class="pictureDetails-top-data-left-right-bottom-right">
+                    <image class="fl" src="/images/01-pictureDetail-02.png" />
+                    <span class="fl">{{item.view_num}}</span>
+                  </view>
+                </view>
+              </view>
+            </view>
+              <view wx:if='{{spotData.isAuthor != "0"}}' data-id='{{item.spotFileId}}' class='setTop' bindtap='setTop'><image src='/images/top.png'></image></view>
+        <view class="centent-follow" catchtap='changeFollow' data-key='{{index}}' data-status="{{item.isFollow}}" data-userid="{{item.author_id}}">
+
+
+              <view wx:if="{{item.isFollow}}" class="centent-follow-text">
+                <text>取消关注</text>
+              </view>
+              <view wx:else class="centent-follow-text_a1">
+                <text>+关注</text>
+              </view>
+        </view>
+
+          </view>
+
+          <view class="pictureDetails-top-swiper">
+            <image src="{{item.doc_path}}" data-id='{{item.doc_id}}' data-group='{{item.isDouble}}' bindtap='onImg' mode="widthFix"/>
+            <view class="botton">{{item.doc_title}}</view>
+          <view  wx:if='{{item.isDouble==2}}' class='group'>
+            <!-- <image src='/images/mosaic.png'></image> -->
+            <text>图文</text>
+            <!-- <text wx:elif='{{item.fileType==0}}'>图片</text>
+            <text wx:else>视频</text> -->
+          </view> 
+
+          </view>
+          <!--信息展示-->
+          <view class="pictureDetails-top-message">
+              <view class="pictureDetails-top-message-top">
+                <p>{{item.describe}}</p>
+              </view>
+              <view class="pictureDetails-top-message-bottom clearfix">
+                <view class="pictureDetails-top-message-bottom-left fl">
+                  <span>
+                    <image src="/images/02-attention-01.png" />
+                  </span>  
+                  <text>{{item.good_num}}</text>
+                </view>
+                <view class="pictureDetails-top-message-bottom-center fl">
+                    <span>
+                      <image src="/images/02-attention-02.png" />
+                    </span> 
+                    <text>{{item.comment_num}}</text>
+                </view>
+                <view class="pictureDetails-top-message-bottom-right1 fr" >{{item.address}}</view> 
+                 <view class="pictureDetails-top-message-bottom-right fr"  bindtap="share">
+                  <span>
+                    <image src="/images/icon_wz.png" />
+                  </span>
+                </view> 
+
+              </view>
+          </view>
+
+        </view>
+     
+    </view>
+    </block>
+</view>
+</view>
+
+<view class='addPicture' bindtap='spot'>
+  <image src='/images/add_icon.png'></image>
+  <!-- <text>+</text> -->
+</view>
+
+
+<view class="b1" hidden="{{spotFind !=2}}">
+  <view class="b2">
+    <view class='cancel' bindtap='cancel'><image src='/images/01-pictureDetail-13.png'></image></view>
+    <view class='title'>
+      <view class='line1'></view>
+      <view class='content'>申请美景地发现者</view>
+    </view>
+    <text class='info'><text class='content-title'>成为美景地发现者，您就拥有如下特权：</text> 
+      1、在页面头部显示个人的头像和昵称；
+      2、可以上传景区封面图；
+      3、可以编辑景区介绍；
+      4、可以推荐置顶图文。
+      <text class='content-title'>成为美景地发现者，您就拥有如下特权：</text>
+      1、在此景区上传图片或者视频达到 5 次；
+      2、在此景区上传的图文的篇数达到 2 篇。
+      3、每个用户最多申请5个景区的美景地发现者。
+      <text class='content-title'>您已上传的图片/视频次数是 <text>{{findData.fileNum}}</text> 次，图文 <text>{{findData.filmNum}}</text> 篇，已达到要求，且申请的美景地发现者个数未达到5个。您可以成为<text class='find'>美景地发现者</text></text>
+    </text>
+    <view class='button'>
+      <view class='button-l' bindtap='cancel'>放弃</view>
+      <view class='button-r' data-id='{{spotId}}' data-name='{{spotName}}' bindtap='confirm'>确认</view>
+    </view>
+
+  </view>
+</view>
+
+<view class="b1" hidden="{{spotFind !=1}}">
+  <view class="b2">
+    <view class='cancel' bindtap='cancel'><image src='/images/01-pictureDetail-13.png'></image></view>
+    <view class='title'>
+      <view class='line1'></view>
+      <view class='content'>申请美景地发现者</view>
+    </view>
+    <text class='info'><text class='content-title'>成为美景地发现者，您就拥有如下特权：</text> 
+      1、在页面头部显示个人的头像和昵称；
+      2、可以上传景区封面图；
+      3、可以编辑景区介绍；
+      4、可以推荐置顶图文。
+      <text class='content-title'>成为美景地发现者，您就拥有如下特权：</text>
+      1、在此景区上传图片或者视频达到 5 次；
+      2、在此景区上传的图文的篇数达到 2 篇。
+      3、每个用户最多申请5个景区的美景地发现者。
+     <text class='content-title'> 您已上传的图片/视频次数是 <text>{{findData.fileNum}}</text> 次，图文 <text>{{findData.filmNum}}</text> 篇，尚未达到要求，请达到要求后再次申请。您可以继续:</text>
+    </text>
+    <view class='button'>
+      <view class='upload' bindtap='upload'>上传</view>
+    </view>
+
+  </view>
+</view>
+
+<view class="b1" hidden="{{spotFind !=3}}">
+  <view class="b2">
+    <view class='cancel' bindtap='cancel'><image src='/images/01-pictureDetail-13.png'></image></view>
+    <view class='title'>
+      <view class='line1'></view>
+      <view class='content'>申请美景地发现者</view>
+    </view>
+    <text class='info'><text class='content-title'>成为美景地发现者，您就拥有如下特权：</text> 
+      1、在页面头部显示个人的头像和昵称；
+      2、可以上传景区封面图；
+      3、可以编辑景区介绍；
+      4、可以推荐置顶图文。
+      <text class='content-title'>成为美景地发现者，您就拥有如下特权：</text>
+      1、在此景区上传图片或者视频达到 5 次；
+      2、在此景区上传的图文的篇数达到 2 篇。
+      3、每个用户最多申请5个景区的美景地发现者。
+      您申请的美景地发现者个数已达到 5 个，您不能再申请了！
+    </text>
+    <view class='button'>
+      <view class='upload' bindtap='cancel'>确定</view>
+    </view>
+
+  </view>
+</view>

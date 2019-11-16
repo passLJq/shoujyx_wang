@@ -1,0 +1,66 @@
+.dia_ss12345 , .dia_ss12345 view, .dia_ss12345 text {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dia_ss12345 {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.dia_ss12345 > view {
+  width: 568rpx;
+  padding: 50rpx 70rpx 60rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+.dia_ss12345 > view > text {
+  font-size: 30rpx;
+  color: #666;
+}
+.dia_ss12345 > view > text:first-of-type {
+  font-size: 36rpx;
+  color: #000;
+  margin-bottom: 15rpx;
+}
+.dia_ss12345 > view > image {
+  width: 100%;
+  margin: 30rpx 0 60rpx 0;
+}
+
+.dia_ss12345 > view > .btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dia_ss12345 .btn button {
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  border-radius: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.dia_ss12345 .b1 {
+  color: #B0A393;
+  border: 1px solid #B0A393;
+}
+
+.dia_ss12345 .b2 {
+  background-color: #B0A393;
+  color: #fff;
+}

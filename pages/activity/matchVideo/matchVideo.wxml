@@ -1,0 +1,50 @@
+<view style="width: 100%;position:relative">
+  <image mode="widthFix" style="width: 100%;" src="http://image.91sjyx.com/sjyx/videoMatch/match1/1.jpg"></image>
+  <view class="button" bindtap="goupload">我要参赛</view>
+  <view class="b2">
+    <view class="{{tabs == 0 ? 'active' : ''}}" bindtap="changesTab" data-type="0">活动详情</view>
+    <view class="{{tabs == 1 ? 'active' : ''}}" bindtap="changesTab" data-type="1">参赛作品</view>
+  </view>
+</view>
+<view class="main" hidden="{{tabs != 0}}">
+  <view>
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/videoMatch/match1/2.jpg"></image>
+  </view>
+  <view>
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/videoMatch/match1/3.jpg"></image>
+  </view>
+  <view>
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/videoMatch/match1/4.jpg"></image>
+  </view>
+  <view>
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/videoMatch/match1/5.jpg"></image>
+    <view class="videoBox">
+      <video src="http://image.91sjyx.com/sjyx/videoMatch/match1/123.mp4"></video>
+    </view>
+  </view>
+  <view>
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/videoMatch/match1/6.jpg"></image>
+  </view>
+  <view>
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/videoMatch/match1/7.jpg"></image>
+  </view>
+  <view>
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/videoMatch/match1/8.jpg"></image>
+  </view>
+  <view>
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/videoMatch/match1/9.jpg"></image>
+  </view>
+</view>
+
+
+
+<view hidden="{{tabs != 1}}">
+  <import src='../../template/imgList.wxml' />
+  <template is="imgList" data="{{images:images,scrollH:scrollH,col1:col1,col2:col2}}" />
+</view>
+
+<view class="rightBox">
+  <view bindtap="goupload">
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/videoMatch/match1/icon.png"></image>我要参赛</view>
+  <!-- <view bindtap="changesTab" data-type="1">参赛作品</view> -->
+</view>

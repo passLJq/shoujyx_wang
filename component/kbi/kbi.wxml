@@ -1,0 +1,54 @@
+<!-- k币 -->
+<view class="c1" hidden='{{!showBox}}'>
+  <view class="c2">
+    <view class='red'>
+      <image class='img' src='/images/red.png'></image>
+      <image class='red1' src='/images/red1.png'></image>
+      <image class='portrait' src="{{workData.HeadImg}}"></image>
+      <image class='cancel' bindtap='cancel' src='/images/x.png'></image>
+    </view>
+    <view class='content'>
+      <view class='userName'>{{workData.user_name}}</view>
+      <view class='kBnum'>
+        <view wx:if='{{kb==10}}' class='kb1' data-kb='10' bindtap='bkSelect'>10k币</view>
+        <view wx:else class='kb' data-kb='10' bindtap='bkSelect'>10k币</view>
+        <view wx:if='{{kb==30}}' class='kb1' data-kb='30' bindtap='bkSelect'>30k币</view>
+        <view wx:else class='kb' data-kb='30' bindtap='bkSelect'>30k币</view>
+        <view wx:if='{{kb==60}}' class='kb1' data-kb='60' bindtap='bkSelect'>60k币</view>
+        <view wx:else class='kb' data-kb='60' bindtap='bkSelect'>60k币</view>
+      </view>
+      <view class='kBnum'>
+        <view wx:if='{{kb==90}}' class='kb1' data-kb='90' bindtap='bkSelect'>90k币</view>
+        <view wx:else class='kb' data-kb='90' bindtap='bkSelect'>90k币</view>
+        <view wx:if='{{kb==188}}' class='kb1' data-kb='188' bindtap='bkSelect'>188k币</view>
+        <view wx:else class='kb' data-kb='188' bindtap='bkSelect'>188k币</view>
+        <view wx:if='{{kb==288}}' class='kb1' data-kb='288' bindtap='bkSelect'>288k币</view>
+        <view wx:else class='kb' data-kb='288' bindtap='onInput'>其它金额</view>
+      </view>
+      <view class='count'>
+        <view class='count-l'>汇率为1:10（1RMB=10K币)</view>
+        <!-- <view class='count-r' bindtap='onInput' >其它金额</view> -->
+      </view>
+      <view hidden='{{!inputMoney}}' class='cash'>
+        <view class='cash-l'>其它金额</view>
+        <view class='cash-r'>
+          <input placeholder="请输入金额" bindfocus='kbFocus' bindinput='kbInput' type='number'></input>
+        </view>
+      </view>
+
+      <view wx:if='{{!isSubmit}}' class='aa' bindtap='rewardSubmit'>打赏</view>
+      <view wx:else class='aa1'>打赏</view>
+
+
+      <view class='total'>
+        <!-- <image src='/images/money_icon.png'></image> -->
+        <text class='l'>K币账户</text>
+        <text class='c'>{{myWallet}}</text>
+        <text class='r' bindtap='onRecharge'>充值</text>
+
+      </view>
+      <!-- <view class='desc'>打赏是为表示鼓励而对作者的无偿行为</view> -->
+    </view>
+
+  </view>
+</view>

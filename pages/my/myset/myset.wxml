@@ -1,0 +1,35 @@
+<view class="line"></view>
+
+<view class="content1">
+  <view class="content-row1" bindtap='userInfo'>
+    <text>个人资料</text>
+    <image src='/images/right_gysj.png'/>
+  </view>
+</view>
+<view class="content1">
+  <view class="content-row" bindtap='onfeedback'>
+    <text>意见反馈</text>
+    <image src='/images/right_gysj.png'/>
+  </view>
+  <view class="content-row" bindtap='ondata'>
+    <text>用户协议</text>
+    <image src='/images/right_gysj.png'/>
+  </view>
+  <view class="content-row" style='border-bottom:0rpx;' bindtap='onabout'>
+    <text>关于我们</text>
+    <image src='/images/right_gysj.png'/>
+  </view>
+</view>
+
+<view class="content1" bindtap='onhelp'>
+  <view class="content-row" style='border-bottom:0rpx;'>
+    <text>帮助中心</text>
+    <image src='/images/right_gysj.png'/>
+  </view>
+</view>
+<view class="content1" bindtap='changeUser'>
+  <view class="content-row2">
+    <text>切换用户</text>
+   
+  </view>
+</view>

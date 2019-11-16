@@ -1,0 +1,35 @@
+<view class='body'>
+<view class='recharge'>
+    <view class='detailed'><text bindtap='onDetailed' data-code='0'>充值明细</text><image src='/images/right_gysj1.png' bindtap='onDetailed' data-code='0'></image></view>
+  <view class='head'>
+    <view class='content'>
+      <view class='num'>充值K币数量</view>
+      <view class='input'>
+        <input type='number' bindinput="kb" value='{{kb}}'></input>
+      </view>
+  </view>
+  <view class='gt'>=</view>
+    <view class='content'>
+      <view class='num'>￥</view>
+      <view class='input'>
+        <input type='number' bindinput="payNum" value='{{payNum}}'></input>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='wxpay'>
+  <view class='img'><image src='/images/wx.png'></image></view>
+  <view class='payTitle'>微信支付</view>
+  <view class='r'><image src='/images/yes_icon.png'></image></view>
+</view>
+
+<view class='line'></view>
+<view class='desc'><text>单次最小充值额度 10个K币（1元）；人民币按 1:10 的比率兑换
+成k币。</text></view>
+<view class='aa'>
+  <view wx:if='{{!isSubmit}}' class='submit' bindtap='payConfirm'>确认支付</view>
+  <view wx:else class='submit'>确认支付</view>
+</view>
+
+</view>

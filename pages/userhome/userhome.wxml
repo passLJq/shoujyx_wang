@@ -1,0 +1,72 @@
+<view class="content">
+  <view class="head" style="background-image:url({{defaultbackg}})">
+    <view class="head1"> 
+      <view class="head1-1"></view>
+    </view>
+    <view class="head2">
+      <view class="head2-one">
+              <image class="head2-tx" src="{{info.portrait}}"/>
+      </view>
+      <view class="head2-two">
+        <text>{{info.user_name}}</text>
+        <view>
+          <block wx:for="{{stars}}">
+            <image wx:if="{{item}}" class="stars" src='/images/stars.png' />
+            <image wx:if="{{!item}}" class="stars" src='/images/stars_1.png' />
+          </block>
+        </view>
+        <view class="head2-two-qm">{{info.user_profile}}</view>
+      </view>
+
+      <span wx:if="{{!info.isfollow}}" data-status="{{info.isfollow}}" class="head2-three1" bindtap="onfollow">
+        <text>+关注</text>
+      </span>
+      <span wx:else class="head2-three" data-status="{{info.isfollow}}" bindtap="onfollow">
+        <text>取消关注</text>
+      </span>
+
+    </view>
+  </view>
+
+  <view class="content-one">
+    <view class="content-one-num1">
+      <text class="number">{{info.view_num}}</text>
+      <text>人气</text>
+    </view>
+    <view  data-id='2' class="content-one-num" bindtap="onUserList">
+      <text class="number">{{info.reward_num}}</text>
+      <text>赏客</text>
+    </view>
+    <view  data-id='1' class="content-one-num" bindtap="onUserList">
+      <text class="number">{{info.fans_num}}</text>
+      <text>粉丝</text>
+    </view>
+    <view  data-id='3' class="content-one-num" bindtap="onUserList">
+      <text class="number">{{info.follow_num}}</text>
+      <text>关注</text>
+    </view>
+  </view>
+  <view class="line"></view>
+
+  <view class="production">
+    <view wx:if="{{onnum==1}}" bindtap='onType' data-msg="没有作品" class="production-type" data-code="1">作品</view>
+    <view  wx:else bindtap='onType' data-msg="没有作品" class="production-type-1" data-code="1">作品</view>
+    <view wx:if="{{onnum==2}}" bindtap='onType' data-msg="没有赞过的的作品" class="production-type" data-code="2">赞过的</view>
+    <view wx:else bindtap='onType' data-msg="没有赞过的的作品" class="production-type-1" data-code="2">赞过的</view>
+    <view wx:if="{{onnum==3}}" bindtap='onType'data-msg="没有获奖作品"  class="production-type" data-code="3">获奖</view>
+    <view wx:else bindtap='onType' data-msg="没有获奖作品" class="production-type-1" data-code="3">获奖</view>
+  </view>
+<view wx:if="{{isEmpty}}" class='shangke'>
+  <span class="icon"><image src='/images/winning.jpg' /></span>
+  <span class="tishi">{{message}}</span>
+</view>
+<view wx:if="{{!isEmpty}}">
+  <import src='../template/imgList.wxml' />
+  <view wx:if="imglist">
+    <template is="imgList" data="{{images:images,scrollH:scrollH,col1:col1,col2:col2}}" />
+  </view>
+</view>
+
+</view>
+<button class="home_sy" open-type="share"> <image src="../../images/home_sy.png" /></button> 
+

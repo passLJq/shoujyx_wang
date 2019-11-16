@@ -1,0 +1,16 @@
+<view class="line"></view>
+<view class="feedback">
+  <text>请详细描述您遇到的问题或者建议。您还可以通过以下方式联系我们：
+  电话：0755-82738037
+  邮箱：support@91sjyx.com
+  QQ ：2533556732
+  服务时间：工作日 9:00 – 17:30
+  </text>
+  <form bindsubmit="formsubmit">
+    <textarea  type='text' name="input" placeholder="请输入你遇到的问题或者建议" placeholder-class='input' />
+    <view class="feedback-button">
+      <view class="button-cancel" bindtap='oncancel' form-type='cancel'>取消</view>
+      <button class="button-submit" form-type='submit'>提交</button>
+    </view>
+  </form>
+</view>

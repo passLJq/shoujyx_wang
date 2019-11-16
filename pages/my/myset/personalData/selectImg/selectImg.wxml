@@ -1,0 +1,19 @@
+<view class="line"></view>
+<view class="album-head">
+  <!-- <view class='head-isPublic'>
+      <text>不公开</text>
+  </view> -->
+  <view class="head-r"><text class='head-r-text' bindtap='submit'>确定</text></view>
+</view>
+<view wx:if="{{show==1}}" class="album-list">
+
+    <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="getCloudBaseWorksList">
+      <block wx:for="{{dataList}}">
+        <view class="alibum-list-img" data-val='{{item.doc_id}}' data-id="{{index}}" data-img="{{item.image}}"  bindtap='selectImg'>
+            <view wx:if="{{item.val}}" class="selectImg"><image  src='/images/selectd.png' /></view>
+            <image mode='aspectFill' src='{{item.image}}' />
+        </view>
+      </block>
+    </scroll-view>
+
+</view>

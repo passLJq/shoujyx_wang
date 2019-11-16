@@ -1,0 +1,108 @@
+const app = getApp();
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    feedbackUrl:'app/session/feedback',
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '意见反馈'
+    });
+  },
+  //取消
+  oncancel:function(){
+    wx.navigateBack({
+      delta:1
+    })
+  },
+  //消息提示
+  Prompt:function(msg){
+    wx.showToast({
+      title: msg,
+      icon: 'none',
+      duration: 2000
+    })
+  },
+  //提交
+  formsubmit:function(e){
+    var thiss = this;
+    let content = e.detail.value.input;
+    content = content.replace(/^\s+|\s+$/g, "");
+    if (!content) {
+      this.Prompt('内容不能为空');
+      return false;
+    }
+    wx.request({
+      url: app.domain2 + this.data.feedbackUrl, 
+      data: {content:content},
+      header: getApp().header,
+      success: function (res) {
+        if (res.data.code == 0){
+          thiss.Prompt('提交成功')
+          setTimeout(function(){
+            wx.navigateBack({
+              delta: 1
+            })
+          },2000);
+
+        }
+      }
+    })
+  },
+
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  // onShareAppMessage: function () {
+    
+  // }
+})

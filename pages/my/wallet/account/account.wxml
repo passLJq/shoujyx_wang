@@ -1,0 +1,63 @@
+<radio-group class="radio-group" bindchange="radioChange">
+<view class='account'>
+  <view class='payInfo'>
+    <view class='icon'>
+      <image src='/images/wx.png' />
+    </view>
+    <view class='info'>
+      <view class='info-l'>
+        <view class='title'><text>招商银行</text><text class='name'>李杰龙</text></view>
+        <view class='time'>2018-03-11 11:03:12</view>
+      </view>
+      <view class='info-r'>
+        <view class='type'>默认</view>
+        <!-- <view class='num'><image src='/images/right_gysj.png'/></view> -->
+        <radio class='num' value="{{item.name}}" checked="1"/>
+      </view>
+    </view>
+  </view>
+  <view class='select'>
+    <view class='select-c'>
+      <view class='defaul'>设为默认</view>
+      <view class='del-img'><image src='/images/rm.png' /><view class='del'>删除</view></view>
+      <view class='edit-img'><image src='/images/03-personlData-03.png' /><view class='edit'>编辑</view></view>
+    </view>
+  </view>
+</view>
+
+<view class='account'>
+  <view class='payInfo'>
+    <view class='icon'>
+      <image src='/images/wx.png' />
+    </view>
+    <view class='info'>
+      <view class='info-l'>
+        <view class='title'><text>招商银行</text><text class='name'>李杰龙</text></view>
+        <view class='time'>2018-03-11 11:03:12</view>
+      </view>
+      <view class='info-r'>
+        <view class='type'>默认</view>
+        <!-- <view class='num'><image src='/images/right_gysj.png'/></view> -->
+        <radio class='num' value="{{item.name}}" checked=""/>
+      </view>
+    </view>
+  </view>
+  <view class='select'>
+    <view class='select-c'>
+      <view class='defaul'>设为默认</view>
+      <view class='del-img'><image src='/images/rm.png' /><view class='del'>删除</view></view>
+      <view class='edit-img'><image src='/images/03-personlData-03.png' /><view class='edit'>编辑</view></view>
+    </view>
+  </view>
+</view>
+</radio-group>
+<view class='addAccount'>+新增账户</view>
+
+
+  
+  
+  
+  
+
+  
+

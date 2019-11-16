@@ -1,0 +1,27 @@
+  <view class="verify" hidden="{{fgdsgd}}">
+    <view class="verify-a">
+        <view class='content'>
+          <view class="mobile_phone"><text>用户登录</text></view>
+          <view class="phone"><text>手机号：</text> <input class='verify-sj' placeholder='请输入手机号码' type='text' bindinput ="getPhone"></input></view>
+          <view class="phone">
+          <text>验证码：</text>
+          <input class='verify-code' type='text' bindinput='getVerify'></input>
+
+            <view wx:if="{{!verifyTime}}" class="getButton" bindtap='getVerifyCode'>获取验证码</view>
+            <view wx:if="{{verifyTime}}" class="getButton-1" >{{verifyTime}}s</view>
+          </view>
+    <view class='works-radio'>
+      <view class="worksShow-radio-group">
+        <radio checked='{{protocol}}' color='#1790d7' class='protocol' bindtap='protocol' />
+      </view>
+      <view class='radio-group-text' bindtap='protocolInfo'>同意手机影像用户注册协议和隐私政策</view>
+    </view>
+        </view>
+        <view class="verify-button">
+            <view class="cancel" bindtap='verifyCancel'>取消</view>
+            <view wx:if="{{isRegister}}" class="cance2" bindtap='verifyConfirm'>登录</view>
+            <button wx:else class="cance2" open-type="getUserInfo" bindgetuserinfo="verifyConfirm">登录</button>
+      </view>
+    </view>
+     
+  </view>

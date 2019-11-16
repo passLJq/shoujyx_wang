@@ -1,0 +1,35 @@
+<view class="centent-list">
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadUser">
+<block wx:for="{{data}}">
+<view class="userList" bindtap='onList' data-userid="{{item.user_id}}">
+  <view class="userList-portrait">
+    <image class="userList-portrait-img" src="{{item.portrait}}" />
+  </view>
+  <view class="userList-centent">
+    <view class="centent">
+      <text>{{item.user_name}}</text>
+      <view class='xing_img'>
+        <block wx:for="{{item.user_rank}}"  wx:for-item="items">
+          <image wx:if="{{items}}" class="stars" src='/images/stars.png' />
+          <image wx:if="{{!items}}" class="stars" src='/images/01-pictureDetail-12.png' />
+        </block>
+      </view>
+    </view>
+    <view class="centent-follow" catchtap='changeFollow' data-key='{{index}}' data-status="{{item.isfollow}}" data-userId="{{item.user_id}}">
+      <view wx:if="{{item.isfollow}}"  class="centent-follow-text">
+        <text wx:if="{{item.isfollow}}">取消关注</text>
+      </view>
+      <view wx:if="{{!item.isfollow}}" class="centent-follow-text_a1">
+        <text wx:if="{{!item.isfollow}}">+关注</text>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<view wx:if="{{!isempty}}" class='shangke'>
+  <span class="icon"><image src='/images/attention.png' /></span>
+  <span class="tishi">{{message}}</span>
+  <span class="button" bindtap='result'>返回</span>
+</view>
+</scroll-view>
+</view>

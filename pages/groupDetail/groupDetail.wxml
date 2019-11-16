@@ -1,0 +1,307 @@
+<!--pictureDetails.wxml 图片详情页面-->
+<view class="container pictureDetails">
+    <!--商品详情上面部分-->
+    <view class="pictureDetails-top">
+        <!--资料-->
+        <view class="pictureDetails-top-data">
+          <view class="pictureDetails-top-data-left fl">
+            <view class="pictureDetails-top-data-left-left fl" data-id="{{worksDetails.member_id}}" bindtap='onuser'>
+              <image src="{{worksDetails.user_portrait}}" />
+            </view>
+            <view class="pictureDetails-top-data-left-right fl">
+              <view class="pictureDetails-top-data-left-right-top">
+                <span class="fl">{{worksDetails.user_name}}</span>
+              </view>
+              <view class="pictureDetails-top-data-left-right-bottom">
+                <view  class="pictureDetails-top-data-left-right-bottom-left">
+                  <block wx:for="{{stars}}">
+                  <image wx:if="{{item}}" src="../../images/01-pictureDetail-11.png" />
+                  <image wx:if="{{!item}}" src="../../images/01-pictureDetail-12.png" />
+                  </block>
+                </view>
+
+                <view class="pictureDetails-top-data-left-right-bottom-center">
+                  <span class="fl">{{worksDetails.upload_time}}</span>
+                </view>
+                <view class="pictureDetails-top-data-left-right-bottom-right">
+                  <image class="fl" src="../../images/01-pictureDetail-02.png" />
+                  <span class="fl">{{worksDetails.view_num}}</span>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{!worksDetails.is_follow}}" data-status="{{worksDetails.is_follow}}" data-userId="{{worksDetails.member_id}}" class="pictureDetails-top-data-right fr " bindtap="attention">
+            <span>+关注</span>
+          </view>
+          <view wx:if="{{worksDetails.is_follow}}" data-status="{{worksDetails.is_follow}}" data-userId="{{worksDetails.member_id}}" class="pictureDetails-top-data-right fr active" bindtap="attention" >
+            <span>取消关注</span>
+          </view>
+        </view>
+        <!--图片-->
+        <view class='icon-group'>
+                <view  class="pictureDetails-top-swiper" data-img='{{worksDetails.images}}' bindtap='onImg'>
+           <image src="{{worksDetails.images}}" mode="widthFix" bindload="bindload" />
+          </view>
+          <view class='icon-group-a'>
+                     <image src='/images/mosaic.png'></image>
+          </view>
+          <view wx:if='{{groupTag}}' class='groupTag'>
+                <image src='/images/bag_img.png'></image>
+                <view class='icon_on'>
+                    <image src='/images/icon_on.png'></image>
+                    <text>点击图片左右滑动</text>
+                </view>
+          </view>
+        </view>
+
+
+        <!--信息展示-->
+        <view class="pictureDetails-top-message">
+            <view class="pictureDetails-top-message-top">
+              
+              <p wx:if="{{!descAll}}" bindtap='descAll' class="title">{{worksDetails.describe}}</p>
+              <p wx:else bindtap='descAll' class="title-all">{{worksDetails.describe}}</p>
+              <p class="fenxiang"><button  open-type="share"> <image src="../../images/share_zf1.png" /></button></p>
+              <p class="jubao" bindtap="report"><image src="../../images/report.png" /></p>
+            </view>
+            <view wx:if="{{fileType==0}}" class="pictureDetails-top-message-center">
+              <view class="img-type">
+                  <image src="../../images/01-pictureDetail-04.png" />
+                  <span class="active" style=" color: #1790d7;">{{worksDetails.type_name}}</span>
+              </view>
+              <view wx:for="{{worksDetails.label}}" class="message-label" wx:for-index="index" wx:key="index">
+                  <span>{{item}}</span>
+              </view>
+            </view>
+            <view wx:if="{{isMatchStatus}}" class="pictureDetails-top-message-bottom">
+              <view class="pictureDetails-top-message-bottom-ul">
+                  <view class="pictureDetails-top-message-bottom-li">
+                    <image src="../../images/01-pictureDetail-05.png" />
+                    <block wx:for="{{worksDetails.match}}">
+                    <navigator class="active" url="/pages/activity/matchdetail/matchdetail?id={{item.match_id}}" class="active" hover-class="none">{{item.match_name}}</navigator>
+                    
+                    </block>
+
+                  </view>
+              </view>
+               
+              
+            </view>
+        </view>
+    </view>
+    <view class='jiange'></view>
+    <view class="pictureDetails-bottom">
+
+     <view wx:if="{{worksDetails.goodList.length}}" class="pictureDetails-bottom-like clearfix">
+        <view class="pictureDetails-bottom-like-left fl">
+          <text>点赞用户</text>
+        </view>
+        <view class="pictureDetails-bottom-like-right fr">
+          <view class="ul fl">
+           <block wx:for="{{worksDetails.goodList}}"  wx:for-item="items">
+            <view class="li" bindtap='onuser' data-id="{{items.userId}}">
+              <image src="{{items.userHeading}}" />
+            </view>
+           </block>
+          </view>
+          <view class="arrow fr" bindtap='onUserList'>
+            <image src="../../images/right_gysj.png" />
+          </view>
+        </view>
+      </view> 
+
+      <view class="pictureDetails-bottom-comment">
+        <view  class="pictureDetails-bottom-comment-top">
+          <text wx:if="{{pictureComment.comment_num}}" >共{{pictureComment.comment_num}}条评论</text>
+          <text wx:if="{{!pictureComment.comment_num}}" >暂无评论</text>
+        </view>
+        <view class="ul" wx:for="{{pictureComment.comment}}" wx:for-index="index" wx:key="index">
+          <view class="li clearfix">
+            <view class="li-left fl">
+              <image src="{{item.portrait}}" data-id="{{item.user_id}}" bindtap='onuser' />
+            </view>
+            <view class="li-right fl">
+              <view class="li-right-top clearfix">
+                <text class="fl name-s" data-id="{{item.user_id}}" bindtap='onuser'>{{item.user_name}}</text>
+                <text class='fl time-s' >{{item.comment_time}}</text>
+                <view class="fr reply" data-id="{{item.user_id}}" data-commentid="{{item.comment_id}}" data-name="{{item.user_name}}" bindtap='reply'><text>回复</text></view>
+              </view>
+              <view class="li-right-center">
+                <p class="p">{{item.comment_context}}</p>
+              </view>
+              <view class="li-right-bottom" wx:for="{{item.level}}" wx:for-item="items" wx:for-index="index" wx:key="index"> 
+              <view data-id="{{items.auth_id1}}" data-commentid="{{item.comment_id}}" data-name="{{items.auth_name1}}" bindtap='reply'>
+
+                <p class="p">
+                <!-- <text class='erjie-s'>1分钟前</text> -->
+                <text class="text-left" data-id="{{items.auth_id1}}" data-commentid="{{item.comment_id}}" catchtap='onuser'>{{items.auth_name1}}</text>
+                <text>回复</text>
+                <text class="text-right" data-id="{{items.auth_id2}}"  catchtap='onuser'>{{items.auth_name2}}</text>
+                <text>{{items.content}}</text>
+                </p>
+              </view>
+              </view>
+            </view>
+          </view>
+         
+        </view>
+      </view>
+      <view class="pictureDetails-bottom-text" bindtap="commentNext">
+        <span class="{{pictureCommentStateActive}}">{{pictureCommentState}}</span>
+      </view>
+    </view>
+    <!--最底部部分-->
+    <view class="pictureDetails-position">
+      <view class="ul">
+        <view class="li" bindtap="TotalComments">
+          <image src="{{pictureDetailsPositionImageComment}}" />
+          <text>{{pictureComment.comment_num}}</text>
+        </view>
+        <view class="li" bindtap="like">
+          <image wx:if="{{pictureDetailsPositionImagelikeFlag}}" src="{{pictureDetailsPositionImagelikeTrue}}" />
+          <image wx:else src="{{pictureDetailsPositionImagelike}}" />
+          <text>{{worksDetails.good_num}}</text>
+        </view>
+        <view class="li" bindtap="collection">
+          <image wx:if="{{pictureDetailsPositionImageCollectionFlag}}" src="{{pictureDetailsPositionImageCollectionTrue}}" />
+          <image wx:else src="{{pictureDetailsPositionImageCollection}}" />
+          <text>{{worksDetails.collect_num}}</text>
+        </view>
+        <view class="li" >
+          <!-- <image src="{{pictureDetailsPositionImageShare}}" /> -->
+          <button type="default" plain="true" hover-class="none" bindtap='onhome'>
+            <image src="{{pictureDetailsPositionImageHome}}" />
+          </button>
+        </view>
+        
+      </view>
+    </view>
+    
+
+
+  <view class="c1" hidden="{{!isgroup}}">
+    <view class="c2">
+        <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{2}}" indicator-color='#999' indicator-active-color='#1790d7' duration="{{duration}}" class='abc'>
+          <block wx:for="{{worksDetails.groupList}}">
+            <swiper-item>
+            <view class='group'>
+              <image class='group-img' src="{{item.images}}"  mode='widthFix' />   
+            </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <image src='/images/delete.png' class='cancel' bindtap='cancel'/> 
+    </view>
+  </view>
+
+
+
+
+
+
+    <!--评论信息模态框-->
+    <view class="pictureDetails-commentMessages {{commentMessageActive}}" catchtouchmove="true">
+      <view class="pictureDetails-commentMessages-content">
+          <view class="pictureDetails-commentMessages-top">
+            <span>评价</span>
+            <textarea placeholder="请输入您的评论"  maxlength="{{TotalMessageNum}}" name="getTotalMessage" value="{{Comment}}" bindinput ="getMessage" />
+            <p>{{TotalMessageNumLength}}/{{TotalMessageNum}}</p>
+          </view>
+          <view class="pictureDetails-commentMessages-bottom">
+            <view class="pictureDetails-commentMessages-bottom-left" bindtap="commentCall">
+              <span>取消</span>
+            </view>
+            <view class="pictureDetails-commentMessages-bottom-right" bindtap="commentMessageRelease">
+              <span>发布</span>
+            </view>
+          </view>
+          <view class="pictureDetails-commentMessages-delect" bindtap="commentCall">
+            <image src="../../images/01-pictureDetail-13.png" />
+          </view>
+      </view>
+    </view>
+
+
+  <!--二级评级-->
+      <!-- <view wx:if="{{userComment}}" class="pictureDetails-commentMessages-user-conment"  catchtouchmove="true">
+      <view class="pictureDetails-commentMessages-content">
+          <view class="pictureDetails-commentMessages-top">
+            <textarea placeholder="{{userData.userName}}"  maxlength="{{TotalMessageNum}}" name="getTotalMessageUser" bindinput ="getUserMessage" />
+            <p>{{usreCommentMessageLength}}/{{TotalMessageNum}}</p>
+          </view>
+          <view class="pictureDetails-commentMessages-bottom">
+            <view class="pictureDetails-commentMessages-bottom-left" bindtap="cancelComment">
+              <span>取消</span>
+            </view>
+            <view class="pictureDetails-commentMessages-bottom-right" bindtap="submitUserReply">
+              <span>发布</span>
+            </view>
+          </view>
+          <view class="pictureDetails-commentMessages-delect" bindtap="cancelComment">
+            <image src="../../images/01-pictureDetail-13.png" />
+          </view>
+      </view>
+    </view> -->
+    <view wx:if="{{userComment}}" class="pictureDetails-commentMessages active" catchtouchmove="true">
+      <view class="pictureDetails-commentMessages-content">
+          <view class="pictureDetails-commentMessages-top">
+          <span>回复</span>
+            <textarea placeholder="{{userData.userName}}"  maxlength="{{TotalMessageNum}}" name="getTotalMessageUser" bindinput ="getUserMessage" />
+            <p>{{usreCommentMessageLength}}/{{TotalMessageNum}}</p>
+          </view>
+          <view class="pictureDetails-commentMessages-bottom">
+            <view class="pictureDetails-commentMessages-bottom-left" bindtap="cancelComment">
+              <span>取消</span>
+            </view>
+            <view class="pictureDetails-commentMessages-bottom-right" bindtap="submitUserReply">
+              <span>发布</span>
+            </view>
+          </view>
+          <view class="pictureDetails-commentMessages-delect" bindtap="cancelComment">
+            <image src="../../images/01-pictureDetail-13.png" />
+          </view>
+      </view>
+
+    </view>
+
+
+
+
+
+<!--二级评论  -->
+
+    <!--分享模态框-->
+    <view class="pictureDetails-commentMessages {{shareActive}}">
+      <view class="pictureDetails-commentMessages-content">
+        <view class="pictureDetails-commentMessages-top">
+          <span>举报类型</span>
+        </view>
+        <view class="pictureDetails-share-content-bottom">
+          <view class="ulyu">
+              
+                <span class="ul-key" data-content='侵权' bindtap='onReportContent'>侵权</span>
+
+                <span class="ul-key" data-content='涉黄' bindtap='onReportContent'>涉黄</span>
+
+                <span class="ul-key" data-content='血腥' bindtap='onReportContent'>血腥</span>
+
+                <span class="ul-key" data-content='暴力' bindtap='onReportContent'>暴力</span>
+
+                <span class="ul-key" data-content='低俗' bindtap='onReportContent'>低俗</span>
+                
+                <span class="ul-key" data-content='其它' bindtap='onReportContent'>其它</span>
+
+          </view>
+        </view>
+        <view class="pictureDetails-commentMessages-delect" bindtap="shareDelect">
+          <image src="../../images/01-pictureDetail-13.png" />
+        </view>
+      </view>
+    </view>
+</view>
+ <!-- <view class='share-fx'><button class="home_sy" open-type="share"> <image src="../../images/home_sy.png" /></button> </view> -->
+<view wx:if="{{!loginStatus}}">
+  <include src='/pages/public/verify/verify.wxml' />
+</view>
+

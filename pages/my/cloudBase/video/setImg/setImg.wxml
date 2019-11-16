@@ -1,0 +1,28 @@
+
+<view class="setImg">
+    <video autoplay="true" loop style='width:100%' src='{{data.img_path}}' binderror=""></video>
+</view>
+<view class="setImg-bottom">
+  <button class="menu"  open-type="share" >
+      <view class="functional">
+      <image style='width:36rpx;height:36rpx; margin-top: 18rpx;' src='/images/share.png' />
+      </view>
+      <view class="functional"><text>分享</text></view>
+  </button>
+  <view class="line-c"></view>
+
+  <view class="line-c"></view>
+  <view class="menu" bindtap='onrm'>
+    <view class="functional"><image src='/images/rm.png' /></view>
+    <view class="functional"><text>删除</text></view>
+ </view>
+
+</view>
+
+<view class="b1" hidden="{{!mvAlbum}}">
+  <view class="b2">
+  <block wx:for="{{data.albumList}}">
+    <view class='category' bindtap="selectKeyword" data-type="mvAlbum" data-id="{{item.album_id}}" data-name="{{item.album_name}}">{{item.album_name}}</view>
+  </block>
+  </view>
+</view>

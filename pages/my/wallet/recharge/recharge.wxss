@@ -1,0 +1,142 @@
+.body{
+  width: 100%;
+  float: left;
+}
+.recharge{
+  width: 100%;
+  height: 338rpx;
+  float: left;
+  background-color: #1790D7;
+}
+.head{
+  width: 100%;
+  height: 200rpx;
+  margin-top: 35rpx;
+}
+.content{
+  width: 100%;
+  height: 68rpx;
+  margin-top: 35rpx;
+}
+.content .num{
+  width: 264rpx;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  line-height: 68rpx;
+  text-align: right;
+  float: left;
+}
+.content .input{
+  float: left;
+  width: 364rpx;
+  height: 68rpx;
+  background-color: #FFFFFF;
+  margin-left: 30rpx;
+  border-radius: 6rpx;
+  padding-left: 12rpx;
+  color: #333;
+}
+.content .input input{
+  width: 360rpx;
+  height: 68rpx;
+  margin-left: 4rpx;
+}
+.gt{
+  height: 16rpx;
+  width: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  margin-left:100rpx;
+}
+.wxpay{
+  float: left;
+  height: 80rpx;
+  width: 100%;
+  margin-top: 20rpx;
+}
+.wxpay .img{
+  height: 80rpx;
+  float: left;
+}
+.wxpay .img image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 54rpx;
+}
+.payTitle{
+  float: left;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  margin-left: 20rpx;
+}
+.wxpay .r{
+  height: 80rpx;
+  float: right;
+}
+.wxpay .r image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 24rpx;
+  margin-top: 20rpx;
+}
+.line{
+  float: left;
+  height: 2rpx;
+  width: 100%;
+  background-color: #DDDDDD;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.desc{
+  float: left;
+  width: 93%;
+  height: 84rpx;
+  margin: 0 auto;
+  font-size: 24rpx;
+  color: #999999;
+  line-height:45rpx;
+  margin-left: 50rpx;
+}
+.aa{
+  width: 100%;
+  height: 80rpx;
+  float: left;
+  margin-top: 20rpx;
+}
+.submit{
+  width: 580rpx;
+  height: 80rpx;
+  background-color: #1790D7;
+  margin: 0 auto;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  border-radius: 6rpx;
+  margin-top: 60rpx;
+}
+.submit1{
+  width: 580rpx;
+  height: 80rpx;
+  background-color: #DDDDDD;
+  margin: 0 auto;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  border-radius: 6rpx;
+  margin-top: 60rpx;
+}
+.detailed{
+  font-size: 28rpx;
+  text-align: right;
+  margin-top: 30rpx;
+  margin-right: 20rpx;
+  color: #FFFFFF;
+}
+.detailed image{
+  width: 14rpx;
+  height: 22rpx;
+  margin-left: 15rpx;
+}

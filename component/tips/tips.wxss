@@ -1,0 +1,79 @@
+.tips-233485 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.4);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tips-233485 cover-view, .tips-233485 .text, .tips-233485 button {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.p-233485 {
+  width: 560rpx;
+  padding: 50rpx 0 0 !important;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+
+.tips-233485 .v-233485 {
+  padding: 0 40rpx;
+}
+
+.tips-233485 .v-233485 text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tips-233485 .v-233485 text:nth-child(1) {
+  text-align: center;
+}
+
+.tips-233485 .tit-233485 {
+  text-align: center;
+}
+.tips-233485 .con-233485 {
+  padding: 40rpx 0 60rpx 0;
+  color: #999;
+  white-space:normal;
+  line-height: 50rpx;
+}
+
+.b-233485 {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.b-233485 cover-view {
+  line-height: 100rpx;
+  font-size: 36rpx;
+}
+
+.b-233485 .can-233485 {
+  color: #999;
+}
+
+.b-233485 .conf-233485 {
+  color: #1790D7;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #f5f5f5;
+}

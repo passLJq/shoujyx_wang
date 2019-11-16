@@ -1,0 +1,125 @@
+.img_item {
+  width: 48.5%;
+  margin: 1% auto 1% 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+.video{
+    position: relative;
+}
+.album-fd{
+  /* height: 50rpx;
+ width: 46.9%; */
+  position: absolute;
+  left: 0;
+
+  bottom:10rpx;
+   
+  background-color: rgba(0, 0, 0, 0.05)
+}
+.album-fd image{
+  width: 80rpx;
+  height:80rpx;
+}
+
+.img{
+  width: 100%;
+  position: relative;
+}
+.imgInfo{
+  display: flex;
+  flex-direction: row;
+  height: 40rpx;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #333;
+  bottom:7rpx;
+}
+.imgInfo-l{
+  width: 50%;
+  float: left;
+  height:38rpx;
+  overflow: hidden;
+ 
+}
+.imgInfo-l image{
+  width:26rpx;
+  height:26rpx;
+  margin:7rpx 0 0 20rpx;
+  
+ float: left;
+}
+
+.imgInfo-l text{
+  font-size: 24rpx;
+  margin:3rpx 0 0 8rpx;
+  float: left;
+
+  
+}
+.imgInfo-l view{ float: left; }
+.imgInfo-r view{ float:right; }
+
+.imgInfo-r{
+  width: 50%;
+  height: 40rpx;
+  float: right;
+  text-align: right;
+  margin-right: 20rpx;
+}
+.imgInfo-r image{
+  width: 26rpx;
+  height:26rpx;
+ margin:7rpx 0 0 10rpx;
+  
+ float:right;
+  
+}
+.imgInfo-r text{
+  font-size: 24rpx;
+  margin:3rpx 0 0 8rpx;
+  float:right;
+}
+.imgInfo .filescore{
+  font-size: 22rpx;
+  line-height:38rpx;
+}
+.imgInfo-jx{
+ position: absolute;
+ top: 10rpx;
+ right: 10rpx;
+ width: 60rpx;
+ height: 36rpx;
+ font-size: 22rpx;
+ background-color: #1790d7;
+ border-radius: 5rpx;
+ text-align: center;
+ line-height: 36rpx;
+ color: #ffffff;
+}
+.imgInfo-jx1{
+ position: absolute;
+ top: 10rpx;
+ right: 20rpx;
+ width: 60rpx;
+ height: 36rpx;
+ font-size: 22rpx;
+ background-color: #1790d7;
+ border-radius: 5rpx;
+ text-align: center;
+ line-height: 36rpx;
+ color: #ffffff;
+}
+
+.group{
+  width: 35rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 9rpx;
+  right: 23rpx;
+}
+.group image{
+  width: 38rpx;
+  height: 31rpx;
+}

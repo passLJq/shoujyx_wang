@@ -1,0 +1,97 @@
+.line{
+  width: 100%;
+  height:16rpx;
+  background-color: #F5F5F5;
+}
+.head{
+  height: 55rpx;
+  width: 94.666%;
+  margin: 0 auto;
+  margin-top: 52rpx;
+  border-bottom: 1rpx solid #e9e9e9;
+}
+.head-l{
+  width: 50%;
+  height: 30rpx;
+  float: left;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #333333;
+}
+.head-r{
+  width: 50%;
+  height: 30rpx;
+  float: right;
+  font-size: 26rpx;
+  color: #666666;
+  text-align: right;
+  line-height: 30rpx;
+}
+.head-r image{
+  width: 14rpx;
+  height: 24rpx;
+  margin-left: 20rpx;
+  margin-top: 1rpx;
+}
+.money{
+  width: 94.666%;
+  height: 158rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
+}
+.money-l{
+  width: 50.5%;
+  height: 158rpx;
+  float: left;
+  border-right: 2rpx solid #DDDDDD;
+}
+.money-l-c{
+  width: 100%;
+  height: 42rpx;
+  margin-top: 54rpx;
+}
+.money-l-c-l{
+  float: left;
+  height: 42rpx;
+  font-size:30rpx;
+  color: #666666;
+  line-height: 42rpx;
+  margin-left: 20rpx;
+}
+.money-l-c-l1{
+  float: left;
+  height: 42rpx;
+  font-size:35rpx;
+  color: #666666;
+  line-height: 42rpx;
+  margin-left: 20rpx;
+}
+.money-l-c-r{
+  float: left;
+  font-size: 50rpx;
+  height: 42rpx;
+  color: #333333;
+  line-height: 42rpx;
+}
+.money-r{
+  width: 49%;
+  height: 128rpx;
+  float:right;
+}
+.money-r-img{
+  width: 100%;
+  height: 58rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.money-r-img image{
+  width: 58rpx;
+  height: 58rpx;
+}
+.recharge{
+  font-size: 30rpx;
+  color: #333333;
+  text-align: center;
+  margin-top: 20rpx;
+}

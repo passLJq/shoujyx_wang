@@ -1,0 +1,152 @@
+page{
+  background-color: #f5f5f5;
+}
+.cash{
+  width: 100%;
+}
+.cash .add{
+  width: 100%;
+  height: 120rpx;
+  background-color: #fff;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 120rpx;
+  color: #333333;
+}
+.account{
+  width: 100%;
+  height: 120rpx;
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.payInfo{
+  height: 120rpx;
+  width: 94.666%;
+  margin: 0 auto;
+}
+.payInfo .icon{
+  float: left;
+  width: 15%;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+.payInfo .icon image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.payInfo .info{
+  float: right;
+  width: 85%;
+  height: 126rpx;
+  border-bottom: 1rpx solid #E9E9E9;
+}
+.payInfo .info-l{
+  width: 50%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  float: left;
+}
+.payInfo .info-l .name{
+  margin-left: 20rpx;
+}
+.payInfo .info-l .title{
+  font-size: 26rpx;
+  color: #333333;
+  margin-top: 10rpx;
+}
+.payInfo .info-l .time{
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 10rpx;
+}
+.payInfo .info-r{
+  width: 50%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  float: right;
+  line-height: 80rpx;
+}
+.payInfo .info-r .type{
+  font-size: 26rpx;
+  color: #333333;
+  float: left;
+  margin-left: 50rpx;
+}
+.payInfo .info-r .num{
+  font-size: 26rpx;
+  color: #F34755;
+  float: right;
+}
+.payInfo .info-r .num image{
+  width: 14rpx;
+  height: 24rpx;
+}
+.cash-info{
+  width: 100%;
+  height: 246rpx;
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.cash-info-title{
+  width: 94.666%;
+  height: 50rpx;
+  font-size: 26rpx;
+  color: #666666;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  line-height: 68rpx;
+}
+.cashNum{
+  display: flex;
+  flex-direction: row;
+  height: 120rpx;
+  width: 94.666%;
+  margin: 0 auto;
+  line-height: 120rpx;
+  font-size: 60rpx;
+  color: #333333;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.cashNum .input{
+  height: 120rpx;
+  width: 300rpx;
+  line-height: 120rpx;
+}
+.cashNum .input input{
+  height: 120rpx;
+  width: 500rpx;
+}
+.cash-info-b{
+  height: 60rpx;
+  width: 94.66%;
+  font-size: 24rpx;
+  line-height: 72rpx;
+  margin: 0 auto;
+}
+.cash-info-b .l{
+  float: left;
+}
+.cash-info-b .r{
+  float: right;
+  color: #1790D7;
+}
+.cash .desc{
+  width: 94.66%;
+  height: 80rpx;
+  margin: 0 auto;
+  font-size: 24rpx;
+  line-height: 80rpx;
+  color: #999999;
+}
+.confirm{
+  width: 580rpx;
+  height: 80rpx;
+  background-color: #1790D7;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 6rpx;
+  line-height: 80rpx;
+  color: #fff;
+  margin-top: 50rpx;
+}

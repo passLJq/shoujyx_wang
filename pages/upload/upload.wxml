@@ -1,0 +1,372 @@
+<view class='upload'>
+  <!-- <view class="upload-switch">
+       <image class='quit' bindtap='quit' src='/images/upload-del.png'></image> 
+     <view wx:if="{{docType !=1}}" class="switch" data-type="1" bindtap='onswitch'>
+      <text>图片</text>
+    </view>
+    <view wx:else class="switch-1" data-type="1" bindtap='onswitch'>
+      <text>图片</text>
+    </view>
+    <view wx:if="{{docType !=3}}" class="switch" data-type="3" bindtap='onswitch'>
+      <text>图文</text>
+    </view>
+    <view wx:else class="switch-1" data-type="3" bindtap='onswitch'>
+      <text>图文</text>
+    </view>
+
+    <view wx:if="{{docType != 2}}" class="switch" data-type="2" bindtap='onswitch'>
+      <text>视频</text>
+    </view>
+    <view wx:else class="switch-1" data-type="2" bindtap='onswitch'>
+      <text>视频</text>
+    </view> 
+  </view> -->
+
+
+  <view wx:if="{{docType == 1}}">
+    <view wx:if='{{!spotId}}' class="ismatch" bindtap='ismatch' data-val="match">
+      <text class='text text_jx'>{{matchData.name}}</text>
+      <image class="icon" src="/images/right_gysj.png" />
+    </view>
+    <view class="images">
+      <block wx:for="{{images}}">
+        <view class="images-img">
+          <view class='upload_img'>
+            <image class='icon-add' src="{{item}}" />
+            <view class='icon_delete' bindtap='delImg' data-id="{{index}}">
+              <image src="/images/icon_delete.png" />
+            </view>
+          </view>
+        </view>
+      </block>
+      <view bindtap='addImg'>
+        <image class='icon-add' src='/images/add.png' />
+      </view>
+    </view>
+    <!-- ***** -->
+    <view class='title'>
+      <text class='sq_title'>拍摄设备:</text>
+      <!-- <input type='text' maxlength='20' placeholder='请输入标题' class='title-input ' bindblur="DocTitle" value="{{title}}" /> -->
+      <view class="label-wrapper">
+        <view class="label-wrapper1" data-label="2" bindtap="choiceLabel">
+          <image wx:if="{{radioValue == '2'}}" src='/images/sjyxVideo2.png' class="labelimg" />
+          <image wx:else src='/images/sjyxVideo1.png' class="labelimg" />
+          <text>手机</text>
+        </view>
+        <view class="label-wrapper2" data-label="1" bindtap="choiceLabel">
+          <image wx:if="{{radioValue == '2'}}" src='/images/sjyxVideo1.png' class="labelimg" />
+          <image wx:else src='/images/sjyxVideo2.png' class="labelimg" />
+          <text>相机</text>
+        </view>
+      </view>
+
+
+    </view>
+    <!-- ***** -->
+    <view class='title'>
+      <text class='sq_title'>作品标题:<text style=' color:red;'> *</text></text>
+      <input type='text' maxlength='20' placeholder='请输入标题' class='title-input ' bindblur="DocTitle" value="{{title}}" />
+    </view>
+
+    <view wx:if='{{!spotId}}' class="content-type">
+      <view class="upload_wz type-title">作品分类:
+        <text style=' color:red;'>*</text>
+      </view>
+      <view class="content-select" bindtap='ismatch' data-val='category'>
+        <text class=" type-key">{{categoryData.name}}</text>
+        <image class="rigth-icon" src='/images/right_gysj.png' />
+      </view>
+    </view>
+
+    <view class="content-type">
+      <view class="upload_wz type-title">个人云库:</view>
+      <view class="content-select" bindtap='ismatch' data-val='album'>
+        <text class="type-key">{{albumData.name}}</text>
+        <image class="rigth-icon" src='/images/right_gysj.png' />
+      </view>
+    </view>
+
+    <view class='describe'>
+      <text class='upload_wz type-title"'>作品描述：</text>
+      <input type='text' class='title-input' placeholder='请输入描述' maxlength='50' bindinput="DocDescribe" value="{{desc}}" />
+    </view>
+
+    <view class="content-type">
+      <view class="upload_wz type-title" bindtap='clickPerson'>添加标签:</view>
+      <input type='text' class='title-input' placeholder="多标签以逗号隔开" bindinput="Doclabel" value="{{label}}" />
+      <!-- <view class="content-select">
+        <view class="">
+          <block wx:for="{{label}}">
+            <text class="bq" data-id="{{index}}" bindtap='delLabel'>{{item}}<text style='margin-left:10rpx;'>x</text></text>
+          </block>
+        </view>
+      </view> -->
+    </view>
+
+    <!-- 
+    <view class="person_box">
+      <view class="phone_select" hidden="{{selectPerson}}">
+        <input class="select_one" bindconfirm="onblur" bindblur="onblur" bindfocus="abc" value="{{inputVal}}" />
+        <view class="add" bindtap="mySelect">
+          <text>添加</text>
+        </view>
+      </view>
+    </view> -->
+
+
+    <radio-group class="radio-group" bindchange="radioChange">
+      <radio wx:if='{{!spotId}}' value="1" checked="true" />
+      <text wx:if='{{!spotId}}'>公开</text>
+      <radio wx:if='{{!spotId}}' value="0" checked="" class='gongk' />
+      <text wx:if='{{!spotId}}'>不公开</text>
+    </radio-group>
+    <view wx:if="{{!submitStyle}}" class="submit" bindtap='onSubmit'>
+      <text>确认上传</text>
+    </view>
+    <view wx:if="{{submitStyle}}" class="submit1">
+      <text>确认上传</text>
+    </view>
+    <view class="Mask_bottom"></view>
+
+
+  </view>
+  <view class="b1" hidden="{{!match}}">
+    <view class="b2">
+      <view class='taichuang' bindtap="selectKeyword" data-type="match" data-id="0" data-name="不参赛">不参赛</view>
+      <block wx:for="{{type.match}}">
+        <view class='taichuang' bindtap="selectKeyword" data-type="match" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+
+
+  <view class="b1" hidden="{{!category}}">
+    <view class="b2">
+      <block wx:for="{{type.type}}">
+        <view class='taichuang' bindtap="selectKeyword" data-type="category" data-id="{{item.id}}" data-name="{{item.type}}">{{item.type}}</view>
+      </block>
+    </view>
+  </view>
+
+  <view class="b1" hidden="{{!album}}">
+    <view class="b2">
+      <view class='taichuang' bindtap="selectKeyword" data-type="album" data-id="0" data-name="全部">全部</view>
+      <block wx:for="{{type.album}}">
+        <view class='taichuang' bindtap="selectKeyword" data-type="album" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}} </view>
+      </block>
+    </view>
+  </view>
+
+
+
+  <view class="c1" hidden="{{!loadImg}}">
+    <view class="c2">
+      <image src='/images/loading.gif' /> {{set_num}}/{{total_num}}
+    </view>
+  </view>
+
+</view>
+
+<!-- <button class='top_20 btn' bindtap="upconfirm">添加图片</button> 
+<block  wx:for="{{images}}">
+<image src="{{item}}"></image>  
+</block>
+
+<view>
+  <contact-button type="default-dark" size="20" session-from="weapp" class="img-plus-style zindex100 yc">
+  </contact-button>
+  <image src="../../images/phone.png" class="img-plus-style" bindtap="calling"></image>
+</view> -->
+<view wx:if="{{docType ==2}}">
+  <view wx:if="{{video}}" class="video-select" bindtap='addvideo'>
+    <text>重新选择</text>
+  </view>
+  <view class="video">
+    <view class="video-view">
+
+      <span wx:if="{{video}}">
+        <video autoplay="true" style="width:100%;height:100%" src="{{videoPath}}"></video>
+      </span>
+      <span wx:if="{{!video}}">
+        <view class="camera" bindtap='addvideo'>
+          <image src='/images/camera.png'></image>
+          <view class="bi_video">添加视频</view>
+        </view>
+      </span>
+
+    </view>
+    <view wx:if="{{video}}" class="file_size">当前视频大小为：{{video.size}} M </view>
+    <view class='title-video'>
+      <input type='text' class='video-input' bindinput="getVideoTitle" placeholder="请输入视频标题" />
+    </view>
+    <view class="images">
+      <textarea class="video-textarea" placeholder="请输入视频说明" maxlength="{{maxlength}}" adjust-position bindinput="getMessage"></textarea>
+    </view>
+    <view class="maxlength">{{TotalMessageNumLength}}/{{maxlength}}</view>
+  </view>
+  <view wx:if="{{!submitStyle}}" class="submit" bindtap='videoSubmit'>
+    <text>确认上传</text>
+  </view>
+  <view wx:if="{{submitStyle}}" class="submit1">
+    <text>确认上传</text>
+  </view>
+</view>
+<!-- <view wx:if="{{!loginStatus}}">
+  <include src='/pages/public/verify/verify.wxml' />
+</view> -->
+
+
+
+
+
+
+<view wx:if="{{docType ==3}}">
+  <view class="worksShow">
+    <view hidden="{{hidden}}">
+      <view wx:if='{{!spotId}}' class="worksShow-type1" bindtap='worksShowSelect'>
+        <view class="content-type">
+          <view class="upload_wz type-title">类别选择:</view>
+          <view class="content-select">
+            <text wx:if='{{worksData.code==0}}' class='type'>选择类别</text>
+            <text wx:elif='{{worksData.code==1}}' class='type'>影集</text>
+            <text wx:else class='type'>游记</text>
+            <image class="rigth-icon" src='/images/right_gysj.png' />
+          </view>
+        </view>
+      </view>
+
+      <view class='worksShow-title1'>
+        <text class='upload_wz type-title"'>作品标题:</text>
+        <input type='text' class='title-input' placeholder='请输入标题' maxlength='50' bindinput="worksTitle" value="{{worksData.worksTitle}}" />
+      </view>
+      <view class='worksShow-introduce1'>
+        <text class='upload_wz type-title"'>作品描述:</text>
+        <textarea type='text' class='title-input1' placeholder='请输入描述' maxlength='500' bindinput="worksDesc" value="{{worksData.worksDesc}}"></textarea>
+      </view>
+
+
+
+
+      <!--作品显示  -->
+
+
+      <block wx:for="{{imgListCache}}">
+        <view class="works">
+          <view class="works-l">
+            <image class="works-l-img" src='{{item.image}}' />
+            <image class="works-l-icon" src='/images/icon_delete.png' data-id="{{index}}" bindtap='worksDelImg' />
+          </view>
+          <view class="works-r">
+            <!-- <view class="works-r-text">
+          <text class="docTitle">图文介绍</text>
+      </view> -->
+            <view class="works-r-docDesc">
+              <textarea class="docDesc" maxlength='500' data-id="{{index}}" placeholder='请输入介绍文字' value="{{item.desc}}" bindinput='getDesc'></textarea>
+            </view>
+
+          </view>
+        </view>
+      </block>
+    </view>
+
+
+    <!--添加作品  -->
+    <view>
+      <view wx:if='{{!spotId}}' class='works-radio'>
+        <view class="worksShow-radio-group">
+          <radio checked='{{isPublicWorks}}' class='make' bindtap='showRadioChange' />
+        </view>
+        <view class='radio-group-text'>我已同意发布作品在平台展示。</view>
+      </view>
+
+      <view wx:if='{{musicSrc}}' class='music1' bindtap='musicPaly'>
+        <view class='musicPaly' wx:if='{{musicData.status}}'>
+          <image src='/images/musicPause.png'></image>
+        </view>
+        <view class='musicPaly' wx:else>
+          <image src='/images/musicPaly.png'></image>
+        </view>
+        <view class='musicName'>{{musicData.name}}</view>
+        <view class='musicStaut' wx:if='{{musicData.status}}'>
+          <image src='/images/music.gif'></image>
+        </view>
+        <view class='musicStaut' wx:else>
+          <image src='/images/music1.gif'></image>
+        </view>
+
+        <view class='musicSelect' catchtap='musicSelect'>+重新选择</view>
+      </view>
+      <view wx:else class='music1' bindtap='musicSelect'>
+        <view class='music-add'>
+          <image class='music' src='/images/music.png'></image>
+          <text> +选择背景音乐</text>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="works_news">
+      <view class='news_tw'>新增图文</view>
+      <view class="works-xz">
+        <view class="worksAdd">
+          <view class="add" bindtap='albumAdd'>+云库选择</view>
+          <view class='add' bindtap='phoneAdd'>+手机相册</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cancel">
+      <view class="button2" bindtap='worksList'>我的图文</view>
+      <view wx:if="{{!isSubmit}}" class="button" bindtap='worksSave'>保存</view>
+      <view wx:else class="button1">保存</view>
+    </view>
+  </view>
+  <view class="works-c1" hidden="{{!loadImg}}">
+    <view class="works-c2">
+      <image src='/images/loading.gif' />{{set_num}}/{{total_num}}
+    </view>
+  </view>
+
+  <view class="music-select" wx:if='{{musicSelect}}'>
+    <scroll-view scroll-y style='height:100%;'>
+      <block wx:for='{{musicList}}'>
+        <view class='music' data-src='{{item.path}}' data-id='{{item.id}}' data-index='{{index}}' data-name='{{item.name}}' data-status='{{item.status}}' bindtap='onMusic'>
+          <view>
+            <view class='music-name'>{{item.name}}</view>
+            <view class='music-status' wx:if='{{item.status}}'>
+              <image src='/images/music.gif'></image>
+            </view>
+            <view class='music-status' wx:else>
+              <image src='/images/music1.gif'></image>
+            </view>
+          </view>
+          <!-- <view class='music-submit' data-name='{{item.name}}' data-id='{{item.id}}' wx:if='{{item.status}}' bindtap='musicConfirm'>确认</view> -->
+          <radio checked='{{item.status}}' color='#1790d7' class='musicSelectIcon' />
+        </view>
+      </block>
+      <view class='music-bottom'></view>
+    </scroll-view>
+
+    <view class='musicCancel' bindtap='musicConfirm'>
+      <text>确认</text>
+    </view>
+  </view>
+</view>
+
+<view class="b1" hidden="{{!worksShowSelect}}">
+  <view class="b2">
+    <view class='taichuang' bindtap="worksShowTypeSelect" data-type="worksShow" data-id="1" data-name="影集">影集</view>
+    <view class='taichuang' bindtap="worksShowTypeSelect" data-type="worksShow" data-id="2" data-name="游记">游记</view>
+  </view>
+</view>
+
+
+
+<!-- <view class="spot-select" hidden='{{uploadSelect}}'>
+   <image class='quit' bindtap='quit' src='/images/upload-del.png'></image>
+    <view class='uploadSelect'>
+      <view class='upload-type'><image bindtap='typeSelect' data-code='1' src='/images/upload-img.png'></image><text>图片</text></view>
+      <view class='upload-type'><image bindtap='typeSelect' data-code='3' src='/images/upload-group.png'></image><text>图文</text></view>
+      <view class='upload-type'><image bindtap='typeSelect' data-code='2' src='/images/upload-video.png'></image><text>视频</text></view>
+    </view>
+</view> -->

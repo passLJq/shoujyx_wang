@@ -1,0 +1,167 @@
+<view class="content">
+  <view class="head" style="background-image:url({{info.background || 'http://image.91sjyx.com/sjyx/img/background.jpg?x-oss-process=image/resize,h_500'}})">
+    <view class="head1">
+
+      <view class="head1-2">
+        <view class="dope_img" bindtap='onmessage'>
+          <image class="head-sz" src='/images/message.png' />
+          <view wx:if='{{info.isNewMessage}}' class="head-yu"></view>
+        </view>
+        <view class='Set_up' bindtap='onsset'>
+          <image class="head-sz" src='/images/sz.png' />
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{isLogin}}" class="head2">
+      <view class="head2-one">
+        <image class="head2-tx" src="{{info.portrait}}" />
+      </view>
+      <view class="head2-two">
+        <text>{{info.user_name}}</text>
+        <view>
+          <block wx:for="{{stars}}">
+            <image wx:if="{{item != 0}}" class="stars" src='/images/stars.png' />
+            <image wx:else class="stars" src='/images/stars_1.png' />
+          </block>
+        </view>
+        <view class="head2-two-qm">{{info.user_profile}}</view>
+      </view>
+      <view class="head2-three">
+        <image class="head2-three-img" bindtap='onsset' src='/images/my_icon_img1.png' />
+      </view>
+    </view>
+    <!-- 无登录样式 -->
+    <view wx:else class="head2">
+      <view class="head2-one" bindtap="goLogin">
+        <image class="head2-tx" src="http://image.91sjyx.com/sjyx/hk/hk24/man.png"></image>
+      </view>
+      <view class="head2-two" bindtap="goLogin">
+        <text style="margin-top: 44rpx;">点击登录</text>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="content-one">
+    <view class="content-one-num1">
+      <text class="number">{{info.view_num || 0}}</text>
+      <text>人气</text>
+    </view>
+    <view bindtap='onUserList' data-id='2' class="content-one-num">
+      <text class="number">{{info.reward_num || 0}}</text>
+      <text>赏客</text>
+    </view>
+    <view bindtap='onUserList' data-id='1' class="content-one-num">
+      <text class="number">{{info.fans_num || 0}}</text>
+      <text>粉丝</text>
+    </view>
+    <view bindtap='onUserList' data-id='3' class="content-one-num">
+      <text class="number">{{info.follow_num || 0}}</text>
+      <text>关注</text>
+    </view>
+  </view>
+
+  <view class="line"></view>
+
+  <block wx:if="{{isLogin}}">
+    <view class="content-two">
+      <view class="content-two-one" bindtap='{{mycollection}}'>
+        <text class="content-two-one1">我的收藏</text>
+        <view class="content-two-one2">
+          <text class="content-two-1">{{info.total_collect_num}}</text>
+          <view class='shanjiao'>
+            <image class="content-two-one-img2" src='/images/right_gysj.png' />
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <view wx:if="{{info.total_collect_num >0}}" class="content-three">
+      <block wx:for="{{info.collect}}">
+        <view data-id="{{item.doc_id}}" data-type="{{item.fileType}}" bindtap='onCollectionImg' class="content-three-img">
+          <image mode='aspectFill' src="{{item.image}}" />
+        </view>
+      </block>
+    </view>
+    <view class="line"></view>
+    <view bindtap='onMycloud' class="content-four">
+      <image class="content-four-img" src='/images/yuku_img1.png' />
+
+      <view class="centent-four-1">
+        <text class="centent-four-2">我的云库</text>
+
+        <view class="centent-four-3">
+          <view class='shanjiao'>
+            <image class="content-two-one-img" src='/images/right_gysj.png' />
+          </view>
+          <view class='ronglian'>{{info.yunku}}</view>
+
+        </view>
+
+      </view>
+    </view>
+
+    <view class="content-four" data-code='1' bindtap='worksShow'>
+      <image class="content-four-img" src='/images/dingzhi_img2.png' />
+      <view class="centent-four-1">
+        <text class="centent-four-2">我的图文</text>
+        <view class="centent-four-3">
+          <view class='shanjiao'>
+            <image class="content-two-one-img" src='/images/right_gysj.png' />
+          </view>
+          <view class='ronglian'>{{info.docCount || 0}} 篇</view>
+
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="content-four" data-code='2'  bindtap='worksShow'>
+    <image class="content-four-img" src='/images/youji_img3.png' />
+    <view class="centent-four-1">
+       <text class="centent-four-2">我的游记</text> 
+      <view class="centent-four-3">
+        <view class='shanjiao'><image class="content-two-one-img" src='/images/right_gysj.png' /></view>
+         <view class='ronglian'>游记</view> 
+      </view>
+    </view>
+  </view>   -->
+
+    <navigator target="miniProgram" version="develop" app-id="wxc50118176f4a9525" path="pages/index/index">
+      <view class="content-four">
+        <image class="content-four-img" src='/images/greetingCard.png' />
+        <view class="centent-four-1">
+          <text class="centent-four-2">我的贺卡</text>
+          <view class="centent-four-3">
+            <view class='shanjiao'>
+              <image class="content-two-one-img" src='/images/right_gysj.png' />
+            </view>
+            <!-- <view class='ronglian'> 钱包明细</view>  -->
+          </view>
+        </view>
+      </view>
+    </navigator>
+
+    <view bindtap='onwallet' class="content-four">
+      <image class="content-four-img" src='/images/qianbao_img11.png' />
+      <view class="centent-four-1">
+        <text class="centent-four-2">我的钱包</text>
+        <view class="centent-four-3">
+          <view class='shanjiao'>
+            <image class="content-two-one-img" src='/images/right_gysj.png' />
+          </view>
+          <view class='ronglian'> 钱包明细</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+
+  <dia showDia="{{showDia}}" bind:close="closeDia"></dia>
+
+</view>
+
+<!-- <view wx:if="{{!loginStatus}}">
+  <include src='/pages/public/verify/verify.wxml' />
+</view> -->

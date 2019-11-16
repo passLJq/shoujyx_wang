@@ -1,0 +1,324 @@
+.dataEditing {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 120rpx;
+  position: relative;
+}
+
+.dataEditing view {
+  box-sizing: border-box;
+}
+
+.dataEditing .personalData-content {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.dataEditing .personalData-content .personalData-content-top {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul {
+  width: 100%;
+  height: auto;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li {
+  width: 100%;
+  height: 90rpx;
+  border-bottom: 1px solid #e9e9e9;
+  box-sizing: border-box;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-left {
+  width: 150rpx;
+  height: 90rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-left span {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 90rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right {
+  width: 560rpx;
+  height: 90rpx;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right .li-right-left {
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right .li-right-left image {
+ height: 100%;
+ width: 100%;
+}
+.border_y{border-radius: 50%;}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right .li-right-left .li-right-left-content {
+  width: 100%;
+  height: 90rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right .li-right-left .li-right-left-content .li-right-left-content-li {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right .li-right-left .li-right-left-content .li-right-left-content-li image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right .li-right-right {
+  width: 13rpx;
+  height: 22rpx;
+  margin-top: 34rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right .li-right-right image {
+  float: left;
+  width: 100%;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right input {
+  border: 1px solid #ccc;
+  border-radius:6rpx;
+  font-size: 26rpx;
+  color: #666666;
+  width: 100%;
+  height: 60rpx;
+  box-sizing: border-box;
+  padding-left: 10rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right .li-rigth-text {
+  border: 1px solid #ccc;
+  border-radius: 6rpx;
+  font-size: 26rpx;
+  color: #666666;
+  width: 100%;
+  height: 60rpx;
+  box-sizing: border-box;
+  padding-left: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li .li-right .li-rigth-text-date {
+  border: 1px solid #ccc;
+  border-radius:6rpx;
+  font-size: 26rpx;
+  color: #666666;
+  width: 520rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+  padding-left: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li:first-child {
+  height: 150rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li:first-child .li-left {
+  height: 150rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li:first-child .li-left span {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 150rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li:first-child .li-right {
+  height: 150rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li:first-child .li-right .li-right-left {
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 20rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li:first-child .li-right .li-right-right {
+  margin-top: 64rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .ul .li:last-child {
+  border-bottom: none;
+}
+
+.dataEditing .personalData-content .personalData-content-top .personalData-content-top-delect {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.dataEditing .personalData-content .personalData-content-top .personalData-content-top-delect image {
+  width: 36rpx;
+  height: 34rpx;
+  float: right;
+}
+
+.dataEditing .personalData-content .personalData-content-top .save {
+  width: 100%;
+  height: auto;
+  padding: 40rpx 65rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-top .save button {
+  width: 100%;
+  height: 88rpx;
+  background-color: #1790d7;
+  border: none;
+  color: white;
+ 
+}
+
+.dataEditing .personalData-content .personalData-content-bottom {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-top text {
+
+ 
+  line-height: 90rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-bottom {
+  width: 100%;
+  height: auto;
+}
+
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-bottom .ul {
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+  margin-bottom: 80rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-bottom .ul .li {
+  width: 100%;
+  height: 100%;
+  float: left;
+  margin-right: 20rpx;
+  position: relative;
+  overflow: hidden;
+
+}
+.gerenfm{ color: #333;  font-size: 30rpx;}
+.genhuanfm{ float: right; color:#666; font-size: 26rpx;}
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-bottom .ul .li image {
+  float: left;
+  width: 100%;
+}
+
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-bottom .ul .li .li-delect {
+  width: 32rpx;
+  height: 32rpx;
+  background-color: #f34755;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-bottom .ul .li .li-delect span {
+  width: 16rpx;
+  height: 16rpx;
+}
+
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-bottom .ul .li .li-delect image {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-bottom .ul .addImage {
+  background-color: #aaaaaa;
+  text-align: center;
+}
+
+.dataEditing .personalData-content .personalData-content-bottom .personalData-content-bottom-bottom .ul .addImage span {
+  display: inline-block;
+  color: white;
+  font-size: 120rpx;
+  line-height: 120rpx;
+}
+
+.dataEditing .genderSelectLogic {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 100;
+  padding: 0 25rpx;
+}
+
+.dataEditing .genderSelectLogic .genderSelectLogicContent {
+  width: 660rpx;
+  height: 180rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: white;
+  border-radius: 20rpx;
+  text-align: center;
+  padding: 20rpx;
+}
+
+.dataEditing .genderSelectLogic .genderSelectLogicContent .ul {
+  width: 100%;
+  height: auto;
+}
+
+.dataEditing .genderSelectLogic .genderSelectLogicContent .ul .li {
+  width: 100%;
+  height: 68rpx;
+  border-bottom: 1px solid #e9e9e9;
+  line-height: 68rpx;
+}
+
+.dataEditing .genderSelectLogic .genderSelectLogicContent .ul .li:last-child {
+  border-bottom: none;
+}
+
+.dataEditing .genderSelectLogic.active {
+  display: block;
+}
+.line{
+height: 20rpx;
+width:100%;
+background-color: #f5f5f5;
+}

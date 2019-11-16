@@ -1,0 +1,93 @@
+/* canvas */
+.commonCanvas {
+  width: 750rpx;
+  position: absolute;
+  top: 0;
+  left: 750rpx;
+}
+
+.commonCanvas canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.canvasBox123 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.4);
+  z-index: 30;
+}
+
+.canvasBox123 view, .canvasBox123 text {
+  box-sizing: border-box;
+}
+
+.canvasBox123 .chooseCan {
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.canvasBox123 .chooseCan .chooseCan-top {
+  width: 100%;
+  padding: 20rpx 0 15rpx 20rpx;
+  display: flex;
+  
+}
+.canvasBox123 .chooseCan .chooseCan-top .bg {
+  background-color: #fff;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.canvasBox123 .chooseCan .chooseCan-top > view {
+  width: 160rpx;
+}
+.canvasBox123 .chooseCan .chooseCan-top .bg::after {
+  content: '';
+  width: 0;
+  height: 0;
+}
+.canvasBox123 .chooseCan .chooseCan-top .bg text {
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 36rpx;
+  margin-top: 10rpx;
+  color: #666;
+}
+
+.canvasBox123 .chooseCan .chooseCan-top .bg image {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+  display: block;
+}
+
+.canvasBox123 .chooseCan .chooseCan-bottom {
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  color: #666666;
+  padding: 20rpx 0;
+  border-top: 1px solid #e9e9e9;
+}
+
+.canvasBox123 .chooseCan .chooseCan-top .bg .post {
+  width: 86rpx;
+  height: 86rpx;
+  border-radius: 50%;
+  background-color: #2EB4C2;
+}
+
+.canvasBox123 .chooseCan .chooseCan-top .bg .post image {
+  width: 52rpx;
+  margin: 24rpx auto 0;
+  height: auto;
+  border-radius: 0;
+}

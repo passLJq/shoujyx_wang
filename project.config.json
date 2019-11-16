@@ -1,0 +1,144 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wxa2c607187b4e51b4",
+	"projectname": "sjyx20190128",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "match评审",
+					"pathName": "pages/activity/matchdetail/matchdetail",
+					"query": "matchId=64&status=1",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "赛事征集",
+					"pathName": "pages/activity/matchdetail/matchdetail",
+					"query": "matchId=67&status=0",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "packageA/pages/test/test",
+					"pathName": "packageA/pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "match已结束",
+					"pathName": "pages/activity/matchdetail/matchdetail",
+					"query": "matchId=44&status=1",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/public/login/login",
+					"pathName": "pages/public/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/activity/matchVideo/matchVideo",
+					"pathName": "pages/activity/matchVideo/matchVideo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/worksShow/myShowList/myShowList",
+					"pathName": "pages/worksShow/myShowList/myShowList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "uploadWorks",
+					"pathName": "pages/uploadWorks/uploadWorks",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "编辑图文",
+					"pathName": "pages/worksShow/worksDetails/worksDetails",
+					"query": "id=2629",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "pages/upload",
+					"pathName": "pages/uploadHome/uploadHome",
+					"query": "type=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/works",
+					"pathName": "pages/worksShow/worksUpload/worksUpload",
+					"query": "id=2629",
+					"scene": null
+				}
+			]
+		}
+	}
+}

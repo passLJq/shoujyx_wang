@@ -1,0 +1,57 @@
+<view class='uploadSelect'>
+  <view class='spotAddress'>
+    <view class='spotAddress-l'>选择城市：</view>
+    <view class='spotAddress-r' bindtap='showCityPicker'>
+      <text>{{city}}</text>
+      <image  src='/images/right_gysj.png'></image>
+    </view>
+
+  </view>
+
+  <view class='spot'>
+      <view class='spotAddress-l'>选择景点：</view>
+      <view  class='spotAddress-r' bindtap='selectSpot'>
+        <text>{{spotName}}</text>
+        <image src='/images/right_gysj.png'></image>
+      </view>
+
+  </view>
+
+</view>
+
+
+
+
+<view class="spot-select" wx:if='{{spotSelect}}'>
+  <view class='search-head'>
+    <view class='search'>
+      <image class='icon-search' src='/images/search.png'></image>
+      <input class='input' bindinput="getkeyword" value='{{keyword}}'></input>
+      <image class='icon-cancel' src='/images/icon-cancel.png' bindtap='keywordDel'></image>
+    </view>
+    <view class='search-button' bindtap='search'>搜索</view>
+  </view>
+  <scroll-view scroll-y style='height:100%;' >
+      <block wx:for='{{spotList}}'>
+      <view class='spotList' data-id='{{item.spotId}}' data-name='{{item.spotName}}' bindtap='onSpot'>
+        <view>
+          <view class='spot-name'>{{item.spotName}}</view>
+        </view>
+        <view class='icon-right'><image src='/images/right_gysj.png'></image></view>
+        <!-- <radio checked='{{item.status}}' color='#1790d7' class='spotSelectIcon' /> -->
+      </view>
+      </block>
+    <view class='spot-bottom'></view>
+  </scroll-view>
+</view>
+
+
+
+
+
+<city-picker class='address-select'
+    id="city-picker"
+    value="{{cityPickerValue}}" 
+    isShow="{{cityPickerIsShow}}"
+    bindsureclick="cityPickerOnSureClick"
+    bindcancelclick="cityPickerOnCancelClick" />

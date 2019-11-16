@@ -1,0 +1,32 @@
+<view class="worksHead">
+  <view wx:if="{{code==1}}" data-code="1" bindtap='onSwitch' class='head-l'><text>已发布的影集</text></view>
+  <view wx:else data-code="1" bindtap='onSwitch' class='head-r'><text>已发布的影集</text></view>
+  <view wx:if="{{code==0}}" data-code="0" bindtap='onSwitch' class='head-l'><text>未发布的影集</text></view>
+  <view wx:else bindtap='onSwitch' data-code="0" class='head-r'><text>未发布的影集</text></view>
+</view>
+
+<view wx:if='{{code==1}}' class='worksList'>
+  <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="worksShowList">
+    <block wx:for="{{worksData}}">
+      <view class='works'>
+        <view class='worksImg' data-id='{{item.worksShowId}}' bindtap='worksImg'>
+          <image src='{{item.image}}' mode='aspectFill'/>
+        </view>
+        <text>{{item.worksShowTitle}}</text>
+      </view>
+    </block>
+</scroll-view>
+</view>
+
+<view wx:else class='worksList'>
+  <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="worksShowList">
+    <block wx:for="{{worksData}}">
+      <view class='works'>
+        <view class='worksImg' data-id='{{item.worksShowId}}' bindtap='worksPreview'>
+          <image src='{{item.image}}' mode='aspectFill'/>
+        </view>
+        <text>{{item.worksShowTitle}}</text>
+      </view>
+    </block>
+</scroll-view>
+</view>

@@ -1,0 +1,30 @@
+<view class='body'>
+  <view class='desc'>
+    <view class='input'>
+      <textarea class='textarea' placeholder="请输入" value='{{desc}}' maxlength="{{TotalMessageNum}}" name="getTotalMessageUser" bindinput ="getDesc" ></textarea>
+    </view>
+  </view>
+
+  <view class='prompt'>
+    <view class='prompt-l'>景区介绍不超200字</view>
+    <view class='prompt-r'>{{descLength}}/{{TotalMessageNum}}</view>
+  </view>
+
+  <view class='add'>
+    <view wx:if='{{image}}' bindtap='addImg'>
+          <image class='uploadImg' src='{{image}}' mode='aspectFill' bindtap='showDetail' />
+          <view class='dell'>更换图片</view>
+    </view> 
+    <view wx:else bindtap='addImg'>
+        <view class='addImg'><image src='/images/add1.png'></image></view>
+        <view class='text'>景区封面背景上传</view>  
+    </view>
+
+  </view>
+
+
+
+
+</view>
+
+  <view class='submit' bindtap='submit'>保存</view>

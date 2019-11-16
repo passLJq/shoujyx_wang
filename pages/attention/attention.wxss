@@ -1,0 +1,493 @@
+.attention {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 120rpx;
+}
+
+.attention .pictureDetails-content {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.attention .pictureDetails-top {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  margin-bottom: 20rpx;
+  padding: 20rpx 0;
+  /*资料*/
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data {
+  width: 100%;
+  height: 70rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left {
+  width: auto;
+  height: 70rpx;
+
+
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-left {
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-left image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right {
+  width: 420rpx;
+  height: 70rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-top {
+  width: auto;
+  height: 33rpx;
+  display: flex;
+  align-items: top;
+
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-top span {
+  display: inline-block;
+  width: 100%;
+  font-size: 26rpx;
+  color: #333333;
+  
+  /*超出的隐藏*/
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /*超出的设置为省略号*/
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-bottom {
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 3rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-bottom .pictureDetails-top-data-left-right-bottom-left {
+  display: inline-block;
+  margin-right: 25rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-bottom .pictureDetails-top-data-left-right-bottom-left image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 6rpx;
+  float: left;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-bottom .pictureDetails-top-data-left-right-bottom-center {
+  display: inline-block;
+  margin-right: 25rpx;
+  margin-top: 5rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-bottom .pictureDetails-top-data-left-right-bottom-center span {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-bottom .pictureDetails-top-data-left-right-bottom-right {
+  display: inline-block;
+  margin-right: 25rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-bottom .pictureDetails-top-data-left-right-bottom-right span {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 10rpx;
+  margin-top: 5rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-left .pictureDetails-top-data-left-right .pictureDetails-top-data-left-right-bottom .pictureDetails-top-data-left-right-bottom-right image {
+  display: inline-block;
+  width: 34rpx;
+  height: 18rpx;
+  margin-top: 12rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-right {
+  width: auto;
+  height: 50rpx;
+  border: 1rpx solid #1790d7;
+  border-radius: 100rpx;
+  line-height: 48rpx;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 20rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-right span {
+  width: 100%;
+  height: 100%;
+  font-size: 26rpx;
+  color: #1790d7;
+  text-align: center;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-right.active {
+  background-color: #1790d7;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-data .pictureDetails-top-data-right.active span {
+  color: white;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-swiper {
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-swiper image {
+  display: inline-block;
+  width: 100%;
+}
+.attention .pictureDetails-top .pictureDetails-top-swiper .botton{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  font-size: 26rpx;
+  left: 0;
+  color: #333;
+  bottom: 9rpx;
+  background-color: rgba(255, 255, 255, 0.5)
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-top {
+  margin-top: 10rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-top p {
+  width: 100%;
+  
+  font-size: 28rpx;
+  color: #333333;
+  line-height:40rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom {
+  width: 100%;
+  height: auto;
+  margin-top: 15rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-left {
+  margin-right: 20rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-left span {
+  float: left;
+  width: 33rpx;
+  height: 32rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-left span image {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-left text {
+  font-size: 24rpx;
+  color: #999;
+  margin: 0 10rpx;
+  float: left;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-center span {
+  float: left;
+  width: 33rpx;
+  height: 32rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-center span image {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-center text {
+  font-size: 24rpx;
+  color: #999;
+  margin: 0 10rpx;
+  float: left;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-right {
+  width: 60rpx;
+  height: auto;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-right span {
+  float: right;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.attention .pictureDetails-top .pictureDetails-top-message .pictureDetails-top-message-bottom .pictureDetails-top-message-bottom-right span image {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.attention .pictureDetails-commentMessages {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content {
+  width: 660rpx;
+  height: 400rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-top {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-top span {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 90rpx;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-top textarea {
+  display: inline-block;
+  width: 100%;
+  height: 160rpx;
+  border: 1px solid #aaaaaa;
+  text-align: left;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-top p {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  text-align: right;
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-bottom {
+  width: 100%;
+  height: 80rpx;
+  border-top: 1px solid #e9e9e9;
+  margin-top: 10rpx;
+  display: flex;
+  text-align: center;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-bottom span {
+  display: inline-block;
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-bottom .pictureDetails-commentMessages-bottom-left {
+  flex: 1;
+  border-right: 1px solid #e9e9e9;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-bottom .pictureDetails-commentMessages-bottom-right {
+  flex: 1;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-bottom .pictureDetails-commentMessages-bottom-right span {
+  color: #1790d7;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-delect {
+  width: 22rpx;
+  height: 22rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+
+.attention .pictureDetails-commentMessages .pictureDetails-commentMessages-content .pictureDetails-commentMessages-delect image {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+.attention .pictureDetails-commentMessages.active {
+  display: block;
+}
+
+.attention .pictureDetails-share {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content {
+  width: 660rpx;
+  height: 400rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-top {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-top span {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 120rpx;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-bottom {
+  width: 100%;
+  height: auto;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-bottom .ul {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-bottom .ul .li {
+  flex: 1;
+  text-align: center;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-bottom .ul .li .li-top {
+  display: inline-block;
+  width: 98rpx;
+  height: 98rpx;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-bottom .ul .li .li-top image {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-bottom .ul .li .li-bottom span {
+  font-size: 24rpx;
+  color: #333333;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-delect {
+  width: 22rpx;
+  height: 22rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+
+.attention .pictureDetails-share .pictureDetails-share-content .pictureDetails-share-content-delect image {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+.attention .pictureDetails-share.active {
+  display: block;
+}
+
+.centent-follow-text{
+  height: 50rpx;
+  width: 130rpx;
+  border-radius:100rpx;
+  background-color:#1790d7;
+  font-size: 24rpx;
+  text-align: center;
+  color: #fff;
+  float: right;
+  margin-top: 10rpx;
+  line-height: 50rpx;
+}
+.centent-follow-text_a1{
+  height: 50rpx;
+  width: 130rpx;
+  border-radius:100rpx;
+  border:2rpx #1790d7 solid;
+  font-size: 26rpx;
+  text-align: center;
+  color: #1790d7;
+  float: right;
+  margin-top: 10rpx;
+  line-height: 50rpx;
+}
+.group{
+  width: 35rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 25rpx;
+}
+.group image{
+  width: 35rpx;
+  height: 30rpx;
+}

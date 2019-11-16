@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "新建图文",
+  "backgroundColor": "#f5f5f5",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "modal": "/component/modal/modal",
+    "tips": "/component/tips/tips"
+  }
+}

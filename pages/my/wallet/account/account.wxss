@@ -1,0 +1,137 @@
+page{
+  background-color: #f5f5f5;
+}
+.account{
+  width: 100%;
+  height: 190rpx;
+  background-color: #fff;
+}
+.payInfo{
+  height: 120rpx;
+  width: 94.666%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.payInfo .icon{
+  float: left;
+  width: 15%;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+.payInfo .icon image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.payInfo .info{
+  float: right;
+  width: 85%;
+  height: 120rpx;
+  border-bottom: 1rpx solid #E9E9E9;
+}
+.payInfo .info-l{
+  width: 50%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  float: left;
+}
+.payInfo .info-l .name{
+  margin-left: 20rpx;
+}
+.payInfo .info-l .title{
+  font-size: 26rpx;
+  color: #333333;
+  margin-top: 10rpx;
+}
+.payInfo .info-l .time{
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 10rpx;
+}
+.payInfo .info-r{
+  width: 50%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  float: right;
+  line-height: 80rpx;
+}
+.payInfo .info-r .type{
+  font-size: 26rpx;
+  color: #333333;
+  float: left;
+  margin-left: 80rpx;
+}
+.payInfo .info-r .num{
+  font-size: 26rpx;
+  color: #F34755;
+  float: right;
+}
+.payInfo .info-r .num image{
+  width: 14rpx;
+  height: 24rpx;
+}
+.select{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  float: left;
+}
+.select-c{
+  width: 94.66%;
+  height: 60rpx;
+  margin: 0 auto;
+}
+.del-img{
+  float: right;
+  height: 60rpx;
+  width: 95rpx;
+}
+.del-img image{
+  height: 34rpx;
+  width: 32rpx;
+  margin-top: 18rpx;
+}
+.defaul{
+  float: left;
+}
+.edit-img{
+  float: right;
+  height: 60rpx;
+  width: 95rpx;
+  margin-right: 20rpx;
+
+}
+.edit-img image{
+  height: 34rpx;
+  width: 36rpx;
+  margin-top: 18rpx;
+}
+
+.select-c .del{
+  float: right;
+  margin-top: 5rpx;
+}
+.select-c .edit{
+  float: right;
+  margin-top: 5rpx;
+}
+.line{
+  width: 100%;
+  height: 30rpx;
+  background-color: red;
+}
+.addAccount{
+  width: 580rpx;
+  height: 80rpx;
+  background-color: #1790D7;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  line-height: 80rpx;
+}

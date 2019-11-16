@@ -1,0 +1,15 @@
+<view class="dia_ss12345" wx:if="{{showBox != 0}}">
+  <view>
+    <text>您还未登录</text>
+    <text>请先登录再进行操作</text>
+    <image mode="widthFix" src="http://image.91sjyx.com/sjyx/hk/hk24/rock.png"></image>
+    <view class="btn" wx:if="{{showBox == 1}}">
+      <button class="b1" bindtap="close">暂不授权</button>
+      <button class="b2" open-type="getUserInfo" bindgetuserinfo="getUserInfo">我要授权</button>
+    </view>
+    <view class="btn" wx:if="{{showBox == 2}}">
+      <button class="b1" bindtap="close">暂不登录</button>
+      <button class="b2" bindtap="goLogin">立即登录</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<view class="activity">
+  <view class="activity-history">
+    <view class='History_button'><image class="right_fun_ic" src="/images/right_gysj.png"></image></view>
+    <view bindtap='history' class='History_button'>历史活动</view>
+  </view>
+  <!-- <view class='top-activity'>
+    <view><image class="top-img" src="/images/hot.png"></image></view>
+    <view class='renmen'>热门活动</view>
+  </view> -->
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+<block wx:for="{{matchList}}">
+  <view class="match">
+    <image class="match-img" bindtap="onmatch" data-status='{{item.status}}' data-id="{{item.match_id}}" src="{{item.match_img}}"></image>
+    <view class='match-title' bindtap="onmatch" data-status='{{item.status}}' data-id="{{item.match_id}}">{{item.match_name}}</view>
+
+    <view class="match-info">
+      <view class="match-info-left">
+        <view class="match-icon"><image class="left_fun_tp" src="/images/left_fun_tp.png"></image></view>
+        <view class="match-text">{{item.match_img_count}}</view>
+      </view>
+      <view class="match-info-right">
+        <view class="match-icon"><image class="left_fun_tp" src="/images/left_fun_ps.png"></image></view>
+        <view class="match-text">{{item.match_status}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom_line"></view>
+</block>
+</scroll-view>
+</view>
+

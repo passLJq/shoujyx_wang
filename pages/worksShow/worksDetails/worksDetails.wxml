@@ -1,0 +1,250 @@
+<!-- <button bindtap="goComm">评论</button>
+<button bindtap="goComm">回复</button> -->
+<wxs src="../../../utils/common.wxs" module="comm"></wxs>
+<view class="header">
+  <image class="cover" style="width:{{coverWidth}}px;top:-{{coverTop}}px;left:-{{coverLeft}}px;" mode="widthFix" src="{{comm.removeParam(worksData.coverurl)}}"></image>
+  <!-- <image mode="center" style="height: 500rpx;width:100%" mode="aspectFill" src="{{comm.removeParam(worksData.coverurl)}}"></image> -->
+  <view class="musicIcon {{playIng ? 'playIng' : 'no'}}" bindtap="stopMusic" wx:if="{{worksData.musicPath && worksData.musicPath != ''}}">
+    <image src="https://image.91sjyx.com/sjyx/Icon/music.png"></image>
+  </view>
+  <!-- <image mode="widthFix" class="logo" src="https://image.91sjyx.com/sjyx/Icon/logo.png"></image> -->
+  <view class="logos" bindtap="goIndex">
+    <image mode="widthFix" class="logo" src="http://image.91sjyx.com/sjyx/hk/hk24/man.png"></image>
+    <view>
+      <text>手机影像</text>
+      <text>91SJYX.COM</text>
+    </view>
+  </view>
+</view>
+
+<view class="works">
+  <view class="headBox">
+    <view class="l" bindtap="onuser">
+      <image mode="aspectFill" src="{{worksData.HeadImg}}"></image>
+      <view>
+        <text>{{worksData.user_name}}</text>
+        <view>
+          <block wx:for="{{stars}}">
+            <image mode="widthFix" wx:if="{{item == 1}}" src="https://image.91sjyx.com/sjyx/Icon/stars.png" />
+            <image mode="widthFix" wx:else src="https://image.91sjyx.com/sjyx/Icon/star.png" />
+          </block>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{!isEdit}}">
+      <view class="r" bindtap="goFollow" wx:if="{{worksData.is_follow == 0}}">关注</view>
+      <view class="rs" bindtap="goFollow" wx:else>取消关注</view>
+    </block>
+  </view>
+  <view class="content">
+    <view class="tt">
+      <text class="title" style="display: block;">{{worksData.title}}</text>
+      <text class="time" wx:if="{{!isEdit}}">发布于 {{worksData.time}}   阅读 {{worksData.viewnum}}</text>
+      <text class="explain">{{worksData.explain}}</text>
+    </view>
+    <view class="imglist">
+      <block wx:for="{{worksData.imgList}}">
+        <image wx:if="{{item.image}}" mode='widthFix' src="{{comm.removeParam(item.image)}}" data-img='{{item.image}}' data-title='{{worksDetails.title}}' data-w='{{item.iwidht}}' data-h='{{item.iheight}}' mode='widthFix' bindtap='zoom'></image>
+        <text wx:if="{{item.desc}}">{{item.desc}}</text>
+      </block>
+    </view>
+
+    <view class="dz" style="padding-top: {{worksData.imgList[worksData.imgList.length-1].desc?50:55}}rpx;" wx:if="{{!isEdit && worksData.goodList.length > 0}}">
+      <view class="relative dianzz">
+        <text class="dz1" style="color: #333;">{{worksData.good_num || 0}}</text>
+        <image wx:if="{{!worksData || worksData.isGood == 0}}" mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/dz.png"></image>
+        <image wx:else mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/dzc2.png"></image>
+      </view>
+      <view class="v">
+        <navigator wx:for="{{worksData.goodList}}" url="/pages/userhome/userhome?userId={{item.userId}}" style="margin-right: 10rpx;" hover-class="none">
+          <image hidden="{{index > 6}}" src="{{item.userHeading}}"></image>
+        </navigator>
+        <text bindtap="onUserList" class="iconfont icon-youjiantou-copy" style="height: 100%;line-height:70rpx;"></text>
+      </view>
+    </view>
+    <block wx:if="{{!isEdit}}">
+      <view class="pl_none" bindtap="goComm" wx:if="{{!commentList || commentList.length <= 0}}">
+        <image mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/none_pl.jpg"></image>
+        <text>暂无评论，快来发表评论</text>
+      </view>
+      <view class="pl" wx:else>
+        <text class="pl_tit">{{commentNum}}条评论</text>
+        <view class="pl_item" wx:for="{{commentList}}">
+          <view class="pl_top">
+            <view>
+              <navigator url="/pages/userhome/userhome?userId={{item.user_id}}" style="height: 76rpx;">
+                <image src="{{item.portrait}}" hover-class="none"></image>
+              </navigator>
+              <text class="name line_over_1">{{item.user_name}}</text>
+              <text class="pltime">{{item.comment_time}}</text>
+            </view>
+            <view bindtap="goComms" data-index="{{index}}">回复</view>
+          </view>
+          <view class="plcon">
+            <text>{{item.comment_context}}</text>
+            <view class="second" wx:for="{{item.level}}" wx:for-index="idx" wx:for-item="itm">
+              <text class="blue">{{itm.auth_name1}}</text>
+              <text> 回复 </text>
+              <text class="blue">{{itm.auth_name2}}</text>
+              <text>：</text>
+              <text>{{itm.content}}</text>
+            </view>
+          </view>
+        </view>
+        <text wx:if="{{!hasMore}}" style="font-size: 28rpx;color: #999;display: block;text-align: center;margin-top: 40rpx;">没有更多评论了~</text>
+      </view>
+    </block>
+  </view>
+</view>
+<block wx:if="{{!isEdit}}">
+
+  <view class="bline"></view>
+  <view class="hot" style="{{isIphoneX ? 'margin-bottom: 40rpx;':''}}">
+    <view class="hot_tit" bindtap="recommendMore" data-code='{{worksData.code}}'>
+      <text>热门推荐</text>
+      <text class="iconfont icon-youjiantou-copy"></text>
+    </view>
+    <view class='worksShow'>
+      <scroll-view scroll-x class="scroll-works">
+        <block wx:for="{{worksData.recommend}}">
+          <view class='album_dt'>
+            <image class='list' data-id='{{item.id}}' src='{{comm.removeParam(item.doc_path)}}' mode='aspectFill' bindtap='recommend' />
+            <view class='album_title line_over_1'>{{item.title}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="footer" style="{{isIphoneX ? 'padding-bottom: 40rpx;height: 136rpx;':''}}">
+    <view bindtap="goComm">
+      <image mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/pj.png"></image>
+      <text class="commNum" wx:if="{{worksData.comment_num > 0}}">{{worksData && worksData.comment_num}}</text>
+    </view>
+    <view bindtap="dianz" class="relative">
+      <!-- <text wx:if="{{addDz}}" class="dz1">+1</text> -->
+      <text class="dzNum" style="{{changeNum ? 'display:none' : ''}}">{{showGoodNum}}</text>
+      <text class="dzNum" style="{{!changeNum ? 'opacity: 0' : 'opacity: 1'}}">{{worksData && worksData.good_num}}</text>
+      <image wx:if="{{!worksData || worksData.isGood == 0}}" mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/dz.png"></image>
+      <image wx:else mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/dzc2.png"></image>
+    </view>
+    <view bindtap="newWorks">
+      <image mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/new.png"></image>
+    </view>
+    <view bindtap="closeCan" data-type="open">
+      <image mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/share.png"></image>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{isEdit}}">
+  <view style="width: 1px;height: 135rpx;"></view>
+  <view class="chooseBox" style="{{showEditMusic != 0 ? isIphoneX ? 'bottom: 170rpx' : 'bottom: 130rpx' : ''}}">
+    <view class="shouq" bindtap="setChoose" data-type="0">
+      <text class="iconfont icon-xiala"></text>
+      <text>收起</text>
+    </view>
+    <!-- 选择音乐 -->
+    <block wx:if="{{showEditMusic == 1}}">
+      <scroll-view class="scbox" scroll-x enable-flex>
+        <view class="scItem" data-index="-1" bindtap="chooseMusic">
+          <view class="nomusic">
+            <view></view>
+            <text class="line_over_1">无配音</text>
+          </view>
+        </view>
+        <block wx:for="{{musicList}}">
+          <view class="scItem {{worksData.musicPath && worksData.musicPath == item.musicurl ? 'active' : ''}}" data-index="{{index}}" bindtap="chooseMusic">
+            <view>
+              <view class="imgBox">
+                <image mode="aspectFill" src="{{item.imgurl}}"></image>
+                <view class="choosed">
+                  <image mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/xz.png"></image>
+                </view>
+              </view>
+              <view class="musicName {{item.musicname.length > 4 ? 'move' : ''}}">
+                <text>{{worksData.musicPath && worksData.musicPath == item.musicurl ? item.musicname : comm.ellip(item.musicname, 4)}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </block>
+    <!-- 选择封面 -->
+    <block wx:if="{{showEditMusic == 2}}">
+      <scroll-view class="scbox" scroll-x enable-flex>
+        <view class="fmItem" bindtap="closeChoose" data-type="open" data-choose="fm">
+          <view class="add imgBox">
+            <text class="iconfont icon-tianjia"></text>
+          </view>
+          <text class="desc line_over_1">上传封面</text>
+        </view>
+        <block wx:for="{{coverList}}">
+          <view class="fmItem {{worksData.coverurl == item.coverurl ? 'active' : ''}}" bindtap="bindCover" data-index="{{index}}">
+            <!-- active -->
+            <view class="imgBox">
+              <image src="{{item.coverurl}}"></image>
+              <view class="cho">
+                <image mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/xz.png"></image>
+              </view>
+            </view>
+            <text class="desc line_over_1">{{item.covertitle}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </block>
+  </view>
+  <view class="editFoot" style="{{isIphoneX ? 'padding-bottom: 40rpx;height: 170rpx':''}}">
+    <view class="l">
+      <view bindtap="setChoose" data-type="2">
+        <image hidden="{{showEditMusic != 2}}" mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/fms.png"></image>
+        <image hidden="{{showEditMusic == 2}}" mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/fm.png"></image>
+        <text style="{{showEditMusic == 2 ? 'color:#1790D7;' : ''}}">封面</text>
+      </view>
+      <view bindtap="setChoose" data-type="1">
+        <image hidden="{{showEditMusic != 1}}" mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/music_x.png"></image>
+        <image hidden="{{showEditMusic == 1}}" mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/music_m.png"></image>
+        <text style="{{showEditMusic == 1 ? 'color:#1790D7;' : ''}}">音乐</text>
+      </view>
+    </view>
+    <view wx:if="{{!isSubmit}}" class="finish" bindtap="submit">
+      <text>完成</text>
+    </view>
+    <view wx:else class="finish">
+      <text style="background: #ccc">完成</text>
+    </view>
+  </view>
+
+</block>
+
+<!-- k币. -->
+<kbi showKbi="{{showKbi}}" workData="{{workData}}" bind:close="showKBox"></kbi>
+
+<!-- 图片选择的弹窗组件 -->
+<modal wx:if="{{showChoose}}" bind:handler="chooseHandler" bind:close="closeChoose"></modal>
+
+<!-- 回复框 -->
+<view wx:if="{{showComm}}" class="pc" catchtouchmove="true">
+  <view class="pc-content">
+    <view class="pc-top">
+      <span>{{commentIndex > -1 ? '回复' : '评论'}}</span>
+      <textarea placeholder="{{commentIndex > -1 ? '@'+commentList[commentIndex].user_name : '请输入您的评论'}}" maxlength="150" name="getTotalMessageUser" bindinput="getCommInp" />
+      <p>{{commLength}}/150</p>
+    </view>
+    <view class="pc-bottom">
+      <view class="pc-bottom-left" bindtap="cancelComment">
+        <span>取消</span>
+      </view>
+      <view class="pc-bottom-right" bindtap="commentAjax">
+        <span>发布</span>
+      </view>
+    </view>
+    <view class="pc-delect" bindtap="cancelComment">
+      <image src="/images/01-pictureDetail-13.png" />
+    </view>
+  </view>
+
+</view>
+
+
+<can wx:if="{{showCan}}" worksData="{{worksData}}" bind:close="closeCan"></can>

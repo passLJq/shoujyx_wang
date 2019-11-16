@@ -1,0 +1,76 @@
+<view class='body'>
+  <view class='table'>
+    <view wx:if='{{item==1}}' class='item' bindtap='item' data-code='1'>支出</view>
+    <view wx:else class='item1' data-code='1' bindtap='item'>支出</view>
+    <view wx:if='{{item==2}}' class='item' data-code='2' bindtap='item'>收益</view>
+    <view wx:else class='item1' data-code='2' bindtap='item'>收益</view>
+    <view wx:if='{{item==0}}' class='item' data-code='0' bindtap='item'>充值</view>
+    <view wx:else class='item1' data-code='0' bindtap='item'>充值</view>
+    <view wx:if='{{item==3}}' class='item' data-code='3' bindtap='item'>提现</view>
+    <view wx:else class='item1' data-code='3' bindtap='item'>提现</view>
+  </view>
+
+
+  <view wx:if='{{item < 3}}' class='payList'>
+    <view wx:if='{{item > 0}}'>
+      <block wx:for='{{listData}}'  wx:for-item="items">
+      <view class='payInfo' data-pid='{{items.id}}'>
+        <view class='icon'>
+          <image src='{{items.member_headimg}}'/>
+        </view>
+        <view class='info'>
+          <view class='info-l'>
+            <view class='title'>{{items.member_name}}</view>
+            <view class='time'>{{items.finishtime}}</view>
+          </view>
+          <view class='info-r'>
+            <view class='type'>{{items.typeName}}</view>
+            <view class='num'>{{item<2?'-':'+'}}{{items.amount}}<text class='num-r'>k币（￥{{items.amount/10}}）</text></view>
+          </view>
+        </view>
+      </view>
+      </block>
+    </view>
+    <view wx:else>
+      <block wx:for='{{listData}}' wx:for-item="items">
+      <view class='payInfo' bindtap='ondetail' data-pid='{{items.id}}'>
+        <view class='icon'>
+          <image wx:if='{{items.way==1}}' src='/images/wx.png'/>
+          <image wx:else src='/images/zfb.png'/>
+        </view>
+        <view class='info'>
+          <view class='info-l'>
+            <view wx:if='{{items.way==1}}' class='title'>微信支付</view>
+            <view wx:else class='title'>支付宝</view>
+            <view class='time'>{{items.finishtime}}</view>
+          </view>
+          <view class='info-r'>
+            <view class='type'>{{items.typeName}}</view>
+            <view class='num'>{{items.amount}}</view>
+          </view>
+        </view>
+      </view>
+      </block>
+    </view>
+
+  </view>
+
+   <view wx:else class='payList'>
+    <block wx:for='{{listData}}' wx:for-item="items">
+    <view class='payInfo' bindtap='ondetail' data-pid='{{items.id}}'>
+      <view class='icon'>
+        <image wx:if='{{items.way==2}}' src='/images/zfb.png' />
+        <image wx:else src='/images/yh.png' />
+      </view>
+      <view class='info'>
+        <view class='tixian'>
+          <view class='title'>{{items.account}} {{items.realname}}</view>
+          <view><text class='time'>{{items.applytime}}</text><text class='money'>{{items.amount}}</text></view>
+        </view>
+      </view>
+    </view>
+    </block>
+
+  </view>
+
+</view>

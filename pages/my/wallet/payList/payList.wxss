@@ -1,0 +1,121 @@
+page{
+    background-color: #f5f5f5;
+}
+.body{
+  width: 100%;
+  float: left;
+}
+.table{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80rpx;
+  background-color: #fff;
+}
+.item{
+  width: 25%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  border-bottom:2rpx solid #1790D7;
+  color: #1790D7;
+  float: left;
+}
+.item1{
+  width: 25%;
+  height: 80rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.payList{
+  width: 100%;
+  background-color: #fff;
+  margin-top: 25rpx;
+}
+.payInfo{
+  height: 126rpx;
+  width: 94.666%;
+  margin: 0 auto;
+}
+.payInfo .icon{
+  float: left;
+  width: 15%;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+.payInfo .icon image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.payInfo .info{
+  float: right;
+  width: 85%;
+  height: 126rpx;
+  border-bottom: 1rpx solid #E9E9E9;
+}
+.payInfo .info-l{
+  width: 50%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  float: left;
+}
+
+.payInfo .info-l .title{
+  font-size: 26rpx;
+  color: #333333;
+  margin-top: 10rpx;
+}
+
+.payInfo .info-l .time{
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 10rpx;
+}
+.payInfo .info-r{
+  width: 50%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  float: right;
+  line-height: 80rpx;
+}
+.payInfo .info-r .type{
+  font-size: 26rpx;
+  color: #333333;
+  float: left;
+}
+.payInfo .info-r .num{
+  font-size: 30rpx;
+  color: #F34755;
+  float: right;
+}
+.payInfo .info-r .num-r{
+  font-size: 24rpx;
+  color: #F34755;
+  float: right;
+}
+
+.payInfo .tixian{
+  width: 100%;
+  height: 80rpx;
+  margin-top: 20rpx;
+  float: left;
+}
+.tixian .title{
+  font-size: 26rpx;
+  color: #333333;
+  margin-top: 10rpx;
+}
+.tixian .time{
+  float: left;
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 10rpx;
+}
+.tixian .money{
+  float: right;
+  font-size: 30rpx;
+  color: #F34755;
+}

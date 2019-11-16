@@ -1,0 +1,51 @@
+<view class='body'>
+  <view class='spotAddress'>
+    <view class='spotAddress-l'>选择城市：</view>
+     <view class='spotAddress-r' bindtap='showCityPicker'> 
+        <view class='spotAddress-r'>
+       <text>{{cityName}}</text> 
+      <!-- <text>国外</text> -->
+      </view>
+      <image src='/images/right_gysj.png'></image>
+    </view>
+  </view>
+    <view class='spotAddress'>
+    <view class='spotAddress-l'>景区名称：</view>
+    <view class='spotAddress-r'>
+        <input type='text' value='' class="title-input" bindinput ="spotName" placeholder='请输入景区' maxlength='10' ></input>
+    </view>
+  </view>
+
+  <view class='spotDesc'>
+    <view class='spotDesc-l'>景区介绍：</view>
+    <view class='spotDesc-r'>
+        <textarea class='textarea' class="title-cotd" value='' bindinput ="spotDesc" placeholder='请输入景区介绍' maxlength='200' ></textarea>
+    </view>
+  </view>
+  
+
+
+  <view class='add' bindtap='addImg'>
+    <view wx:if='{{image}}' >
+          <image class='uploadImg' src='{{image}}' mode='aspectFill' />
+          <view class='dell'>更换图片</view>
+    </view> 
+    <view wx:else>
+        <view class='addImg'><image src='/images/add1.png'></image></view>
+        <view class='text'>景区封面背景上传</view>  
+    </view>
+
+  </view>
+
+<view class='spotCentent'>要求：景区名称不超过20个字，景区介绍不超过100个字。</view>
+</view>
+
+<view wx:if='{{submitStyle}}' class='submit' bindtap='submit'>提交</view>
+<view wx:else class='submit1'>提交</view>
+
+<city-picker class='address-select'
+    id="city-picker"
+    value="{{cityPickerValue}}" 
+    isShow="{{cityPickerIsShow}}"
+    bindsureclick="cityPickerOnSureClick"
+    bindcancelclick="cityPickerOnCancelClick" />

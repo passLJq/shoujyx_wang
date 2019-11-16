@@ -1,0 +1,10 @@
+
+ <view class="spot-select" hidden='{{uploadSelect}}'>
+    <view class='uploadSelect'>
+      <view class='upload-type'><image bindtap='typeSelect' data-code='1' src='/images/upload-img.png'></image><text>图片</text></view>
+      <view class='upload-type'><image bindtap='goUploadWorks' data-code='3' src='/images/upload-group.png'></image><text>图文</text></view>
+      <view class='upload-type'><image bindtap='typeSelect' data-code='2' src='/images/upload-video.png'></image><text>视频</text></view>
+    </view>
+    <!-- <image class='quit' bindtap='quit' src='/images/upload-del.png'></image> -->
+    <view class='cancel'><view bindtap='quit'>返回</view></view>
+</view>

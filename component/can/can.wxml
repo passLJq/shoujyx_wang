@@ -1,0 +1,23 @@
+<view class="canvasBox123">
+  <view class="commonCanvas" id="canvas-container" hidden="{{!showPost}}">
+    <canvas canvas-id="cc" style="height: {{height}}px;"></canvas>
+  </view>
+
+  <view class="chooseCan">
+    <view class="chooseCan-top">
+      <view>
+        <button data-index="" class='bg' open-type="share">
+          <image src="https://image.91sjyx.com/sjyx/Icon/wxShare.png"></image>
+          <text>分享</text>
+        </button>
+      </view>
+      <view>
+        <button class='bg' bindtap="markCard">
+          <view class="post"><image mode="widthFix" src="https://image.91sjyx.com/sjyx/Icon/iconPoster.png"></image></view>
+          <text>生成海报</text>
+        </button>
+      </view>
+    </view>
+    <view class="chooseCan-bottom" style="{{isIphoneX ? 'padding-bottom: 60rpx;' : ''}}" bindtap="close">取消</view>
+  </view>
+</view>

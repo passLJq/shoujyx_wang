@@ -1,0 +1,15 @@
+/* pages/rule/.wxss */
+page{ background-color: #f5f5f5;}
+.rule_title{background-color: #f5f5f5; height: 130rpx; text-align:center; color: #715f47;}
+.rule_title image{ width: 375rpx; height: 50rpx; margin: 40rpx 0; }
+.activity_Name{ background-color: #fff; border-radius: 4rpx; padding: 30rpx; width: 640rpx; margin: 0 auto 40rpx auto; clear: both; box-shadow:0 1px 3px rgba(0,0,0,.02),0 4px 8px rgba(0,0,0,.02); }
+.activity_Name span{ width: 100%; clear: both;  display:inline-block; color:#333; font-size: 28rpx;}
+.activity_Name span i{ width:5rpx; height:24rpx; position: relative; top:1rpx; border-radius:6rpx; display:inline-block; background-color:#715f47; margin-right: 15rpx;}
+.activity_Name span h1{ font-size: 28rpx; color:#715f47; font-weight: bold;  line-height:20rpx; padding:0rpx; margin: 0px;display:inline-block;  }
+.activity_Name span.Explain{ margin-top: 20rpx; line-height:40rpx;}
+
+.activity_Name span.Explain em{  color: #f25c4d;font-weight: bold; }
+.activity_Name span.Explain p{ width: 100%; clear: both; display:inline-block;}
+.activity_Name span.Explain image{ width: 24rpx; height:24rpx;margin-right: 15rpx; position: relative; top:2rpx;}
+.activity_Name span.Explain1{ margin-top: 10rpx; line-height:40rpx;}
+.activity_Name span.Explain1 image{ width: 24rpx; height:24rpx;margin-right: 15rpx; position: relative; top:2rpx;}

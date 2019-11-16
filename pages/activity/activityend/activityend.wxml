@@ -1,0 +1,25 @@
+<view class="activity">
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+<block wx:for="{{matchList}}">
+  <view class="match">
+    <image class="match-img" bindtap="onmatch" data-id="{{item.match_id}}" src="{{item.match_img}}"></image>
+    <view class="match-title" bindtap="onmatch" data-id="{{item.match_id}}">{{item.match_name}}</view>
+
+    <view class="match-info">
+      <view class="match-info-left">
+        <view class="match-icon"><image class="left_fun_tp" src="/images/left_fun_tp.png"></image></view>
+        <view class="match-text">{{item.match_img_count}}</view>
+      </view>
+      <view class="match-info-right">
+        <view class="match-icon"><image class="left_fun_tp" src="/images/left_fun_ps.png"></image></view>
+        <view class="match-text">{{item.match_status}}</view>
+      
+      </view>
+    </view>
+  </view>
+  <view class="bottom_line"></view>
+</block>
+</scroll-view>
+
+</view>
+

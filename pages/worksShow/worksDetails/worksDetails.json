@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "",
+  "backgroundColor": "#f5f5f5",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "kbi": "/component/kbi/kbi",
+    "modal": "/component/modal/modal",
+    "can": "/component/can/can"
+  }
+}

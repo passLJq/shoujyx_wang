@@ -1,0 +1,9 @@
+/* pages/main/main.wxss */
+/* zoomImgByView {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+page {
+  background-color: #000;
+} */

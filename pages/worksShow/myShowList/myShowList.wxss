@@ -1,0 +1,374 @@
+.headShow{
+  width: 94.66%;
+  height: 100rpx;
+  margin: 0 auto;
+}
+.head-l{
+  float: left;
+  width: 50%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #1790d7;
+  color: #1790d7;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.head-r{
+  float: right;
+  width: 50%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #1790d7;
+  color: #1790d7;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.head-l1{
+  float: left;
+  width: 50%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #e9e9e9;
+  color: #333;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.head-r1{
+  float: right;
+  width: 50%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #e9e9e9;
+  color: #333;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.worksShow{
+  width: 94.66%;
+  height: 240rpx;
+  margin: 0 auto;
+  padding:20rpx 0;
+}
+.worksShow-l{
+  float: left;
+  width:220rpx;
+  
+  position:relative;
+}
+.worksShow-l image{
+  border-radius: 6rpx;
+  margin-top: 10rpx;
+  width: 220rpx;
+  height:220rpx;
+}
+.worksShow-status{
+  width: 100%;
+  height: 40rpx;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  position: absolute;
+  border-bottom-right-radius:6rpx; 
+  border-bottom-left-radius: 6rpx; 
+ 
+  left: 0;
+  color: #fff;
+  bottom: 10rpx;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+.worksShow-r{
+  float: right;
+  width:67%;
+  height: 200rpx;
+}
+.worksShow-r .one{
+  margin-left: 5rpx;
+  height: 60rpx;
+  margin-top: 10rpx;
+  width:100%;
+}
+.worksShow-r .title{
+  width: 86%;
+  height: 60rpx;
+  float: left;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+ 
+  color: #333;
+}
+.title-text{
+  width: 70%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  float: left;
+}
+.worksShow-r image{
+  width: 50rpx;
+  height: 28rpx;
+}
+.worksShow-r .rm{
+  width: 10%;
+  height: 36rpx;
+  float: right;
+}
+.worksShow-r .rm image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.worksShow-r .number{
+  width: 100%;
+  height: 60rpx;
+  margin-top: 20rpx;
+  color: #999;
+}
+.worksShow-r .number .view{
+  width: 45%;
+  font-size: 24rpx;
+  padding-left: 10rpx;
+  float: left;
+}
+.worksShow-r .number .share{
+  width: 50%;
+  font-size: 24rpx;
+  float: right;
+}
+.worksShow-r .button{
+  width:100%;
+  height: 50rpx;
+  margin-top: 30rpx;
+}
+.worksShow-r .button button{
+  width:144rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin-left: 15rpx;
+  float: left;
+  padding: 0rpx;
+  border-radius: 6rpx;
+
+}
+.worksShow-r .button .bg{
+  background-color: #1790d7;
+  color: #fff;
+}
+.worksRelease{
+  background-color: #1790d7;
+  color: #fff;
+  
+}
+.worksRelease-1{
+  background-color: #f5f5f5;
+}
+.worksShow-r .button .edit{
+  /* border:1rpx solid #1790d7;
+  background-color: #fff; */
+  
+}
+
+.line{
+  width: 100%;
+  height: 20rpx;
+  background-color: #f5f5f5;
+}
+
+.button-line{
+  height: 80rpx;
+  width: 100%;
+}
+.content{
+  width: 100%; 
+  float: left;
+  padding-bottom: 130rpx;
+  
+}
+
+ .pictureDetails-position {
+  width: 100%;
+  height:120rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  
+
+
+  background-color: white;
+}
+
+.pictureDetails-position .ul {
+  width: 87.733%;
+  height: 80rpx;
+  display: flex;
+ 
+ 
+  margin: 0 auto;
+ bottom: 0rpx;
+}
+
+.pictureDetails-position .ul .li {
+  flex: 1;
+  text-align: center;
+ 
+ 
+  position: relative;
+}
+.pictureDetails-position .ul .li .make{
+  /* width: 80%;
+  margin-bottom: 20rpx; */
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  background-color: #1790d7; 
+  color: #fff; 
+  border-radius: 6rpx;
+  margin-top: 20rpx;
+}
+.isEmpty{
+  height: 80%;
+  margin-top: 160rpx;
+  font-size: 26rpx;
+  color: #666;
+  text-align: center;
+  line-height: 50rpx;
+}
+.isEmpty image{
+  width: 300rpx;
+  height: 251rpx;
+}
+.isEmpty .worksAdd{
+  height: 80rpx;
+  width: 500rpx;
+  background-color: #1790d7;
+  border-radius: 6rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 58rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+
+.posterShare{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color:rgba(0, 0, 0, 0.7);
+  z-index:9999;
+  /* display: none; */
+  left:0;
+  top:0;
+}
+.posterShare .posterShareBox{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+}
+.posterShare .posterShare-one{
+    margin: 20rpx;
+    display: flex;
+    justify-content: flex-start;
+}
+.posterShare .posterShare-one button{
+  margin: 0;
+
+  display: flex;
+  flex-direction:column ;
+  line-height:normal;
+  background: #fff;
+  align-items:center;
+  font-size:26rpx;
+}
+.posterShare .posterImg{
+   width: 86rpx;
+   height: 86rpx;
+   margin-bottom: 6rpx;
+}
+.posterShare .wxShareImg{
+  width: 86rpx;
+  height: 86rpx;
+  margin-bottom: 6rpx;
+}
+.posterShare .line{
+  height: 2rpx;
+  width: 100%;
+  background: #E9E9E9;
+}
+.posterShare .posterShare-two{
+    font-size: 36rpx;
+    text-align: center;
+    color: #666666;
+    margin: 20rpx;
+}
+/* .poste_box{
+  width: 670rpx;
+  margin: auto;
+  margin-top: 50rpx;
+  background-color: #fff;
+} */
+.poste_box{
+  width: 750rpx;
+  /* height: 100%; */
+  margin: auto;
+  /* background-color: #fff; */
+}
+
+.savePoste{
+  background-color: #FF8427;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:30rpx;
+  color: #fff;
+}
+.saveTitle{
+  font-size: 25rpx;
+  color: #666;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20rpx;
+  text-align: center;
+}
+.canvasBtn{
+  display: flex;
+  width: 100%;
+  height: 88rpx;
+  border: 1rpx solid #E9E9E9;
+  font-size: 30rpx;
+  box-sizing:border-box;
+  
+}
+.canvasBtnCancel{
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  line-height: 88rpx;
+  box-sizing:border-box;
+  border-right: 1rpx solid #E9E9E9;
+}
+.canvasBtnSave{
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  line-height: 88rpx;
+  color: #008FFF;
+}
+.canvasImg{
+  /* position: absolute; */
+}
+
+button::after {
+  border: none;
+}
+
+.button button {
+  border: 1px solid rgba(23,144,215,1);
+  color: #1790D7;
+}

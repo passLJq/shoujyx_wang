@@ -1,0 +1,64 @@
+.line{
+  height: 20rpx;
+  width:100%;
+  background-color: #f5f5f5;
+}
+.feedback{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.feedback text{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.feedback text{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+  line-height: 45rpx;
+}
+.feedback textarea{
+  border: 1rpx solid #ccc;
+  width: 96.2%;
+  line-height: 35rpx;
+  border-radius: 6rpx;
+  padding: 15rpx 10rpx 10rpx 15rpx;
+}
+.feedback-button{
+  height: 150rpx;
+  width: 100%;
+  font-size: 40rpx;
+}
+.button-cancel{
+  float: left;
+  height: 88rpx;
+  width: 30%;
+  background-color:#f5f5f5;  
+  margin:40rpx auto;
+   margin-left: 8%;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size:30rpx;
+  color: #666;
+  border: 1rpx solid #999;
+  line-height: 88rpx;
+}
+.button-submit{
+  float:right;
+  height: 88rpx;
+  width: 30%;
+  background-color:#1790d7;  
+  margin:40rpx auto;
+   margin-right: 8%;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size:30rpx;
+   color: #fff;
+  line-height: 88rpx;
+}

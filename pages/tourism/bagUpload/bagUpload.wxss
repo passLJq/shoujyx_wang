@@ -1,0 +1,93 @@
+.body{
+  width: 94.666%;
+  margin: 0 auto;
+}
+.desc{
+  width: 100%;
+  height: 180rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 5rpx;
+}
+.input{
+  width: 96%;
+  height: 160rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  color: #333;
+}
+.textarea{
+  width: 100%;
+  height: 160rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+}
+.prompt{
+  width: 100%;
+  height: 60rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  color: #999;
+}
+.prompt-l{
+  float: left;
+}
+.prompt-r{
+  float: right;
+}
+.add{
+  width: 100%;
+  height: 360rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 5rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+.uploadImg{
+  width: 100%;
+  height:360rpx;
+}
+.dell{
+  width: 120rpx;
+  height: 58rpx;
+  position: absolute;
+  background-color: #1790d7;
+  text-align: center;
+  line-height: 58rpx;
+  border-radius: 5rpx;
+  font-size: 24rpx;
+  color: #fff;
+  right: 10rpx;
+  top: 10rpx;
+}
+
+.addImg{
+  width: 100%;
+  height: 58rpx;
+  text-align: center;
+  float: left;
+  margin-top: 100rpx;
+}
+.addImg image{
+  width: 58rpx;
+  height: 58rpx;
+}
+.text{
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 85rpx;
+  font-size: 28rpx;
+}
+.submit{
+  width: 80%;
+  height:80rpx;
+  margin: 0 auto;
+  background-color: #1790d7;
+  margin-top: 50rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+}

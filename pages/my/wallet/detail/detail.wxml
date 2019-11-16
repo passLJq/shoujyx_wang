@@ -1,0 +1,32 @@
+
+<view class='content'>
+  <view class='recharge'>
+    <view wx:if='{{payType==0}}' class='recharge-l'>充值金额</view>
+    <view wx:else class='recharge-l'>提现金额</view>
+    <view class='recharge-r'><text>￥</text>{{moneyData.amount}}</view>
+  </view>
+  <view class='list'>
+    <view class='list-l'>类型</view>
+    <view class='list-r'>{{moneyData.typeName}}</view>
+  </view>
+
+  <view wx:if='{{payType==0}}' class='list'>
+    <view  class='list-l'>K币</view>
+    <view class='list-r'>{{moneyData.amount *10}}</view>
+  </view>
+
+   <view wx:if='{{payType==0}}' class='list'>
+    <view class='list-l'>流水号</view>
+    <view class='list-r'>{{moneyData.orderId}}</view>
+  </view> 
+
+  <view wx:if='{{payType > 0}}' class='list'>
+    <view class='list-l'>状态</view>
+    <view class='list-r'>处理</view>
+  </view>
+
+    <view class='list'>
+    <view class='list-l'>时间</view>
+    <view class='list-r'>{{moneyData.finishTime}}</view>
+  </view>
+</view>

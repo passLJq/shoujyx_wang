@@ -1,0 +1,35 @@
+<view class='line'></view>
+<view class='head'>
+  <view class='head-l'>我的k币</view>
+  <view class='head-r' bindtap='onlist' data-code='1'><text>支出明细</text> <image src='/images/right_gysj.png'></image></view>
+</view>
+<view class='money'>
+  <view class='money-l'>
+    <view class='money-l-c'>
+      <view class='money-l-c-l'></view>
+      <view class='money-l-c-r'>{{walletData.k_coin}}</view>
+    </view>
+  </view>
+  <view class='money-r' bindtap='onrecharge'>
+    <view class='money-r-img'><image src='/images/money.png'></image></view>
+    <view class='recharge'>我要充值</view>
+  </view>
+</view>
+<view class='line'></view>
+<view class='head'>
+  <view class='head-l'>我的收益</view>
+  <view class='head-r' bindtap='onlist' data-code='2'><text>收益明细</text> <image src='/images/right_gysj.png'></image></view>
+</view>
+<view class='money'>
+  <view class='money-l'>
+    <view class='money-l-c'>
+      <view class='money-l-c-l'>￥</view>
+      <view class='money-l-c-r'>{{walletData.income}}</view>
+    </view>
+  </view>
+  <view class='money-r' bindtap='oncash'>
+    <view class='money-r-img'><image src='/images/balance.png'></image></view>
+    <view class='recharge'>我要提现</view>
+  </view>
+</view>
+<view class='line'></view>

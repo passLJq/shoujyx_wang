@@ -1,0 +1,65 @@
+
+<view class="setImg">
+    <!-- <image class="setImg-img" 
+    style='width:{{imgWidth}}rpx;height:{{imgHeight}}rpx; top: {{top}}rpx; position:relative;' 
+    bindload="imageLoad" 
+    data-img="{{data.img_path}}" 
+    bindtap='zoom' 
+    src='{{data.img_path}}' /> -->
+     <zoomImgByView 
+          id='mapLayout'
+          bindload="imageLoad"
+          img_src="{{data.img_path}}"
+          view_width="{{viewWidth}}"
+          view_height="{{viewHeight}}"
+          style='top: {{top}}rpx; position:relative;'
+          /> 
+    <!-- <image mode='scaleToFill' 
+    src='../../../images/01.jpg' 
+    bindtouchstart='touchStartHandle' 
+    bindtouchmove='touchMoveHandle' 
+    bindload='load' 
+    style="width: {{ touch.scaleWidth }}px;height: {{ touch.scaleHeight }}px"></image> -->
+</view>
+<view class="setImg-bottom">
+  <button wx:if="{{albumId != -5}}" class="menu" bindtap='goPictureDetails'>
+      <view class="functional"><image style='width:36rpx;height:36rpx; margin-top: 18rpx;' src='/images/share.png' /></view>
+      <view class="functional"><text>详情</text></view>
+       <!-- <button class="button" open-type="share">
+       <image src='/images/share.png' />分享
+       </button> -->
+  </button>
+  
+  <view class="line-c"></view>
+
+  <view class="menu" bindtap='oneidt' >
+    <view class="functional"><image src='/images/icon-edit.png'/></view>
+    <view class='functional'><text>编辑</text></view>
+  </view>
+  <view class="line-c"></view>
+
+  <view class="menu" bindtap='onmv'>
+    <view class="functional"><image src='/images/mv.png' /></view>
+    <view class="functional"><text>移动</text></view>
+  </view>
+  <view class="line-c"></view>
+  <view wx:if='{{albumId != -2}}' class="menu" bindtap='onrm'>
+    <view class="functional"><image src='/images/rm.png' /></view>
+    <view class="functional"><text>删除</text></view>
+ </view>
+ <view class="line-c"></view>
+
+ <view wx:if='{{albumId > 0}}' class="menu" bindtap='setAlbum'>
+    <view class="functional"><image src='/images/cover.png' /></view>
+    <view class="functional"><text>设为封面</text></view>
+ </view>
+</view>
+
+<view class="b1" hidden="{{!mvAlbum}}">
+  <view class="b2">
+  <block wx:for="{{data.albumList}}">
+    <view class='category' bindtap="selectKeyword" data-type="mvAlbum" data-id="{{item.album_id}}" data-name="{{item.album_name}}">{{item.album_name}}</view>
+  </block>
+    <view class='category' bindtap="selectCancel" data-type="mvAlbum">取消</view>
+  </view>
+</view>

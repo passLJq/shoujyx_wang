@@ -1,0 +1,18 @@
+<view class='explain'>
+  <view class='title'>提现需下载手机影像APP操作</view>
+  <view class='title1'>下载步骤</view>
+  <view class='img'><image src='/images/down1.png'></image></view>
+  <view class='desc'>
+    <view class='desc-c'>
+      <view class='text'>
+              <text>  1.长按下方二维码，点击保存。
+        2.用微信打开“扫一扫”，从相册导入二维码。
+        3.导入后会自动跳转至下载页面，即可下载手机影像APP。</text>
+      </view>
+
+    </view>
+  </view>
+
+   <view class="img" class='wxDown' catchlongpress='baocun'><image src='/images/wxDown.png'></image></view> 
+   <view class='botton'><text>如有操作疑问请添加手机影像客服微信：sjyx009最终解释权归手机影像所有</text></view>
+</view>

@@ -1,0 +1,19 @@
+<view class='addAccount'>
+    <view class='table'>
+      <view wx:if='{{selectType == 1}}' bindtap='ontype' data-code='1' class='table-l'>支付宝</view>
+      <view wx:else data-code='1' bindtap='ontype' class='table-r'>支付宝</view>
+      <view wx:if='{{selectType ==2}}' bindtap='ontype' data-code='2' class='table-l'>银行卡</view>
+      <view wx:else data-code='2' bindtap='ontype' class='table-r'>银行卡</view>
+    </view>
+
+    <view class='accountInfo'>
+      <view class='accountName'>
+        <view class='zfb'>支付宝账号</view>
+        <view class='input'><input type='number'></input></view>
+      </view>
+      <view class='userName'>
+      
+      </view>
+    </view>
+
+</view>

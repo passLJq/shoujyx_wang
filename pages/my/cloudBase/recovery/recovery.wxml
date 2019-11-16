@@ -1,0 +1,48 @@
+<view class="line"></view>
+<view class="album-list">
+
+    <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="getCloudBaseWorksList">
+      <block wx:for="{{dataList}}">
+        <view class="alibum-list-img" data-val='{{item.doc_id}}' data-id="{{index}}" data-img="{{item.val}}"  bindtap='selectImg'>
+            <view wx:if="{{item.val}}" class="selectImg"><image  src='/images/selectd.png' /></view>
+            <view wx:else class="selectImg"><image  src='/images/selectd-1.png' /></view>
+            <image mode='aspectFill' src='{{item.image}}' />
+        </view>
+      </block>
+    </scroll-view>
+</view>
+
+<view class="setImg-bottom" >
+
+  <view class="menu"  bindtap='selectd'>
+    <view class="functional">
+      <image wx:if="{{!selectd}}" src='/images/check.png' />
+      <image wx:if="{{selectd}}" src='/images/check-1.png' />
+    </view>
+    <view class='functional'><text>全选</text></view>
+  </view>
+  <view class="line-c"></view>
+  <view class="menu" data-code="1" bindtap='restore'>
+    <view class="functional"><image src='/images/restore.png' /></view>
+    <view class="functional"><text>还原</text></view>
+    
+  </view>
+  <view class="line-c"></view>
+  <view class="menu" data-code="0" bindtap='restore'>
+    <view class="functional"><image src='/images/rm.png' /></view>
+    <view class="functional"><text>彻底删除</text></view>
+ </view>
+ <view class="line-c"></view>
+  <view class="menu" bindtap='delAll'>
+    <view class="functional"><image src='/images/empty.png' /></view>
+    <view class="functional"><text>清空回收站</text></view>
+ </view>
+</view>
+
+<view class="b1" hidden="{{!mvAlbum}}">
+  <view class="b2">
+  <block wx:for="{{data.albumList}}">
+    <view class='category' bindtap="selectKeyword" data-type="mvAlbum" data-id="{{item.album_id}}" data-name="{{item.album_name}}">{{item.album_name}}</view>
+  </block>
+  </view>
+</view>

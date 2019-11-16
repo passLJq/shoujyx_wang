@@ -1,0 +1,6 @@
+
+ <zoomImgByView 
+          id='mapLayout'
+          img_src="{{imgSrc}}"
+          view_width="{{viewWidth}}"
+          view_height="{{viewHeight}}"/> 

@@ -1,0 +1,5 @@
+<view class="message">
+  <text>{{message}}</text>
+  <text class="message-time">{{time}}</text>
+</view>
+

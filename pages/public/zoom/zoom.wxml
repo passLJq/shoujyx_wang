@@ -1,0 +1,5 @@
+<view class="container"> 
+    <view bindtouchmove="touchmoveCallback" bindtouchstart="touchstartCallback"> 
+        <image src="{{img}}" style="width: {{ touch.scaleWidth }}px;height: {{ touch.scaleHeight }}px;  margin-top: {{top}}px" mode="widthFix"  bindload="bindload"></image> 
+    </view> 
+</view>

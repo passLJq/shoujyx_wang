@@ -1,0 +1,13 @@
+<cover-view class="tips-233485">
+  <cover-view class="p-233485" style="z-index: 990">
+    <cover-view class="v-233485" style="z-index: 991">
+      <cover-view style="z-index: 992" class="text tit-233485">{{data.title || '提示'}}</cover-view>
+      <cover-view style="z-index: 992" class="text con-233485">{{data.content || ''}}</cover-view>
+    </cover-view>
+    <cover-view class="line"></cover-view>
+    <cover-view class="b-233485" style="justify-content: {{data.cancel ? 'space-between' : 'center'}}; padding: 0 40rpx;">
+      <cover-view bindtap="cancel" class="can-233485" wx:if="{{data.cancel}}" style="{{data.cancelColor?'color:'+data.cancelColor:''}}">{{data.cancel || '取消'}}</cover-view>
+      <cover-view bindtap="confirm" class="conf-233485" style="{{data.confirmColor?'color:'+data.confirmColor:''}}">{{data.confirm || '确认'}}</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>

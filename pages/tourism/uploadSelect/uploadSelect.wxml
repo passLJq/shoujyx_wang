@@ -1,0 +1,73 @@
+<view class='uploadSelect'>
+  <view class='spotAddress'>
+    <view class='spotAddress-l'>选择城市：</view>
+    <view wx:if='{{!cityId}}' class='spotAddress-r' bindtap='showCityPicker'>
+      <text>{{city}}</text>
+      <image  src='/images/right_gysj.png'></image>
+    </view>
+    <view wx:else class='spotAddress-r'>
+      <text>{{city}}</text>
+      <!-- <image src='/images/right_gysj.png'></image> -->
+    </view>
+  </view>
+
+  <view class='spot'>
+      <view class='spotAddress-l'>选择景点：</view>
+      <view wx:if='{{!spotId}}'  class='spotAddress-r' bindtap='selectSpot'>
+        <text>{{spotName}}</text>
+        <image src='/images/right_gysj.png'></image>
+      </view>
+      <view wx:else class='spotAddress-r'>
+        <text>{{spotName}}</text>
+        <!-- <image src='/images/right_gysj.png'></image> -->
+      </view>
+
+  </view>
+
+</view>
+
+<view class='uploadButton'>
+  <view data-id='1' bindtap='upload'>上传图片</view>
+  <view data-id='3' bindtap='upload'>上传图文</view>
+  <view data-id='2' bindtap='upload'>上传视频</view>
+</view>
+
+
+
+
+<view class="spot-select" wx:if='{{spotSelect}}'>
+  <view class='search-head'>
+    <view class='search'>
+      <image class='icon-search' src='/images/search.png'></image>
+      <input class='input' bindinput="getkeyword" value='{{keyword}}'></input>
+      <image class='icon-cancel' src='/images/icon-cancel.png' bindtap='keywordDel'></image>
+    </view>
+    <view class='search-button' bindtap='search'>搜索</view>
+  </view>
+  <scroll-view scroll-y style='height:100%;'>
+      <block wx:for='{{spotList}}'>
+      <view class='spotList' data-id='{{item.spotId}}' data-index='{{index}}' data-name='{{item.spotName}}' data-status='{{item.status}}' bindtap='onSpot'>
+        <view>
+          <view class='spot-name'>{{item.spotName}}</view>
+        </view>
+        <radio checked='{{item.status}}' color='#1790d7' class='spotSelectIcon' />
+      </view>
+      </block>
+    <view class='spot-bottom'></view>
+  </scroll-view>
+
+  <view class='spotCancel' bindtap='spotConfirm'>
+    <text>确认</text>
+  </view>
+</view>
+
+
+
+
+
+<city-picker class='address-select'
+    id="city-picker"
+    value="{{cityPickerValue}}" 
+    isShow="{{cityPickerIsShow}}"
+    bindsureclick="cityPickerOnSureClick"
+    bindcancelclick="cityPickerOnCancelClick" />

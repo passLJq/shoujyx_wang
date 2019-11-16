@@ -1,0 +1,148 @@
+<!--pages/activity/vote/vote.js.wxml-->
+<view>
+  <!-- <view class="share">
+        
+        <image class="vote-forward" src="/images/forward_red.png" />
+    </view> -->
+  <!-- 模态窗 -->
+  <view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <image class="modal-cancel-img" bindtap="onCancel" src="/images/01-pictureDetail-13.png" />
+    <view class="modal-title">温馨提示</view>
+    <view class="modal-content">
+      <!-- <view class="modal-input">
+            <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入数量"></input>
+            </view> -->
+      <view class="content-des">1幅作品1天最多投3票，今天的投票到达上限，您还可以为其他作品投票哦!</view>
+    </view>
+    <view class="modal-footer">
+      <!-- <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view> -->
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+  </view>
+
+  <button class="vote-share" open-type="share">
+    <image class="vote-forward" src="/images/forward_red.png" />
+  </button>
+  <!-- 滑块视图 -->
+  <view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block>
+        <swiper-item>
+          <image src="{{imgUrls[0]}}" class="slide-image" />
+        </swiper-item>
+        <swiper-item>
+          <image src="{{imgUrls[1]}}" class="slide-image" bindtap="goMobileMatch" />
+        </swiper-item>
+        <swiper-item>
+          <image src="{{imgUrls[2]}}" class="slide-image" bindtap="goHome" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 活动介绍 -->
+  <view class="activity-exp">
+    <view class="activity-exp-title">
+      <image class="activity-title-img" src="/images/explain.png" alt="" />
+      <text class="activity-title-name">活动说明</text>
+    </view>
+
+    <view class="activity-title1">
+      <!-- <view class="verticalLine"></view> -->
+      <text class="activity-name">活动名称</text>
+    </view>
+    <view class="activity-int-wrapper">
+      <text class="activity-int">改革开放四十周年摄影展暨湖南省上市公司协会第五届‘中盈广场杯’摄影大赛。</text>
+    </view>
+    <view class="activity-title2">
+      <!-- <view class="verticalLine"></view> -->
+      <text class="activity-name">活动奖励</text>
+    </view>
+    <view class="activity-reward">
+      <view>
+        <text class="reward">最佳网络人气奖：<text class="reward-num">25名</text></text>
+      </view>
+      <!-- <view>
+                <text class="reward">第1至第5名：获奖证书，<text class="reward-num">奖金800元</text></text>
+            </view>
+            <view>
+                <text class="reward">第6至第25名：获奖证书，<text class="reward-num">奖金300元</text></text>
+            </view> -->
+    </view>
+    <view class="activity-rule-wrapper">
+      <view class="activity-rule" bindtap="goRule">活动详细规则 >></view>
+    </view>
+  </view>
+  <!-- 活动介绍 -->
+  <view>
+    <view class="count_down_title">
+      <image class="count_down_img" src="/images/count_down.png" alt="" />
+      <text wx:if="{{timeEnd}}" class="count_down_text">活动投票倒计时</text>
+      <text wx:if="{{!timeEnd}}" class="count_down_text">活动投票已结束</text>
+    </view>
+  </view>
+  <!-- 倒计时 -->
+  <view class="count-down">
+    <view class="count-down-time">
+      <text class="time-set" space="true"><text style="font-weight:bold;">{{timeDay}}</text> 天</text>
+    </view>
+    <view class="count-down-time">
+      <text class="time-set" space="true"><text style="font-weight:bold;">{{timeHour}}</text> 时</text>
+    </view>
+    <view class="count-down-time">
+      <text class="time-set" space="true"><text style="font-weight:bold;">{{timeMinute}}</text> 分</text>
+    </view>
+    <view class="count-down-time">
+      <text class="time-set" space="true"><text style="font-weight:bold;">{{timeSecond}}</text> 秒</text>
+    </view>
+  </view>
+  <!-- 搜索 -->
+  <view>
+    <view class="search">
+      <input type='text' placeholder='编号 / 作者名字' confirm-type='search' bindinput='inputBind' bindconfirm='query'></input>
+      <view bindtap="searchSure" class="searchSure">搜索</view>
+    </view>
+  </view>
+  <!-- 投票榜单 -->
+  <view class="vote-list">
+    <view data-num="1" class="list-menu {{_num==1?'active':''}}" bindtap="menuClick">
+      <text bindtap="newestVote">最新投票</text>
+    </view>
+    <view data-num="2" class="list-menu {{_num==2?'active':''}}" bindtap="menuClick">
+      <text bindtap="realTimeList">实时榜单</text>
+    </view>
+    <view data-num="3" class="list-menu {{_num==3?'active':''}}" bindtap="menuClick">
+      <text bindtap="numberSort">编号排序</text>
+    </view>
+    <view class="vote-line"></view>
+  </view>
+
+  <view>
+    <view class="kongge"></view>
+  </view>
+
+  <view>
+    <!-- <scroll-view scroll-y  style="height: 600px;" scroll-top='{{topNum}}' bindscroll="scrolltoupper"> -->
+    <view class="imgList">
+      <view class="imgList-box" wx:for="{{imgList}}">
+        <view class='imgList-img'>
+          <!-- <image class="imgList-img-url" bindtap="imgPreview"  mode="{{'center'}}" lazy-load="{{'true'}}" data-list="{{imgPreviewList}}" data-src="{{item.picUrl}}" src="{{item.picUrl}}" /> -->
+          <image class="imgList-img-url" bindtap="imgPreview" mode="{{'center'}}" lazy-load="{{'true'}}" data-index="{{index}}" data-list="{{imgPreviewList}}" data-src="{{item.picUrl}}" src="{{item.picUrl}}" />
+          <view class="imgList-img-info">
+            <text space="true">{{item.id}}号 {{item.authorName}}</text>
+          </view>
+        </view>
+        <view class="imgList-des">{{item.picName}}</view>
+        <view class="imgList-number">
+          <text space="true">{{item.voteNum}} </text>
+          <text class="imgList-number-ticket">票</text>
+        </view>
+        <view class="imgList-button">
+          <button wx:if="{{canIUse}}" bindtap="buttonTrigger" data-index="{{index}}" data-id="{{item.id}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="button" disabled="{{item.num==3?true:false}}">立即投票</button>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{imgListNull}}" class="imgListNull">没有找到您要的作品</view>
+    <!-- </scroll-view> -->
+  </view>
+</view>

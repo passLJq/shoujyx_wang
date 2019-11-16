@@ -1,0 +1,62 @@
+<view class="line"></view>
+<view class="edit">
+  <view class="edit-title">
+    <text>作品标题</text>
+    <input class="edit-title-input" type='text' value='{{data.doc_title}}' bindinput="blur"></input>
+  </view>
+  <view class="edit-title">
+    <text>作品分类</text>
+    <view class="edit-category" bindtap='oncategory'>
+      <text>{{type_name}}</text>
+      <image src='/images/right_gysj.png' />
+    </view>
+  </view>
+
+  <view class="edit-title">
+    <text>个人云库</text>
+    <view class="edit-category" bindtap='onalbum'>
+      <text>{{album_name}}</text>
+      <image src='/images/right_gysj.png' />
+    </view>
+  </view>
+  <view class="edit-desc" bindblur="describe">
+    <text>作品描述</text>
+    <textarea type='text' value='{{data.describe}}' bindinput='descblur'> </textarea>
+  </view>
+
+  <view class="edit-title">
+    <text>作品标签</text>
+    <input class="edit-title-input" placeholder="多标签以逗号隔开" type='text' value='{{data.label}}' bindinput='onlabel'></input>
+  </view>
+  <view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <radio value="1" checked="{{data.ispublic==1?1:''}}" />公开
+      <radio value="0" checked="{{data.ispublic?'':1}}" class='gongk' />不公开
+    </radio-group>
+  </view>
+  <view class="button">
+    <view class="cancel" bindtap='oncancel'>
+      <text>取消</text>
+    </view>
+    <view class="save" bindtap='onSubmit'>
+      <text>保存</text>
+    </view>
+  </view>
+
+</view>
+
+<view class="b1" hidden="{{!category}}">
+  <view class="b2">
+    <block wx:for="{{data.type_list}}">
+    <view class='category' bindtap="selectKeyword" data-type="category" data-id="{{item.id}}" data-name="{{item.type}}">{{item.type}}</view>
+    </block>
+  </view>
+</view>
+
+<view class="b1" hidden="{{!album}}">
+  <view class="b2">
+  <block wx:for="{{data.albumList}}">
+    <view class='category' bindtap="selectKeyword" data-type="album" data-id="{{item.album_id}}" data-name="{{item.album_name}}">{{item.album_name}}</view>
+  </block>
+  </view>
+</view>

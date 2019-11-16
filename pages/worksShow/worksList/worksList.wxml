@@ -1,0 +1,136 @@
+<!--pictureDetails.wxml 图片详情页面-->
+<view class="container attention">
+    <!--商品详情上面部分-->
+    <view class="pictureDetails-content" wx:for="{{listData}}" wx:for-index="index">
+        <view class="pictureDetails-top" >
+          <!--资料-->
+          <view class="pictureDetails-top-data">
+            <view class="pictureDetails-top-data-left fl">
+              <view class="pictureDetails-top-data-left-left fl" data-id="{{item.author_id}}" bindtap='onuser'>
+                <image src="{{item.author_portrait}}" />
+              </view>
+              <view class="pictureDetails-top-data-left-right fl">
+                <view class="pictureDetails-top-data-left-right-top" data-id="{{item.author_id}}" bindtap='onuser'>
+                  <span class="fl">{{item.author_name}}</span>
+                </view>
+                <view class="pictureDetails-top-data-left-right-bottom">
+                  <view class="pictureDetails-top-data-left-right-bottom-left">
+                    <block wx:for="{{item.rank}}" wx:for-item="items">
+                     <image wx:if="{{items}}" src="/images/stars.png" />
+                     <image wx:else src="/images/01-pictureDetail-12.png" />
+                    </block>
+                  </view>
+                  <view class="pictureDetails-top-data-left-right-bottom-center">
+                    <span class="fl">{{item.upload_time}}</span>
+                  </view>
+                  <view class="pictureDetails-top-data-left-right-bottom-right">
+                    <image class="fl" src="/images/01-pictureDetail-02.png" />
+                    <span class="fl">{{item.view_num}}</span>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+        <view class="  centent-follow" catchtap='changeFollow' data-key='{{index}}' data-status="{{item.is_follow}}" data-userid="{{item.author_id}}">
+              <view wx:if="{{item.is_follow == 1}}"  class="centent-follow-text">
+                <text>取消关注</text>
+              </view>
+              <view wx:else class="centent-follow-text_a1">
+                <text>+关注</text>
+              </view>
+        </view>
+
+
+
+          </view>
+
+          <view class="pictureDetails-top-swiper">
+            <image src="{{item.doc_path}}" data-id='{{item.worksShowId}}' bindtap='onImg' mode="widthFix"/>
+            <!-- <view class="botton">{{item.title}}</view> -->
+          </view>
+          <!--信息展示-->
+          <view class="pictureDetails-top-message">
+              <view class="pictureDetails-top-message-top">
+                <p>{{item.title}}</p>
+              </view>
+              <view class="pictureDetails-top-message-bottom clearfix">
+                <view class="pictureDetails-top-message-bottom-left fl">
+                  <span>
+                    <image src="/images/02-attention-01.png" />
+                  </span>  
+                  <text>{{item.goodCount}}</text>
+                </view>
+                <view class="pictureDetails-top-message-bottom-center fl">
+                    <span>
+                      <image src="/images/02-attention-02.png" />
+                    </span> 
+                    <text>{{item.commentCount}}</text>
+                </view>
+                <!-- <view class="pictureDetails-top-message-bottom-right fr"  bindtap="share">
+                  <span>
+                    <image src="/images/02-attention-03.png" />
+                  </span>
+                </view> -->
+
+              </view>
+          </view>
+
+        </view>
+     
+    </view>
+  
+  
+   
+
+ 
+    <!--分享模态框-->
+    <!-- <view class="pictureDetails-share {{shareActive}}" catchtouchmove="true">
+      <view class="pictureDetails-share-content">
+        <view class="pictureDetails-share-content-top">
+          <span>分享</span>
+        </view>
+        <view class="pictureDetails-share-content-bottom">
+          <view class="ul">
+            <view class="li">
+              <view class="li-top">
+                <image src="/images/01-pictureDetail-14.png" />
+              </view>
+              <view class="li-bottom">
+                <span>朋友圈</span>
+              </view>
+            </view>
+            <view class="li">
+              <view class="li-top">
+                <image src="/images/01-pictureDetail-15.png" />
+              </view>
+              <view class="li-bottom">
+                <span>微信</span>
+              </view>
+            </view>
+            <view class="li">
+              <view class="li-top">
+                <image src="/images/01-pictureDetail-16.png" />
+              </view>
+              <view class="li-bottom">
+                <span>打赏</span>
+              </view>
+            </view>
+            <view class="li">
+              <view class="li-top">
+                <image src="/images/01-pictureDetail-17.png" />
+              </view>
+              <view class="li-bottom">
+                <span>举报</span>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="pictureDetails-share-content-delect" bindtap="shareDelect">
+          <image src="/images/01-pictureDetail-13.png" />
+        </view>
+      </view>
+    </view> -->
+</view>
+<!-- <view wx:if="{{!loginStatus}}">
+  <include src='/pages/public/verify/verify.wxml' />
+</view> -->

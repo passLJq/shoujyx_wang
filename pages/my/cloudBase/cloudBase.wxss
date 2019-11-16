@@ -1,0 +1,202 @@
+
+
+
+.line{
+  height: 20rpx;
+  width:100%;
+  background-color: #f5f5f5;
+}
+.cloud-head{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50rpx;
+ 
+  margin-top: 30rpx;
+}
+.cloud-upload{
+  width: 32.5%;
+  font-size: 26rpx;
+  height: 50rpx;
+  background-color: #1790d7;
+  line-height: 50rpx;
+  border-radius: 6rpx;
+  color: #fff;
+   margin-left: 20rpx;
+}
+.cloud-upload image{
+  width: 26rpx;
+  height: 20rpx;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+.cloud-upload text{
+  margin-left: 15rpx;
+}
+.cloud-head-r{
+  width: 62%;
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+.head-r-content{
+  float:right;
+  margin-right: 20rpx;
+  color: #666;
+  font-size: 24rpx;
+  
+}
+.head-r-upgrade{
+  float: right;
+  height: 50rpx;
+  background-color:#f34755; 
+  width: 140rpx; 
+  border-radius:6rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+.cloud-album{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.album{
+  float: left;
+  height: 227rpx;
+  width: 218.6rpx;
+  border:0.33rpx solid #f5f5f5;
+  border-radius: 8rpx;
+  margin: 20rpx auto 20rpx 20rpx;
+}
+.album1{
+  float: left;
+  height: 220rpx;
+  width: 100%;
+  border:0.33rpx solid #f5f5f5;
+  border-radius: 8rpx;
+}
+.album2{
+  display: flex;
+  flex-direction: column;
+  float: left;
+  height: 213rpx;
+  width: 100%;
+  border:0.33rpx solid #f5f5f5;
+  border-radius: 8rpx;
+}
+.album2 image{
+  height: 145rpx;
+  width: 200rpx;
+  margin: 8rpx 8rpx 8rpx 8rpx;
+}
+.album2 text{
+  line-height:36rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: #333;
+  padding:0 10rpx;
+}
+.cloud-title{
+  margin:10rpx 20rpx 10rpx 0rpx;
+  font-size: 26rpx;
+  color: #333;
+  width:100%;
+  float: left;
+  clear: both;
+}
+
+.cloud-title text{margin:0rpx 0rpx 0rpx 20rpx; color: #333;}
+/* 遮罩层 */
+.b1{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;background:rgba(0,0,0,0.4);
+  overflow: hidden;
+  z-index: 100;
+}
+.b2{
+  display: flex;
+  flex-direction:column;
+  width: 87.7333%; 
+  margin:35% auto;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+.category{
+  height: 88rpx;
+  width: 88%;
+  border-bottom:1px #e9e9e9 solid; 
+  margin:0 auto;
+  text-align: center;
+  font-size:30rpx;
+  line-height:88rpx;
+  color: #333;
+}
+.albumAdd{
+  height: 420rpx;
+  width: 80%;
+  border-bottom:1px #e9e9e9 solid; 
+  text-align: center;
+  margin:0 auto;
+
+  color: #333;
+}
+.albumAdd-title{
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
+  font-size:30rpx;
+  color:#333;
+}
+.albumAdd-content{
+  font-size:26rpx;
+  color:#333;
+  padding-bottom: 30rpx;
+}
+.albumAdd-list{
+  flex-direction: row;
+  width: 100%;
+  height: 100rpx;
+  margin-top: 20rpx;
+  
+  
+}
+.albumadd-input{
+  height: 80rpx;
+  width: 100%;
+  border:1rpx solid #ccc;
+  border-radius: 6rpx;
+  font-size:26rpx;
+  margin-bottom: 40rpx;
+}
+
+.button-cancel{
+  float: left;
+  height: 70rpx;
+  width:148rpx;
+  background-color:#f5f5f5;  
+  border-radius: 6rpx;
+  margin-left: 5rpx;
+  font-size:30rpx;
+  line-height: 70rpx;
+  border: 1rpx solid #ccc;
+  color: #666;
+}
+.button-add{
+   float: right;
+  height: 70rpx;
+  width:148rpx;
+  background-color:#1790d7;  
+  border-radius: 6rpx;
+  margin-left: 5rpx;
+  font-size:30rpx;
+  line-height: 70rpx;
+  border: 1rpx solid #1790d7;
+  color: #fff;
+}
+
+
+
+/* 遮罩层 */

@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor": "#dd561c",
+  "navigationBarTitleText": "WeChat",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "list": "/component/list/list"
+  }
+}

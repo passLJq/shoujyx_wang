@@ -1,0 +1,126 @@
+{
+  "pages": [
+    "pages/img/img",
+    "pages/pictureDetails/pictureDetails",
+    "pages/my/wallet/recharge/recharge",
+    "pages/my/wallet/wallet",
+    "pages/my/wallet/explain/explain",
+    "pages/my/wallet/account/account",
+    "pages/my/wallet/addAccount/addAccount",
+    "pages/my/wallet/cash/cash",
+    "pages/my/wallet/detail/detail",
+    "pages/my/wallet/payList/payList",
+    "pages/uploadHome/uploadHome",
+    "pages/upload/upload",
+    "pages/uploadWorks/uploadWorks",
+    "pages/tourism/tourismList/tourismList",
+    "pages/tourism/bagUpload/bagUpload",
+    "pages/tourism/uploadSelect/uploadSelect",
+    "pages/tourism/spotRecommend/spotRecommend",
+    "pages/tourism/recommendSuccess/recommendSuccess",
+    "pages/tourism/search/search",
+    "pages/tourism/worksList/worksList",
+    "pages/tourism/tourism",
+    "pages/worksShow/myShowList/myShowList",
+    "pages/groupDetail/groupDetail",
+    "pages/activity/activity",
+    "pages/worksShow/worksShow",
+    "pages/worksShow/albumSelect/albumSelect",
+    "pages/worksShow/worksDetails/worksDetails",
+    "pages/worksShow/worksList/worksList",
+    "pages/worksShow/worksShowList/worksShowList",
+    "pages/my/cloudBase/video/video",
+    "pages/my/cloudBase/video/setImg/setImg",
+    "pages/activity/contestInfo/contestInfo",
+    "pages/my/myset/data/data",
+    "pages/my/cloudBase/recovery/recovery",
+    "pages/my/myset/personalData/selectImg/selectImg",
+    "pages/public/contentInfo/contentInfo",
+    "pages/public/main/main",
+    "pages/public/changeUser/changeUser",
+    "pages/public/login/login",
+    "pages/public/zoom/zoom",
+    "pages/my/myset/personalData/dataEditing/dataEditing",
+    "pages/my/my",
+    "pages/my/myset/personalData/personalData",
+    "pages/my/cloudBase/cloudBase",
+    "pages/my/cloudBase/album/album",
+    "pages/my/cloudBase/album/setImg/setImg",
+    "pages/my/cloudBase/album/setImg/edit/edit",
+    "pages/my/collection/collection",
+    "pages/my/message/message",
+    "pages/my/myset/myset",
+    "pages/my/message/messageDetail/messageDetail",
+    "pages/activity/matchdetail/matchdetail",
+    "pages/activity/matchVideo/matchVideo",
+    "pages/my/myset/feedback/feedback",
+    "pages/userhome/userhome",
+    "pages/my/myUserList/myUserList",
+    "pages/attention/attention",
+    "pages/search/search",
+    "pages/activity/activityend/activityend",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/activity/rule/rule",
+    "pages/activity/vote/vote",
+    "pages/my/selectImg/selectImg",
+    "pages/public/imgsize/imgsize"
+  ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "name": "packageA",
+      "pages": [
+        "pages/test/test"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#e45d23",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/switch666/b-home5.png",
+        "iconPath": "images/switch666/b-home4.png",
+        "pagePath": "pages/img/img",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/switch666/b-match5.png",
+        "iconPath": "images/switch666/b-match4.png",
+        "pagePath": "pages/activity/activity",
+        "text": "活动"
+      },
+      {
+        "selectedIconPath": "images/switch666/b-upload3.png",
+        "iconPath": "images/switch666/b-upload2.png",
+        "pagePath": "pages/uploadHome/uploadHome",
+        "text": "上传"
+      },
+      {
+        "selectedIconPath": "images/switch666/b-follow1.png",
+        "iconPath": "images/switch666/b-follow.png",
+        "pagePath": "pages/attention/attention",
+        "text": "关注"
+      },
+      {
+        "selectedIconPath": "images/switch666/b-man5.png",
+        "iconPath": "images/switch666/b-man4.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxc50118176f4a9525",
+    "wx2c526457217bb60a"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

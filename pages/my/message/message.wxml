@@ -1,0 +1,46 @@
+<view class="line"></view>
+<view class="production">
+  <view wx:if="{{onnum==1}}" bindtap='onType' class="production-type" data-code="1">社交消息</view>
+  <view  wx:else bindtap='onType' class="production-type-1" data-code="1">社交消息</view>
+  <view wx:if="{{onnum==2}}" bindtap='onType' class="production-type" data-code="2">系统消息</view>
+  <view wx:else bindtap='onType' class="production-type-1" data-code="2">系统消息</view>
+</view>
+
+<view wx:if="{{onnum==1}}"> 
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadMessage">
+  <view class="message">
+    <block wx:for="{{messageList}}">
+    <view class="message-row">
+      <view class="message-row-l">
+        <text class="message-userName" data-id="{{item.user_id}}" bindtap='onuser'>@{{item.user_name}}</text>
+        <text wx:if="{{onnum==1}}" class="message-type">{{item.info_content}}</text>
+        <text wx:else class="message-type">{{item.content}}</text>
+        <text wx:if="{{item.info_type != 1}}" class="message-works" bindtap='onworks' data-type="{{item.info_type}}" data-id="{{item.doc_id}}">{{item.doc_name}}</text>
+      </view>
+      <view class="message-row-r">
+        <text class="message-time">{{item.time}}</text>
+        <image class="message-icon" src='/images/right_gysj.png'/>
+      </view>
+    </view>
+    </block>
+  </view>
+</scroll-view>
+</view>
+
+<view wx:if="{{onnum==2}}"> 
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadMessage">
+  <view class="message">
+    <block wx:for="{{messageList}}">
+    <view class="message-row" data-msg='{{item.content}}' data-time='{{item.time}}' bindtap="onmessage">
+      <view class="message-row-l">
+        <text class="message-type">{{item.content}}</text>
+      </view>
+      <view class="message-row-r">
+        <text class="message-time">{{item.time}}</text>
+        <image class="message-icon" src='/images/right_gysj.png'/>
+      </view>
+    </view>
+    </block>
+  </view>
+</scroll-view>
+</view>

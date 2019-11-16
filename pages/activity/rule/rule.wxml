@@ -1,0 +1,40 @@
+<!--pages/rule/.wxml-->
+<view class="rule_title"><image src='/images/rule_img1.png' /></view>
+<view class='activity_Name'>
+  <span><i></i><h1>活动名称</h1></span>
+  <span class="Explain">改革开放四十周年摄影展暨湖南省上市公司协会第五届‘中盈广场杯’摄影大赛。</span>
+</view>
+<view class='activity_Name'>
+  <span><i></i><h1>活动介绍</h1></span>
+  <span class="Explain">2018年是全面贯彻党的十九大精神的开局之年，也是改革开放四十周年。为了记录湖南资本市场改革开放以来的发展成就，展示湖南上市公司开拓创新、奋发向上的精神面貌，湖南省上市公司协会将举办以“改革开放 颂美时代”为主题的摄影展和摄影比赛。</span>
+</view>
+<view class='activity_Name'>
+  <span><i></i><h1>投票时间</h1></span>
+  <span class="Explain">
+    <image src='/images/rule_img2.png' />开始时间：2018-11-26 00:00:00
+  </span>
+  <span class="Explain1">
+    <image src='/images/rule_img3.png' />结束时间：2018-12-09 23:59:59
+  </span>
+</view>
+<view class='activity_Name'>
+  <span><i></i><h1>奖励规则</h1></span>
+  <span class="Explain">经过评委初步评选后，将所有入选作品（<em>300</em> 幅）进行集中展示并开通大众投票功能，投票时间为<em>20</em> 天，最终按得票高低评出 <em>25</em> 件作品即为最佳网络人气奖。</span>
+</view>
+<view class='activity_Name'>
+  <span><i></i><h1>投票规则</h1></span>
+  <span class="Explain">
+    <p>1、每个用户每天为每幅作品可投3票（不限作品幅数）</p>
+    <p>2、若发现恶意刷票，系统将剔除刷票成绩，且经劝阻无效者，将关闭其投票通道。</p>
+  </span>
+</view>
+<view class='activity_Name'>
+  <span><i></i><h1>活动奖励</h1></span>
+  <span class="Explain">
+   <p>最佳网络人气奖：<em>25</em> 名</p>
+   <p>第1至第5名：获奖证书，奖金 <em>800</em> 元</p>
+   <p>第6至第25名：获奖证书，奖金 <em>300</em> 元</p>
+  </span>
+</view>
+
+

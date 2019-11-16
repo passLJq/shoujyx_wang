@@ -1,0 +1,124 @@
+<view class='head'>
+  <!-- <view class='search'>
+    <image src='/images/search.png' bindtap='search'></image>
+  </view> -->
+  <view class='head-l'>美景地推荐</view>
+  <view class='head-c'><image src='/images/che.png'  bindtap='search'></image></view>
+  <view class='head-r' bindtap='onMore'>更多</view>
+  <view class='head-icon' bindtap='onrecommend'><image src='/images/right_gysj.png'></image></view>
+</view>
+
+<view>
+    <scroll-view scroll-x class="scroll-works" >
+    <block wx:for="{{data}}">
+      <view class='album_dt'>
+      <image class='list' data-name='{{item.name}}' data-id='{{item.id}}' src='{{item.path}}' mode='aspectFill' bindtap='showDetail' />
+       <view class='album_title'>{{item.name}}</view> 
+      </view>
+    </block>
+    </scroll-view>
+</view>
+
+<view>
+
+<view class='line'></view>
+<view class="container attention">
+    <block wx:for='{{listData}}'  wx:for-index="index">
+    <view class="pictureDetails-content">
+        <view class="pictureDetails-top" >
+          <!--资料-->
+          <view class="pictureDetails-top-data">
+            <view class="pictureDetails-top-data-left fl">
+              <view class="pictureDetails-top-data-left-left fl" data-id="{{item.author_id}}" bindtap='onuser'>
+                <image src="{{item.author_portrait}}" />
+              </view>
+              <view class="pictureDetails-top-data-left-right fl">
+                <view class="pictureDetails-top-data-left-right-top" data-id="{{item.author_id}}" bindtap='onuser'>
+                  <span class="fl">{{item.author_name}}</span>
+                </view>
+                <view class="pictureDetails-top-data-left-right-bottom">
+                  <view class="pictureDetails-top-data-left-right-bottom-left">
+                    <block wx:for="{{item.rank}}" wx:for-item="items">
+                     <image wx:if="{{items}}" src="/images/stars.png" />
+                     <image wx:if="{{!items}}" src="/images/stars_1.png" />
+                    </block>
+                  </view>
+                  <view class="pictureDetails-top-data-left-right-bottom-center">
+                    <span class="fl">{{item.upload_time}}</span>
+                  </view>
+                  <view class="pictureDetails-top-data-left-right-bottom-right">
+                    <image class="fl" src="/images/01-pictureDetail-02.png" />
+                    <span class="fl">{{item.view_num}}</span>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+        <view class="centent-follow" catchtap='changeFollow' data-key='{{index}}' data-status="{{item.isFollow}}" data-userid="{{item.author_id}}">
+              <view wx:if="{{item.isFollow}}" class="centent-follow-text">
+                <text>取消关注</text>
+              </view>
+              <view wx:else class="centent-follow-text_a1">
+                <text>+关注</text>
+              </view>
+        </view>
+
+
+
+          </view>
+
+          <view class="pictureDetails-top-swiper">
+            <image src="{{item.doc_path}}" data-id='{{item.doc_id}}' data-group='{{item.isDouble}}' bindtap='onImg' mode="widthFix"/>
+            <view class="botton">{{item.doc_title}}</view>
+          <!-- <view wx:if='{{item.isDouble==1}}' class='group'>
+            <image src='/images/mosaic.png'></image>
+          </view> -->
+
+          <view  wx:if='{{item.isDouble==2}}' class='group'>
+            <!-- <image src='/images/mosaic.png'></image> -->
+            <text>图文</text>
+            <!-- <text wx:elif='{{item.fileType==0}}'>图片</text>
+            <text wx:else>视频</text> -->
+          </view> 
+
+          </view>
+          <!--信息展示-->
+          <view class="pictureDetails-top-message">
+              <view class="pictureDetails-top-message-top">
+                <p>{{item.describe}}</p>
+              </view>
+              <view class="pictureDetails-top-message-bottom clearfix">
+                <view class="pictureDetails-top-message-bottom-left fl">
+                  <span>
+                    <image src="/images/02-attention-01.png" />
+                  </span>  
+                  <text>{{item.good_num}}</text>
+                </view>
+                <view class="pictureDetails-top-message-bottom-center fl">
+                    <span>
+                      <image src="/images/02-attention-02.png" />
+                    </span> 
+                    <text>{{item.comment_num}}</text>
+                </view>
+                <view class="pictureDetails-top-message-bottom-right1 fr"  data-id='{{item.spotId}}' data-name='{{item.spotName}}' bindtap='onspot'>{{item.address}}</view> 
+                 <view class="pictureDetails-top-message-bottom-right fr"  bindtap="share">
+                  <span>
+                    <image src="/images/icon_wz.png"/>
+                  </span>
+                </view> 
+
+              </view>
+          </view>
+
+        </view>
+     
+    </view>
+    </block>
+</view>
+</view>
+
+
+<view class='addPicture' bindtap='spot'>
+  <!-- <text>+</text> -->
+  <image src='/images/add_icon.png'></image>
+</view>

@@ -1,0 +1,16 @@
+<view class="line"></view>
+<view class="album-list">
+  <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="getCloudBaseWorksList">
+        <block wx:for="{{dataList}}">
+      <view class="alibum-list-img" bindtap='onImg' data-id='{{item.doc_id}}'>
+          <image mode='aspectFill' src='{{item.image}}' />
+            <view class="video" data-imgid="{{item.imgId}}">
+              <view class="album-fd">
+                  <image src='/images/play.png'/>
+              </view>
+          </view>
+
+      </view>
+    </block>
+  </scroll-view>
+</view>

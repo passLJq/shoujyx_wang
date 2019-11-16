@@ -1,0 +1,12 @@
+<cover-view style="z-index:999" class="choose-12138">
+  <cover-view class="up">
+    <cover-view class="view" bindtap="chooseHandler" data-type="0">拍照</cover-view>
+    <cover-view class="line"></cover-view>
+    <cover-view class="view view2" bindtap="chooseHandler" data-type="1">手机相册</cover-view>
+    <cover-view class="line"></cover-view>
+    <cover-view class="view" bindtap="chooseHandler" data-type="2">手机影像云库</cover-view>
+  </cover-view>
+  <cover-view class="qx" bindtap="closeChoose">
+   <cover-view class="text">取消</cover-view>
+  </cover-view>
+</cover-view>

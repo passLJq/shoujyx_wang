@@ -1,0 +1,47 @@
+.worksHead{
+  display: flex;
+  flex-direction: row;
+  height: 90rpx;
+  width: 94.5%;
+  margin-left: 20rpx;
+}
+.head-l{
+  width: 50%;
+  height: 90rpx;
+  font-size: 28rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #1790d7;
+  border-bottom: 1rpx solid #1790d7;
+}
+.head-r{
+  width: 50%;
+  height: 90rpx;
+  font-size: 28rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.worksList{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.works{
+  margin-top: 20rpx;
+  float: left;
+  width: 345rpx;
+  height: 460rpx;
+  margin-left: 20rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.worksImg{
+  width: 345rpx;
+  height: 380rpx;
+}
+.worksImg image{
+    width: 345rpx;
+  height: 380rpx;
+}
+.works text{
+  line-height: 80rpx;
+}

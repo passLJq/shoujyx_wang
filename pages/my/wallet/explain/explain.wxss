@@ -1,0 +1,53 @@
+.explain{
+  width: 100%;
+}
+.title{
+  font-size: 28rpx;
+  margin-top: 80rpx;
+  color: #333333;
+  width: 100%;
+  text-align: center;
+}
+.title1{
+  font-size: 28rpx;
+  margin-top: 80rpx;
+  color: #333333;
+  width: 100%;
+  text-align: center;
+}
+.img{
+  text-align: center;
+}
+.img image{
+  width: 24rpx;
+  height: 22rpx;
+}
+.desc-c{
+  width: 90%;
+  height: 284rpx;
+  border:1rpx solid #DDDDDD;
+  font-size: 28rpx;
+  margin: 0 auto;
+  line-height: 70rpx;
+  margin-top: 30rpx;
+}
+.desc-c .text{
+  margin-left: 20rpx;
+}
+.wxDown{
+  text-align: center;
+  margin-top: 40rpx;
+}
+.wxDown image{
+  width: 178rpx;
+  height: 178rpx;
+}
+.botton{
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 26rpx;
+  color: #333333;
+  margin-top: 40rpx;
+  line-height: 40rpx;
+}

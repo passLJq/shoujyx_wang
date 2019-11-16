@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+      "city-picker": "/pages/public/component/city-picker/city-picker"
+    }
+
+}

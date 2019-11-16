@@ -1,0 +1,51 @@
+<view class="header">
+  <input class="title" placeholder="输入图文标题（必填）" focus="{{isFocus}}" bindblur="offTitle" bindinput="getTitle" value="{{title}}"></input>
+  <textarea placeholder="输入图文作品描述" bindinput="getContent" value="{{content}}" maxlength="-1"></textarea>
+</view>
+
+<view class="list">
+  <view class="item" wx:for="{{list}}">
+    <view class="xh"><text>{{index+1}}</text></view>
+    <view class="imgBox" wx:if="{{item.image}}">
+      <image src="{{item.image}}"></image>
+      <view class="sc" bindtap="delImg" data-index="{{index}}">
+        <view class="iconfont icon-Group-copy"></view>
+      </view>
+    </view>
+    <view class="imgBox" wx:else>
+      <view class="iconfont icon-tianjia addImg" bindtap="addImg" data-index="{{index}}" data-type="justOne"></view>
+    </view>
+    <view class="right">
+      <textarea auto-height maxlength="-1" placeholder="请输入图片说明" bindinput="getItemContent" data-index="{{index}}" value="{{item.desc}}"></textarea>
+      <view>
+        <view bindtap="itemHandler" data-index="{{index}}" data-type="0" hidden="{{index == 0}}">
+          <view class="botton iconfont icon-shangjiantou-copy"></view>
+        </view>
+        <view bindtap="itemHandler" data-index="{{index}}" data-type="1" hidden="{{index == list.length - 1}}">
+          <view class="botton iconfont icon-xiajiantou-copy"></view>
+        </view>
+        <view bindtap="itemHandler" data-index="{{index}}" data-type="2">
+          <view class="botton iconfont icon-Group-copy"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom">
+    <view class="iconfont icon-tianjia addItem" bindtap="addImg"></view>
+    <view class="bb">
+      <view hidden="{{list.length < 2}}" bindtap="preview">预览</view>
+    </view>
+    <view class="tis" hidden="{{!isTis}}" bindtap="addImg">
+    <!-- <view class="tis hidet" bindtap="addImg"> -->
+      <i></i>
+      <text>点击添加图片</text>
+    </view>
+  </view>
+</view>
+
+<!-- 图片选择的弹窗组件 -->
+<modal wx:if="{{showChoose}}" bind:handler="chooseHandler" bind:close="closeChoose"></modal>
+
+<!-- 提示组件 -->
+<tips wx:if="{{tips}}" bind:handler="tipsHandler" data="{{tips}}"></tips>

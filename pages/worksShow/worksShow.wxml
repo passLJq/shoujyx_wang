@@ -1,0 +1,44 @@
+<view wx:if="{{!isEmpty}}" class='isEmpty'>
+<image src='/images/worksEmpty.png' />
+<view>你还没有{{worksName}}，去制作{{worksName}}</view>
+<view class='worksAdd' bindtap='worksMake'>+{{worksName}}制作</view>
+</view>
+<view wx:else>
+<view class='content'>
+  <view class='line'></view>
+  <block wx:for="{{data}}">
+  <view class="worksShow">
+    <view class="worksShow-l">
+      <image src='{{item.image}}' data-id="{{item.worksShowId}}" mode='aspectFill' bindtap='onimg' />
+      <view class="worksShow-status"><text wx:if="{{item.status==1}}">已发布</text><text wx:else>未发布</text></view>
+    </view>
+    <view class="worksShow-r">
+      <view class="one">
+        <view class="title"><view class='title-text'>{{item.worksShowTitle}} </view></view>
+        <view class="rm" data-id="{{item.worksShowId}}" data-index='{{index}}' bindtap='worksDel'><image src='/images/rm.png' /></view>     
+      </view>
+      <view class="number">
+        <view class="view">浏览量: {{item.view_num}}</view>
+        <view class="share">点赞数：{{item.good_num}}</view>
+      </view>
+      <view class="button">
+        <button data-id="{{item.worksShowId}}" data-code='{{item.code}}' class='edit' bindtap='worksEdit'>编辑</button>
+        <button wx:if="{{item.status==0}}"  data-id="{{item.worksShowId}}" data-index="{{index}}" data-status='{{item.status}}' class='worksRelease' bindtap='worksRelease'>发布</button>
+                <button wx:else  data-id="{{item.worksShowId}}" data-index="{{index}}" data-status='{{item.status}}' class='worksRelease-1' bindtap='worksRelease'>取消发布</button>
+        <button id="{{index}}" aa="{{item.index}}" class='bg' open-type="share" bindtap='worksShare'>分享</button>
+      </view>
+    </view>
+  </view>
+    <view class='line'></view>
+</block>
+</view> 
+<view class="pictureDetails-position">
+    <view class="ul">
+      <view class="li" data-id="{{worksDetails.works_id}}">
+        <view class='make' data-code='{{code}}'  bindtap='worksMake'>+制作新{{worksName}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  </view>

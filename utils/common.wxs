@@ -1,0 +1,18 @@
+// 去掉图片网络地址的参数后缀 （否则图片显示模糊）
+var removeParam = function (url) {
+  return url ? url.split('?')[0] : url
+}
+
+var ellip = function (str, num) {
+  if (!str) return ''
+  var s = str.trim()
+  if (s.length > num) {
+    s = s.substring(0, num) + '...'
+  }
+  return s
+}
+
+module.exports = {
+  removeParam: removeParam,
+  ellip: ellip
+}

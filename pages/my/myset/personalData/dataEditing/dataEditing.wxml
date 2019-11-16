@@ -1,0 +1,168 @@
+<!--pictureDetails.wxml 个人资料页面-->
+<view class='line'></view>
+<view class="container dataEditing">
+  <view class="personalData-content">
+    <view class="personalData-content-top">
+      <view class="personalData-content-top-delect clearfix">
+        <image src="/images/03-personlData-03.png" />
+      </view>
+      <view class="ul clearfix">
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>头像</span>
+          </view>
+          <view class="li-right fl">
+            <span class="li-right-left fl" bindtap="changeHead">
+              <image class=' border_y' src="{{dataList.portrait}}"/>
+            </span>
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>昵称</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <input type="text" value="{{dataList.user_name}}" bindinput='onUserName'/>
+            
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>星级</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <span class="li-right-left fl">
+              <view class="li-right-left-content">
+                <view wx:for="{{grade.list}}" wx:key="{{index}}" class="li-right-left-content-li clearfix" >
+                  <image wx:if="{{item == 0}}" src="/images/01-pictureDetail-12.png" />
+                  <image wx:if="{{item == 1}}" src="/images/01-pictureDetail-11.png" />
+                </view>
+              </view>
+            </span>
+            <span class="li-right-right fr">
+             
+            </span>
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>姓名</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+           <input type="text" value="{{dataList.realName}}" bindinput='onRealName'/>
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>性别</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <view class="li-rigth-text" bindtap="genderSelect">
+              <span>{{dataList.user_sex}}</span>
+            </view>
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>生日</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <picker mode="date" value="{{content.date}}" start="1900-01-01" end="2199-01-01" bindchange="bindDateChange">
+              <view class="picker">
+                <view class="li-rigth-text-date">
+                  <span>{{dataList.user_birthday}}</span>
+                </view>
+              
+              </view>
+            </picker>
+           
+          </view>
+        </view>
+         <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>身份证号</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <input type="number" placeholder="{{dataList.user_idCard}}"  bindinput='onIdCard'/>
+           
+          </view>
+        </view> 
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>E-mail</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <input type="" value="{{dataList.email}}" bindinput='onEmail' />
+          
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>地址</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <input type="" value='{{dataList.address}}' bindinput='onUserAddres' />
+          </view>
+
+          <!-- <view class="li-right fl" mode="widthFix">
+            <view class="section">
+              <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                <view class="picker">
+                  <view class="li-rigth-text-date">
+                    {{dataList.address}}
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view> -->
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>签名</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <input type="" value='{{dataList.user_profile}}' bindinput='onUserProfile' />
+          </view>
+        </view>
+
+      </view>
+      <view class="save">
+        <button type="default" size="defaultSize" plain="plain}" disabled="" bindtap="bindSave" hover-class="other-button-hover">保存</button>
+      </view>
+    </view>
+    <view class="personalData-content-bottom">
+      <view class="personalData-content-bottom-top">
+        <text class="gerenfm">个人封面</text>
+        <text class="genhuanfm" bindtap='changeBackground'>更换封面</text>
+      </view>
+      <view class="personalData-content-bottom-bottom">
+        <view class="ul clearfix">
+        
+          <view class="ul-content" wx:key="{{index}}">
+             <view class="li">
+                <image src="{{background}}" mode="widthFix"/>
+             </view>
+          </view>
+            <view class="li addImage" bindtap="getPicture">
+                <span>+</span>
+            </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--性别选择逻辑部分-->
+  <view class="genderSelectLogic {{gender.active}}" catchtouchmove="true">
+    <view class="genderSelectLogicContent">
+      <view class="ul">
+        <view class="li" data-gendermark="{{gender.text_man}}" data-sex="0" catchtap="genderMan">
+          <span>{{gender.text_man}}</span>
+        </view>
+        <view class="li" data-gendermark="{{gender.text_woman}}" data-sex="1" catchtap="genderMan">
+          <span>{{gender.text_woman}}</span>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

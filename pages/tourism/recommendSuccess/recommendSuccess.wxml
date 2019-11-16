@@ -1,0 +1,27 @@
+<view class='head'>
+  <image src='/images/yuku_img1.png'></image>
+</view>
+<view class='title'>
+  景区推荐成功！
+</view>
+<view class='content'>
+    <text>
+  您可以继续申请成为景区“{{spotName}}”的美景地发现者，只需要达到以下条件：
+
+  1、在此景区上传图片或者视频达到5次；
+  2、在此景区上传的文章的篇数达到2篇。
+  3、每个用户最多只能申请5个景区的美景地发现者。
+
+  成为美景地发现者，您就拥有如下特权：
+
+  1、在页面头部显示个人的头像和昵称；
+  2、可以上传景区封面图；
+  3、可以编辑景区介绍；
+  4、可以推荐置顶文章。
+  </text>
+</view>
+
+<view class='button'>
+  <view class='button-l' bindtap='onhome'>返回旅游首页</view>
+  <view class='button-r' bindtap='upload'>上传</view>
+</view>

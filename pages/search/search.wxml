@@ -1,0 +1,83 @@
+
+<view class="head">
+  <view class="search">
+    <icon type="search" class="search-img" size="15" />
+    <view class='aa'>
+      <input type='text' focus placeholder='输入关键词搜索' bindfocus='onfocus' value="{{keyword}}" placeholder-class='placeholder' maxlength="80" bindinput='oninput' bindconfirm="onconfirm" name="input" />
+    </view>
+  </view>
+  <view class='sous'><button bindtap='onsearch'>搜索</button></view>
+</view>
+
+<view class="keyword-search" wx:if="{{text}}">
+  <block  wx:if="{{search}}">
+    <view class="history" wx:if="{{history[0]}}">
+      <view class='hostort-title'>历史搜索</view>
+      <view bindtap='onclear' class='history-clear'>清除</view>
+    </view>
+    <view class="history-keyword">
+      <block wx:for="{{history}}">
+        <text class="text-1" bindtap='keyword' data-val="{{item}}">{{item}}</text>
+      </block>
+    </view>
+  </block>
+
+  <block wx:if="{{searchTop}}">
+    <view class="history">
+      <view class='hostort-title '>热门搜索</view>
+      <view bindtap='onswitch' class='history-clear '>换一批</view>
+    </view>
+    <view class="history-keyword">
+      <block wx:for="{{searchTop}}">
+        <text class="text-1" bindtap='keyword' data-val="{{item.keyword}}">{{item.keyword}}</text>
+      </block>
+    </view>
+  </block>
+  <view class="keyword-top"></view>
+</view>
+
+
+ <!-- <import src='../template/imgList.wxml' />
+<view wx:if="imglist">
+  <template is="imgList" data="{{images:images,scrollH:scrollH,col1:col1,col2:col2}}" />
+</view> -->
+
+<view wx:if="{{dataList.length}}" class="album-head">
+  <view class='head-l' data-id='-1' bindtap='changeview'>
+    <image src='/images/button.png'/>
+  </view>
+  <!-- <view class="head-r"><text class='head-r-text'>管理</text></view> -->
+</view>
+<view wx:if="{{show==1}}" class="album-list">
+  <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+        <block wx:for="{{dataList}}">
+      <view class="alibum-list-img" data-group='{{item.isDouble}}' bindtap='onImg' data-id='{{item.imgId}}'>
+          <image mode='aspectFill' src='{{item.pic}}' />
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<view wx:if="{{show!=1}}" class="album-list1">
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+  <block wx:for="{{dataList}}">
+<view class="album-list-c" bindtap='onImg' data-id='{{item.imgId}}'>
+    <image  src="{{item.pic}}" bindload="imageLoad" data-index="{{index}}" 
+    style="width:{{ images[index].width }}rpx; height:{{ images[index].height }}rpx;" />
+
+    <view class="album-fd">
+      <span class="album-fd-l">
+        <text>{{item.title}}</text>
+      </span>
+      <span class="album-fd-r">
+      <image class="album-view" src='/images/icon-view.png'/>
+        <text>{{item.view_num}}</text>
+      <image class='album-comment' src='/images/icon-comment.png'/>
+        <text>{{item.comment}}</text>
+      <image class="album-good" src='/images/icon-good.png'/>
+        <text>{{item.good_num}}</text>
+      </span>
+    </view>
+</view>
+</block>
+</scroll-view>
+</view>

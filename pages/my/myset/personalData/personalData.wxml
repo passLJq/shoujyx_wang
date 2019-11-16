@@ -1,0 +1,171 @@
+<!--pictureDetails.wxml 个人资料页面-->
+<view class='line'></view>
+<view class="container personalData">
+  <view class="personalData-content">
+    <view class="personalData-content-top">
+      <view class="personalData-content-top-delect clearfix">
+        <navigator url="dataEditing/dataEditing?memberId={{memberId}}" hover-class="navigator-hover">
+          <image src="/images/03-personlData-03.png" />
+        </navigator>
+        
+      </view>
+      <view class="ul clearfix">
+        <view class="li">
+          <view class="li-left fl" >
+            <span>头像</span>
+          </view>
+          <view class="li-right fl">
+            <span class="li-right-left fl">
+              <image src="{{userInfo.portrait}}"/>
+            </span>
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" >
+            <span>昵称</span>
+          </view>
+          <view class="li-right fl" >
+            <span class="li-right-left fl">{{userInfo.user_name}}</span>
+           
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl">
+            <span>星级</span>
+          </view>
+          <view class="li-right fl" >
+            <span class="li-right-left fl">
+              <view class="li-right-left-content">
+                <view wx:if="{{grade== 1}}" class="li-right-left-content-li clearfix" >
+                  <image src="/images/stars.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                </view>
+                <view wx:if="{{grade== 2}}" class="li-right-left-content-li clearfix" >
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                </view>
+                <view wx:if="{{grade== 3}}" class="li-right-left-content-li clearfix" >
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                </view>
+                <view wx:if="{{grade== 4}}" class="li-right-left-content-li clearfix" >
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                  <image src="/images/01-pictureDetail-12.png" />
+                </view>
+                <view wx:if="{{grade== 5}}" class="li-right-left-content-li clearfix" >
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                  <image src="/images/stars.png" />
+                </view>
+              </view>
+            </span>
+            <span class="li-right-right fr">
+             
+            </span>
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>姓名</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <span class="li-right-left fl">{{userInfo.realName}}</span>
+           
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>性别</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <span class="li-right-left fl">{{userInfo.user_sex}}</span>
+          
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>生日</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <span class="li-right-left fl">{{userInfo.user_birthday}}</span>
+           
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>手机</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <span class="li-right-left fl">{{userInfo.user_phone}}</span>
+          </view>
+        </view>
+
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>身份证号</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <span class="li-right-left fl">{{userInfo.user_idCard}}</span>
+          </view>
+        </view>
+
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>E-mail</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <span class="li-right-left fl">{{userInfo.email}}</span>
+          
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>地址</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <span class="li-right-left fl">{{userInfo.address}}</span>
+           
+          </view>
+        </view>
+        <view class="li">
+          <view class="li-left fl" mode="widthFix">
+            <span>签名</span>
+          </view>
+          <view class="li-right fl" mode="widthFix">
+            <span class="li-right-left fl">{{userInfo.user_profile}}</span>
+         
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class="personalData-content-bottom">
+      <view class="personalData-content-bottom-top">
+        <text>个人封面</text>
+      </view>
+      <view class="personalData-content-bottom-bottom">
+        <view class="ul clearfix">
+
+          <view class="li">
+            <image src="{{userInfo.background}}" mode="widthFix"/>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

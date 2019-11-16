@@ -1,0 +1,82 @@
+<!-- <view class='headShow'>
+  <view wx:if='{{code==1}}' class='head-l' data-type='1' bindtap='onShowType'>影集</view>
+  <view wx:else class='head-l1' data-type='1' bindtap='onShowType'>影集</view>
+  <view wx:if='{{code==2}}' class='head-r' data-type='2' bindtap='onShowType'>游记</view>
+  <view wx:else class='head-r1' data-type='2' bindtap='onShowType'>游记</view>
+</view> -->
+<wxs src="../../../utils/common.wxs" module="comm"></wxs>
+<view wx:if="{{!isEmpty}}" class='isEmpty'>
+  <image src='/images/worksEmpty.png' />
+  <view>你还没有图文，去制作图文</view>
+  <view class='worksAdd' bindtap='worksMake'>+图文制作</view>
+</view>
+<view wx:else>
+  <view class='content'>
+    <view class='line'></view>
+    <block wx:for="{{data}}">
+      <view class="worksShow">
+        <view class="worksShow-l">
+          <image src='{{comm.removeParam(item.image)}}' data-id="{{item.worksShowId}}" mode='aspectFill' bindtap='onimg' />
+          <view class="worksShow-status">
+            <text wx:if="{{item.status==1}}">已发布</text>
+            <text wx:else>未发布</text>
+          </view>
+        </view>
+        <view class="worksShow-r">
+          <view class="one">
+            <view class="title">
+              <view class='title-text'>{{item.worksShowTitle}} </view>
+            </view>
+            <view class="rm" data-id="{{item.worksShowId}}" data-index='{{index}}' bindtap='worksDel'>
+              <image src='/images/rm.png' />
+            </view>
+          </view>
+          <view class="number">
+            <view class="view">浏览量: {{item.view_num}}</view>
+            <view class="share">点赞数：{{item.good_num}}</view>
+          </view>
+          <view class="button">
+            <button data-id="{{item.worksShowId}}" data-code='{{item.code}}' class='edit' bindtap='worksEdit'>编辑</button>
+            <button wx:if="{{item.status==0}}" data-id="{{item.worksShowId}}" data-index="{{index}}" data-status='{{item.status}}' class='worksRelease' style="color: #fff;" bindtap='worksRelease'>发布</button>
+            <button wx:else data-id="{{item.worksShowId}}" data-index="{{index}}" data-status='{{item.status}}' class='worksRelease-1' bindtap='worksRelease'>取消发布</button>
+            <button data-id="{{index}}" data-type="open" aa="{{item.index}}" class='bg' bindtap='closeCan'>分享</button>
+          </view>
+        </view>
+      </view>
+      <view class='line'></view>
+    </block>
+  </view>
+  <view class="pictureDetails-position">
+    <view class="ul">
+      <view class="li" data-id="{{worksDetails.works_id}}">
+        <view class='make' data-code='{{code}}' bindtap='worksMake'>+新建图文</view>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<!-- 分享海报 -->
+<!-- <view wx:if="{{posterShareShow}}" class="posterShare">
+  <view class='poste_box' id='canvas-container'>
+    <canvas canvas-id="myCanvas" class='canvasImg' style="width:750rpx;position: fixed; left: 750rpx;height:{{posertImgHeight}}rpx" />
+
+  </view>
+
+  <view class="posterShareBox">
+    <view class="posterShare-one">
+      <button open-type="share">
+        <image class="posterImg" src="/images/wxShare.png" />微信</button>
+      <button bindtap="setPoster">
+        <image class="wxShareImg" src="/images/poster.png" />生成海报</button>
+    </view>
+    <view class="line"></view>
+    <view class="posterShare-two">
+      <span bindtap="cancelPoster">取消</span>
+    </view>
+  </view>
+
+</view> -->
+
+<can wx:if="{{showCan}}" worksId="{{worksId}}" bind:close="closeCan"></can>
